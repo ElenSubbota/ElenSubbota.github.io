@@ -1,0 +1,288 @@
+@media only screen and (max-width: 800px) {
+  .header-top_wrap {
+    grid-template-rows: 120px 1fr;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+  // menu in top header
+  .header-top_menu-btn {
+    display: block;
+    float: right;
+    z-index: 101;
+  }
+  .header-top__list {
+    @include flex-col-centr;
+    // justify-content: space-evenly;
+    height: 100vh;
+    width: 100%;
+    top: 120px;
+    position: absolute;
+    background-color: $accent;
+    margin: 0;
+    // Скрываем меню по умолчанию
+    left: -100vw;
+    transition: all .5s;
+    z-index: 100;
+    &_active {
+      left: 0;
+    }
+    & .header-top_li {
+      width: 100vw;
+      text-align: center;
+      padding: 1vw 0 1vw 2vw;
+    }
+    & .header-top_link {
+      display: block;
+      width: 100%;
+      font-size: 1.1em;
+      color: $light-text;
+      line-height: 4;
+      font-weight: 200;
+      letter-spacing: 4px;
+    }
+  }
+
+  // MIDDLE HEADER
+
+  .header-middle__list {
+    @include flex-row;
+    flex-wrap: wrap;
+    transition: all .4s;
+    margin: 0;
+  }
+  .header-middle__list {
+    height: 0;
+    overflow: hidden;
+    transition: all .5s;
+  }
+  // При нажатии на верхний блок меню появляется список когдаменю
+  .header-middle__list--active {
+    width: 100vw;
+    position: absolute;
+    height: auto;
+    z-index: 22;
+        transition: all .5s;
+  }
+  .header-middle_li {
+    width: 100%;
+    border-bottom: 1px solid darken($blue, 15%);
+    margin: 0;
+  }
+
+  // верхний блок меню (нужен для мобильной версии)
+  .header-middle_menu {
+    @include flex-row-centr;
+
+  }
+
+  // BOTTOM HEADER
+
+  .header-bottom__nav {
+    display: block;
+    position: absolute;
+    z-index: 99;
+  }
+  .header-bottom__menu {
+    @include flex-row-centr;
+    align-items: center;
+    height: 50px;
+    background-color: lighten($blue, 2%);
+    color: $light-text;
+    text-transform: uppercase;
+    transition: all .5s;
+    &:visited {
+      color: $light-text;
+    }
+  }
+  .header-bottom__fixed {
+    display: block;
+    position: fixed;
+    top: 0;
+  }
+  .header-bottom__li--big {
+    width: 20%;
+  }
+
+  // стили для иконок треугольников
+  .triangle-bottom {
+    display: inline-block;
+    width: 6px;
+    height: auto;
+    border-style: solid;
+    border-radius: 5%;
+    border-width: 6px 6px 0 6px;
+    border-color: $light-icn transparent transparent transparent;
+    margin-left: 5px;
+    transition: all .5s;
+}
+.triangle-top {
+    display: inline-block;
+    width: 6px;
+    height: auto;
+    border-style: solid;
+    border-radius: 5%;
+    border-width: 0 6px 6px 6px;
+    border-color: transparent transparent $light-icn transparent;
+    margin-left: 5px;
+    transition: all .5s;
+}
+  .header-bottom__list {
+    @include flex-col-centr;
+    align-items: center;
+    background-color: $blue;
+    width: 100vw;
+    transform: scaleY(0);
+  }
+  .header-bottom__list--mobile {
+        transform: scaleY(1);
+  }
+
+
+  // TOP SECTION
+
+  .top-section__wrap {
+    grid-template-columns: 100vw;
+    grid-gap: 10px;
+}
+.top-section__item--1, .top-section__item--2, .top-section__item--3, .top-section__item--4, .top-section__item--5, .top-section__item--6   {
+  grid-column: 1;
+  min-height: 45vh;
+
+// Стили для верхней грид секции
+.top-section__item--1_title-bl {
+  width: 75%;
+  margin-top: 40%;
+  background-color: rgba(54, 47, 79, .6);
+}
+.top-section__item--1_descript-bl {
+  width: 100%;
+  font-size: .8em;
+  margin: 5px 0 5px 0;
+}
+// Большие заголовки в блоках
+.top-section__item_big-title  {
+  font-size: 2.625em;
+}
+
+// 2 блок Women
+.top-section__item--2_title-bl {
+  width: 65%;
+  top: 0;
+  position: relative;
+  text-align: justify;
+  padding: 15px;
+}
+.top-section__item_big-title_women {
+    font-size: 2em;
+}
+}
+.top-section__item_descr {
+  max-width: 293px;
+  height: 55px;
+  @include flex-row-centr;
+  opacity: 1;
+  position: relative;
+  z-index: 3;
+  transition: all 0.5s;
+}
+ // SECTION WHO we area
+ .who-we_images_wrap {
+   width: 100%;
+ }
+ .who-we_images {
+   width: 100%;
+   overflow: hidden;
+ }
+ .who-we_img {
+   width: 100%;
+   height: auto;
+ }
+
+
+ // footer
+.footr_titl {
+  font-size: 14px;
+}
+ .footr_blc-4 {
+   display: none;
+ }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px)  and (max-width: 767px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and ( max-width: 1199px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) and (max-width: 1469px) {
+
+}
+/* Extra large devices (large laptops and desktops, 1470px and up) */
+@media only screen and (min-width: 1470px) and (max-width: 1650px) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// @media only screen and (max-width: 320px) {}
+// @media screen and (min-width: 331px ) and (max-width : 615px) {}
+// @media only screen and (min-width: 616px) and (max-width: 740px) {}
+//  @media only screen and (min-width: 741px) and (max-width: 1125px){}
+//    @media only screen and (min-width: 1120px) and (max-width: 1183px) {}
+//          @media only screen and (min-width: 1184px) and (max-width: 1521px)  {}
+//
+// @media only screen and (max-width: 320px) {
+//
+// }
+// @media only screen and (min-width: 321px) {
+//
+// }
+// /* Small devices (portrait tablets and large phones, 600px and up) */
+// @media only screen and (min-width: 600px) {
+//
+// }
+//
+// /* Medium devices (landscape tablets, 768px and up) */
+// @media only screen and (min-width: 768px) {
+//
+// }
+//
+// /* Large devices (laptops/desktops, 992px and up) */
+// @media only screen and (min-width: 992px) {
+//
+// }
+//
+// /* Extra large devices (large laptops and desktops, 1200px and up) */
+// @media only screen and (min-width: 1200px) {
+//
+// }
+// /* Extra large devices (large laptops and desktops, 1470px and up) */
+// @media only screen and (min-width: 1470px) {
+//
+// }

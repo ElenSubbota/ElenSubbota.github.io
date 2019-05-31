@@ -1,0 +1,1081 @@
+* {
+      transition: .3s ease-in-out;
+}
+body {
+  /*  background-color: rgba(250, 255, 255, 0.4);*/
+  background: rgba(250, 250, 250, 1);
+  font-size: 14px;
+}
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 5% 0 5%;
+  overflow: hidden;
+}
+a {
+  color: inherit;
+}
+
+/*.header__background {
+  background-image: url("../img/glass-3276648_1920.jpg");
+  padding-top: 33.7%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}*/
+.header__logo {
+  background: rgba(110, 110, 110, 0.6);
+  height: 45px;
+  width: 100%;
+  position: fixed;
+  z-index: 50;
+}
+#logo_full {
+  display: block; /*включить логотип для полноэкранного сайта*/
+}
+#logo_mobile {
+  display: none; /*выключить мобильный логотип*/
+}
+.logo {
+  float: left;
+  z-index: 40;
+  position: relative;
+}
+
+/*МЕНЮ НАВИГАЦИИ ПО САЙТУ*/
+.header__nav {
+  /*  width: 50%;*/
+  float: right;
+  z-index: 40;
+  position: relative;
+}
+input[name="menu"] {
+  display: none;
+  outline: none;
+  border: none;
+}
+label[for="header__nav-input"] {
+  display: none;
+}
+#nav ul {
+  z-index: 40;
+  text-align: center;
+}
+nav li {
+  display: inline-block;
+  vertical-align: center;
+  border-left: 1px solid lightgrey;
+}
+nav li:hover {
+}
+nav a {
+  color: rgba(255, 255, 255, 1);
+  font-size: 1.2em;
+  font-weight: 500;
+  padding: 0 10px 0 10px;
+}
+#entry__img {
+  position: relative;
+  padding-top: 3px;
+}
+.header__contacts {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  top: 17%;
+  right: 15%;
+}
+.tel-numb__text {
+  font-size: 1.8em;
+  color: white;
+  font-weight: 300;
+}
+.tel__tw-row {
+  padding-left: 18%;
+}
+
+/*БЛОК С РАССЫЛКОЙ*/
+
+.block__useful-newsletter {
+  position: absolute;
+  width: 330px;
+  height: 230px;
+  top: 40%;
+  right: 14%;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 15px;
+  border-radius: 3px;
+}
+.block__useful-newsletter h3 {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-left: 5px;
+}
+.block__useful-newsletter p {
+  padding-left: 7px;
+}
+#user__email {
+  width: 280px;
+  min-height: 40px;
+  border-radius: 5px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  color: #333333;
+  padding-left: 10px;
+  margin: 5px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+.but__enter {
+  width: 295px;
+  min-height: 40px;
+  border-radius: 5px;
+  margin: 5px 0 10px 5px;
+  background-color: rgba(215, 142, 41, 0.9);
+  font-size: 16px;
+  color: #1b1b1b;
+  border: none;
+  padding: 0;
+}
+.but__enter:hover {
+  background-color: rgb(215, 142, 31);
+}
+
+/*СЛАЙДЕР*/
+.header__slider {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+}
+#slides {
+  position: relative;
+  padding-top: 33.7%; /* адаптивная высота слайдера*/
+  margin: 0;
+  list-style-type: none;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+.slide {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+
+  -webkit-transition: opacity 1.5s;
+  -moz-transition: opacity 1.5s;
+  -o-transition: opacity 1.5s;
+  transition: opacity 1.5s;
+}
+.showing {
+  opacity: 1;
+}
+.slide {
+  font-size: 40px;
+  padding: 40px;
+  box-sizing: border-box;
+  background: #333;
+  color: #fff;
+}
+.slide:nth-of-type(1) {
+  background-image: url("../img/glass-3276648_1920.jpg");
+}
+.slide:nth-of-type(2) {
+  background-image: url("../img/inside-1499607_1920.jpg");
+}
+.slide:nth-of-type(3) {
+  background-image: url("../img/moscow-3550477_1920.jpg");
+}
+.slide:nth-of-type(4) {
+  background-image: url("../img/night-1450087_1920.jpg");
+}
+.slide:nth-of-type(5) {
+  background-image: url("../img/architecture-3309018_1920.jpg");
+}
+.slide:nth-of-type(1), .slide:nth-of-type(2), .slide:nth-of-type(5) {
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.slide:nth-of-type(3), .slide:nth-of-type(4) {
+  background-position: center top;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+/*КОНТЕЙНЕР ДЛЯ ОСНОВ.КОНТЕНТА САЙТА + ЛЕВОГО БЛОКА*/
+.tw-columns {
+  min-height: 2600px;
+}
+.container__tw-columns { /*Общий контенер для колонок*/
+  max-width: 1400px;
+  min-height: 1000px;
+  height: 100%;
+  margin: 0 auto;
+}
+.main { /*Колонка контента*/
+  width: 80%;
+  min-height: 2000px;
+  position: relative;
+  float: left;
+  /* background-color: #7FFFD4; */
+  margin: 0;
+  overflow: hidden;
+}
+.sidebar__left { /*левая колонка*/
+  width: 20%;
+  min-height: 2000px;
+  height: 100%;
+  position: relative;
+  float: left;
+  /*  background: #ffb9b3;*/
+}
+.filter__mobile {
+  display: none;
+}
+.filter {
+  width: 250px;
+  min-height: 500px;
+  background-color: rgba(110, 110, 110, 0.6);
+  margin: 40px 10px 10px 10px;
+  border-radius: 7px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+.filter__select {
+  width: 230px;
+  height: 40px;
+  margin: 10px 0 10px 10px;
+  border-radius: 5px;
+}
+.filter h3 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 300;
+  margin: 10px 0 10px 0;
+  padding: 20px 0 0 0;
+}
+.filter p {
+  margin-left: 10px;
+}
+option {
+  font-size: 16px;
+}
+.but__search {
+  width: 230px;
+  min-height: 40px;
+  border-radius: 5px;
+  margin: 5px 0 10px 10px;
+  font-size: 16px;
+  color: #1b1b1b;
+  border: none;
+}
+.but__search:hover {
+background-color: rgb(215, 142, 31);
+}
+
+/*ЛЕВЫЙ БЛОК - НОВОСТИ*/
+.sidebar__news {
+  width: 250px;
+  margin: 55px 0 10px 10px;
+  text-align: center;
+}
+.sidebar__news p {
+  margin: 10px 0 10px 0;
+}
+
+/*ОСНОВНОЙ БЛОК - УСЛУГИ*/
+h2 {
+  font-size: 35px;
+  font-weight: 300;
+  text-align: center;
+  line-height: 100px;
+}
+.landing-block__services {
+  min-height: 350px;
+}
+.img__services-mobile {
+  display: none;
+}
+.img__services-full {
+  display: block;
+}
+.img__services {
+  width: 25%;
+  position: relative;
+  float: left;
+  padding-top: 3%;
+}
+.img__services img {
+  display: block;
+  margin: auto;
+}
+.img__services p {
+  text-align: center;
+  width: 150px;
+  margin: auto;
+  padding-top: 7%;
+}
+.img__services p {
+  font-size: 1.2em;
+  color: #595959;
+  line-height: 120%;
+}
+.link__points {
+  color: blue;
+  font-size: 1.1em;
+}
+.foto_width-162 {
+  display: none;
+}
+.foto_width-212 {
+  display: none;
+}
+.foto_width-337 {
+  display: block;
+}
+.rent-product__row-1_img {
+  width: 32%;
+  min-height: 280px;
+  margin: 10px 3px 10px 3px;
+  padding-top: 5px;
+  background-color: rgba(	220, 220, 220, 0.7);
+  background-position:  10px 20px;
+  position: relative;
+  float: left;
+  overflow: hidden;
+}
+.rent-product__row-1 {
+  padding-left: 3%;
+}
+.rent-product__row-1_img  img {
+  margin: auto;
+}
+.rent-product__row-1_img  p {
+  padding-left: 10px;
+}
+.rent-product__row-1_img  img:first-child {
+  padding-left: 1.5%;
+  padding-top: 1%;
+}
+.rent-product__row-1_img  img:last-child {
+
+}
+.rent-product {
+  position: relative;
+}
+.sale-product {
+  position: relative;
+}
+.top-product {
+  position: relative;
+}
+
+/* кнопка БОЛЬШЕ ПРЕДЛОЖЕНИЙ */
+.button__see-more {
+  margin-left: calc(50% - 148px);
+  position: relative;
+  top: 20px;
+}
+footer {
+  min-height: 100px;
+  background: #595959;
+  position: relative;
+  position: bottom;
+}
+.foot_signature {
+  right:  40%;
+  top: 50%;
+  font-size: 18px;
+  color: white;
+  position: absolute;
+}
+
+/*МОБИЛЬНЫЕ*/
+
+@media screen and (max-width: 330px) {
+  .container {
+    width: 100%;
+  }
+  .container__tw-columns {
+    width: 100%;
+    min-height: 3500px;
+  }
+  .sidebar__left {
+    display: none;  /*убрали левую колонку*/
+  }
+  .main {
+    width: 98%;  /*растянули блок основного контента */
+  }
+  .header__logo {
+    height: 40px;
+  }
+  #logo_full {
+    display: none;
+  }
+  #logo_mobile {
+    display: block;
+    padding-top: 5px;
+  }
+  label[for="header__nav-input"] {
+    display: inline-block;
+    position: relative;
+    float: right;
+    padding-right: 25px;
+    padding-top: 5px;
+    cursor: pointer;
+  }
+  nav > ul {
+    display: none;
+    outline: none;
+  }
+  nav li {
+    display: block;
+    position: relative;
+    font-size: 15px;
+    padding-bottom: 8px;
+    padding-top: 5px;
+    outline: none;
+    background-color: rgba(89, 89, 89, 0.5);
+    border: none;
+  }
+  input[type="checkbox"]:checked ~ label + ul {
+    display: block;
+  }
+  #slides {
+    display: none;
+  }
+  .header__slider {
+    position: relative;
+    padding-top: 70%; /* адаптивная высота слайдера*/
+    margin: 0;
+    box-shadow: 0 0 12px rgba(0,0,0,0.3);
+    background-image: url("../img/glass-3276648_518.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  .header__contacts {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    top: 30%;
+    right: 2%;
+  }
+  .block__useful-newsletter {
+    display: none;
+  }
+  /* ФИЛЬТР */
+
+  .filter__mobile {
+    display: block;
+  }
+  .filter__mobile {
+    max-width: 90%;
+    min-height: 350px;
+    margin: auto;
+	  padding-bottom: 20px;
+    border-radius: 7px;
+  }
+  .filter__select {
+    width: 95%;
+    height: 30px;
+    margin:  5px 0 5px 10px;
+  }
+  .filter__mobile h3 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 300;
+    margin: 8px 0 10px 0;
+    padding: 10px 0 0 0;
+  }
+  .filter__mobile p {
+    padding-left: 10px;
+    font-size: 12px;
+  }
+  option {
+    font-size: 16px;
+  }
+  .but__search :hover {
+
+  }
+  .img__services-mobile {
+    display: block;
+  }
+  .img__services-full {
+    display: none;
+  }
+  .img__services {
+    width: 50%;
+    position: relative;
+    float: left;
+    padding-top: 3%;
+  }
+  .img__services p {
+    font-size: 14px;
+    width: 50%;
+    padding-top: 0;
+  }
+  .img__services p {
+    text-align: left;
+    margin: auto;
+    padding-top: 8%;
+    line-height: 120%;
+  }
+  .landing-block__services {
+	  margin-left: 20px;
+	  left: 50px;
+  }
+  .landing-block__services h2 {
+    font-size: 22px;
+    font-weight: 300;
+    text-align: center;
+    line-height: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+	}
+	hr {
+		display: none;
+	}
+  h2 {
+	  font-size: 22px;
+  }
+  .foto_width-162 {
+    display: none;
+  }
+  .foto_width-212 {
+    display: none;
+  }
+  .foto_width-337 {
+    display: block;
+  }
+  .rent-product__row-1_img {
+    width: 100%;
+    min-height: 200px;
+    background: none;
+    float: none;
+  }
+  .rent-product__row-1 {
+    padding-left: 0;
+  }
+  footer {
+    height: 100px;
+    background: #595959;
+    position: relative;
+    position: bottom;
+  }
+}
+
+@media screen and (min-width: 331px ) and (max-width : 615px)  {
+  .container {
+    width: 100%;
+  }
+  .container__tw-columns {
+    width: 100%;
+    height: 3500px;
+  }
+  .sidebar__left {
+    display: none;  /*убрали левую колонку*/
+  }
+  .main {
+    width: 98%;  /*растянули блок основного контента */
+  }
+  .header__logo {
+    height: 40px;
+  }
+  #logo_full {
+    display: none;
+  }
+  #logo_mobile {
+    display: block;
+    padding-top: 5px;
+  }
+  label[for="header__nav-input"] {
+    display: inline-block;
+    position: relative;
+    float: right;
+    padding-right: 25px;
+    padding-top: 5px;
+    cursor: pointer;
+  }
+  nav > ul {
+    display: none;
+    outline: none;
+  }
+  nav li {
+    display: block;
+    position: relative;
+    font-size: 15px;
+    padding-bottom: 8px;
+    padding-top: 5px;
+    outline: none;
+    background-color: rgba(89, 89, 89, 0.5);
+    border: none;
+  }
+  input[type="checkbox"]:checked ~ label + ul {
+    display: block;
+  }
+  #slides {
+    display: none;
+  }
+  .header__slider {
+    position: relative;
+    padding-top: 70%; /* адаптивная высота слайдера*/
+    margin: 0;
+    box-shadow: 0 0 12px rgba(0,0,0,0.3);
+    background-image: url("../img/glass-3276648_518.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  .block__useful-newsletter {
+    display: none;
+  }
+  .filter__mobile {
+    display: block;
+  }
+  .filter__mobile {
+    max-width: 90%;
+    min-height: 400px;
+    margin: auto;
+    border-radius: 7px;
+  }
+  .filter__select {
+    width: 95%;
+    height: 35px;
+    margin:  5px 0 5px 10px;
+  }
+  .filter__mobile h3 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 300;
+    margin: 10px 0 10px 0;
+    padding: 10px 0 0 0;
+  }
+  .filter__mobile p {
+    padding-left: 10px;
+    font-size: 12px;
+  }
+  option {
+    font-size: 16px;
+  }
+  .but__search {
+    width: 230px;
+    min-height: 40px;
+    border-radius: 5px;
+    position: absolute;
+    margin-left: 17%;
+    font-size: 16px;
+    color: #1b1b1b;
+    border: none;
+    box-shadow: none;
+  }
+  .img__services-mobile {
+    display: block;
+  }
+  .img__services-full {
+    display: none;
+  }
+  .img__services {
+    width: 50%;
+    height: 200px;
+    position: relative;
+    float: left;
+    padding-top: 3%;
+  }
+  .img__services p {
+    font-size: 14px;
+    width: 50%;
+    padding-top: 0;
+  }
+  .img__services p {
+    text-align: left;
+    margin: auto;
+    padding-top: 8%;
+    line-height: 120%;
+  }
+  .landing-block__services {
+    margin-left: 20px;
+    left: 50px;
+  }
+  .landing-block__services h2 {
+    font-size: 22px;
+    font-weight: 300;
+    text-align: center;
+    line-height: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  hr {
+    display: none;
+  }
+  .foto_width-162 {
+    display: none;
+  }
+  .foto_width-212 {
+    display: none;
+  }
+  .foto_width-337 {
+    display: block;
+  }
+  .rent-product__row-1_img {
+    width: 100%;
+    min-height: 200px;
+    background: none;
+    float: none;
+    /* margin: 0 0 20px 20px; */
+    margin-left: calc(50% - 175px);
+  }
+  .rent-product__row-1 {
+    padding-left:
+  }
+  footer {
+    height: 100px;
+    background: #595959;
+    position: relative;
+    position: bottom;
+  }
+}
+
+@media only screen and (min-width: 616px) and (max-width: 740px) {
+  .container {
+    width: 100%;
+  }
+  .container__tw-columns {
+    width: 100%;
+    min-height: 3500px;
+  }
+  .block__useful-newsletter {
+    display: none;
+  }
+  .sidebar__left {
+    display: none;  /*убрали левую колонку*/
+  }
+  .main {
+    width: 98%;  /*растянули блок основного контента */
+  }
+  label[for="header__nav-input"] {
+    display: inline-block;
+    position: relative;
+    float: right;
+    padding-right: 25px;
+    padding-top: 10px;
+    cursor: pointer;
+  }
+  nav > ul {
+    display: none;
+    outline: none;
+  }
+  nav li {
+    display: block;
+    position: relative;
+    font-size: 15px;
+    padding-bottom: 8px;
+    padding-top: 5px;
+    outline: none;
+    background-color: rgba(89, 89, 89, 0.5);
+    border: none;
+  }
+  input[type="checkbox"]:checked ~ label + ul {
+    display: block;
+  }
+  #slides {
+    position: relative;
+    padding-top: 45.7%;
+    margin: 0;
+    list-style-type: none;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  }
+  .header__contacts {
+    top: 30%;
+    left: 8%;
+  }
+
+  /*БЛОК С РАССЫЛКОЙ*/
+
+  .block__useful-newsletter {
+    position: absolute;
+    width: 330px;
+    height: 230px;
+    top: 20%;
+    right: 5%;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 15px;
+    border-radius: 3px;
+  }
+  .filter__mobile {
+    display: block;
+  }
+  .filter__mobile li {
+    display: inline-block;
+    margin-top: 0;
+  }
+  .filter__mobile {
+    max-width: 90%;
+    min-height: 100px;
+    margin: auto;
+	  padding-bottom: 20px;
+    border-radius: 7px;
+  }
+  .filter__select {
+    width: 95%;
+    height: 30px;
+    margin:  5px 0 5px 10px;
+  }
+  .filter__mobile h3 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 300;
+    margin: 20px 0 30px 0;
+    padding: 10px 0 0 0;
+  }
+  .filter__mobile p {
+    padding-left: 10px;
+    font-size: 12px;
+  }
+  option {
+    font-size: 16px;
+  }
+  .but__search {
+    width: 150px;
+    min-height: 30px;
+    border-radius: 5px;
+    margin:   5px 0 10px 32px;
+    font-size: 20px;
+    color: #1b1b1b;
+    border: none;
+    box-shadow: none;
+  }
+  .foto_width-162 {
+    display: none;
+  }
+  .foto_width-212 {
+    display: block;
+  }
+  .foto_width-337 {
+    display: none;
+  }
+  .rent-product__row-1_img {
+    width:230px;
+    min-height: 200px;
+    margin: 3px 20px 10px 35px;
+    padding-top: 5px;
+    background-color: rgba(	220, 220, 220, 0.7);
+    background-position:  10px 20px;
+    position: relative;
+    float: left;
+  }
+  .rent-product__row-1_img  figure {
+    position: relative;
+    width: 214px;
+    margin: auto;
+  }
+.rent-product__row-1_img figure:last-child {
+  float: right;
+  }
+  .rent-product__row-1_img  p {
+    padding-left: 50px;
+  }
+  .rent-product__row-1_img  img:first-child {
+    padding-left: 1.5%;
+    padding-top: 1%;
+  }
+}
+@media only screen and (min-width: 741px) and (max-width: 1125px) {
+  .container {
+    width: 100%;
+  }
+  .container__tw-columns {
+    width: 100%;
+    min-height: 3500px;
+  }
+  .sidebar__left {
+    display: none;  /*убрали левую колонку*/
+  }
+  .main {
+    width: 98%;  /*растянули блок основного контента */
+  }
+  label[for="header__nav-input"] {
+    display: inline-block;
+    position: relative;
+    float: right;
+    padding-right: 25px;
+    padding-top: 10px;
+    cursor: pointer;
+  }
+  nav > ul {
+    display: none;
+    outline: none;
+  }
+  nav li {
+    display: block;
+    position: relative;
+    font-size: 15px;
+    padding-bottom: 8px;
+    padding-top: 5px;
+    outline: none;
+    background-color: rgba(89, 89, 89, 0.5);
+    border: none;
+  }
+  input[type="checkbox"]:checked ~ label + ul {
+    display: block;
+  }
+  #slides {
+    position: relative;
+    padding-top: 45.7%;
+    margin: 0;
+    list-style-type: none;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  }
+  .header__contacts {
+    top: 30%;
+    left: 8%;
+  }
+
+  /*БЛОК С РАССЫЛКОЙ*/
+
+  .block__useful-newsletter {
+    position: absolute;
+    width: 330px;
+    height: 230px;
+    top: 20%;
+    right: 5%;
+    padding: 15px;
+  }
+  .filter__mobile {
+    display: block;
+  }
+  .filter__mobile li {
+    display: inline-block;
+    margin-top: 0;
+  }
+  .filter__mobile {
+    max-width: 90%;
+    min-height: 100px;
+    margin: auto;
+	  padding-bottom: 20px;
+    border-radius: 7px;
+  }
+  .filter__select {
+    width: 95%;
+    height: 30px;
+    margin:  5px 0 5px 10px;
+  }
+  .filter__mobile h3 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 300;
+    margin: 20px 0 30px 0;
+    padding: 10px 0 0 0;
+  }
+  .filter__mobile p {
+    padding-left: 10px;
+    font-size: 12px;
+  }
+  option {
+    font-size: 16px;
+  }
+  .but__search {
+    width: 150px;
+    min-height: 30px;
+    border-radius: 5px;
+    margin:   5px 0 10px 32px;
+    font-size: 20px;
+    color: #1b1b1b;
+    border: none;
+    box-shadow: none;
+  }
+  .foto_width-337 {
+    display: block;
+
+  }
+  .foto_width-212 {
+      display: none;
+  }
+  .foto_width-212 {
+    margin:
+  }
+  .rent-product__row-1_img {
+    width: 45%;
+    min-height: 250px;
+    margin: 10px 3px 10px 10px;
+    padding-top: 5px;
+    background-color: rgba(	220, 220, 220, 0.7);
+    background-position:  10px 20px;
+    position: relative;
+    float: left;
+  }
+  .rent-product__row-1_img  figure {
+    width: 337px;
+    position: relative;
+    margin: auto;
+  }
+  .rent-product__row-1_img  p {
+    padding-left: 10px;
+  }
+  .rent-product__row-1_img  img:first-child {
+    padding-left: 0;
+    padding-top: 1%;
+  }
+}
+@media only screen and (min-width: 1126px) and (max-width: 1405px) {
+  /*БЛОК С РАССЫЛКОЙ*/
+
+  .block__useful-newsletter {
+    position: absolute;
+    width: 330px;
+    height: 230px;
+    top: 45%;
+    right: 14%;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 15px;
+    border-radius: 3px;
+  }
+  .block__useful-newsletter h3 {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-left: 5px;
+  }
+  .block__useful-newsletter p {
+    padding-left: 7px;
+  }
+  .foto_width-337 {
+    display: block;
+
+  }
+  .foto_width-212 {
+    display: none;
+  }
+  .foto_width-212 {
+    margin:
+  }
+  .rent-product__row-1_img {
+    width: 48%;
+    min-height: 250px;
+    margin: 10px 3px 10px 10px;
+    padding-top: 5px;
+    background-color: rgba(	220, 220, 220, 0.7);
+    background-position:  10px 20px;
+    position: relative;
+    float: left;
+  }
+  .rent-product__row-1_img  figure {
+    width: 337px;
+    position: relative;
+    margin: auto;
+  }
+  .rent-product__row-1_img  p {
+    padding-left: 10px;
+  }
+  .rent-product__row-1_img  img:first-child {
+    padding-left: 0;
+    padding-top: 1%;
+  }
+  .header__contacts {
+    top: 30%;
+    left: 8%;
+  }
+}

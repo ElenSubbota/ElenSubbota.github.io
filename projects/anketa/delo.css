@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:700&subset=cyrillic-ext');
+html {
+	background-image: radial-gradient( #e7d065 0%, transparent 100%), url(./img/backgraund2.png);
+	margin: none;
+	padding: none;
+}
+body {
+	background: url(./img/background.png) no-repeat center top / 1000px 1500px;
+	background-repeat: "no-repeat";
+	background-attachment: scroll;
+	padding: 0;
+	margin: 0;
+	font-family: PT Sans, Arial, sans-serif;
+	box-shadow: inset 0 0 35px rgba(0,0,0,2);
+}
+.container_header {
+	width: 904px;
+	height: 345px;
+	margin: auto;
+	padding: 0;
+}
+.container {
+	width: 772px;
+	margin: auto;
+	padding: 0;
+}
+.clearfix:after {
+	content:'';
+	display: table;
+	width: 100%;
+	clear: both;
+}
+.logo {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+.img-container_logo {
+	padding-top: 67px;
+	float: left;
+}
+.img-container_logo a {
+	text-align: center;
+}
+figure {
+	float: right;
+	text-align: center;
+	font-size: 8px;
+	margin: 0;
+	padding: 0;
+}
+.secretly {
+	float: right;
+	padding-top: 47px;
+}
+.file {
+	padding-top: 194px;
+	align-self:center;
+}
+.img-container_file {
+    display: flex;
+    justify-content: center;
+ }
+.img-container_file img {
+    align-self:center;
+}
+.anketa a {   							/* ↓ Секция анкеты ↓ */
+	font-family: PT Sans, sans-serif;
+	font-size: 22px;
+	font-weight: bold;
+	line-height: 49pt;
+	color: #361b10;
+	float: left;
+}
+form input {
+	background: url(./img/line.png);
+	background-repeat: no-repeat;
+	background-position: top 15px right;
+	padding: none;
+	margin: 5px;
+	font-family: Courier New, sans-serif;
+	font-size: 30px;
+	line-height: 36pt;
+	border: none;
+	padding-left: 210px;
+	outline: none;
+}
+.anketa {
+	padding-top: 30px;
+}
+.field {
+	clear: both;
+	text-align: left; 
+}
+.student_academy {
+	position: relative;
+	top: 15px;
+}
+.student_academy form span span {
+	margin-right: 0px;
+}
+.student_academy span a {
+	color: #014f98;
+}
+.checkbox_blocks div {  /* обтекание блоков с навыками */
+	float: left;
+}
+.radio span { /* кнопки radio студент академии */
+	font-size: 22px;
+	line-height: 49pt;
+	color: #361b10;
+	margin-left: -28px;
+}
+.myradio {
+  vertical-align: top;
+  width: 17px;
+  height: 17px;
+  margin: 0 4px 0 0;
+}
+.myradio + label {
+  cursor: pointer;
+}
+.myradio:not(checked) {
+  position: absolute;
+  opacity: 0;
+}
+.myradio:not(checked) + label {
+  position: relative;
+  padding: 0 0 0 35px;
+}
+.myradio:not(checked) + label:before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border: none;
+  outline: none;
+  background: url(./img/radio_off.png);
+  background-position: center;
+}
+.myradio:not(checked) + label:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 3.5px;
+  width: 18px;
+  height: 16px;
+  background: url(./img/elips.png);
+  opacity: 0;
+  transition: all .2s;
+}
+.myradio:checked + label:after {
+  opacity: 1;
+}
+.skills	p {				/* секция с навыками checkbox's */
+	font-size: 22px;
+	font-family: PT Sans, sans-serif;
+	position: relative;
+	top: 5px;
+}
+#cont_str_text	{
+	position: relative;
+	bottom: 30px;
+}
+.skills	span {		
+	font-size: 36px;
+	font-family: PT Sans, sans-serif;
+	position: relative;
+	color: #3d3d3d;
+	top: 15px;
+}
+.skills a {
+	text-align: justify;	
+}
+#text_bef_str {
+	font-family: PT Sans, sans-serif;
+	font-size: 14px;
+	line-height: 22px;
+	color: #3d3d3d;
+	position: relative;
+	top: -27px;
+	right: -20px;
+}							/* checkbox's */
+.checkbox_blocks	{
+	position: relative;
+	top: -60px;
+}
+.mycheckbox {
+  vertical-align: top;
+  width: 17px;
+  height: 17px;
+  margin: 0 4px 0 0;
+}
+.mycheckbox + label {
+  cursor: pointer;
+}
+.mycheckbox:not(checked) {
+  position: absolute;
+  opacity: 0;
+}
+.mycheckbox:not(checked) + label {
+  position: relative;
+  padding: 0 0 0 35px;
+  margin-top: '';
+}
+.mycheckbox:not(checked) + label:before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  outline: none;
+  background: url(./img/Shape.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 1;
+}
+.mycheckbox:not(checked) + label:after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 9px;
+  width: 25px;
+  height: 25px;
+  background: url(./img/galochka.png);
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: all .2s;
+}
+.mycheckbox:checked + label:after {
+  opacity: 21;
+}
+.checkbox_block_1 ul li {
+	position: relative;
+	margin-top: 5px;
+	margin-left: -48px;
+	font-family: PT Sans, sans-serif;
+	font-size: 21px;
+}
+.checkbox_block_2 > ul li, .checkbox_block_3 > ul li {
+	position: relative;
+	margin-top: 5px;
+	margin-right: 30px;
+	font-family: PT Sans, sans-serif;
+	font-size: 21px;
+}
+#midle_block {
+	margin-right: 10px;
+}
+footer {
+	padding-bottom: 80px;
+}

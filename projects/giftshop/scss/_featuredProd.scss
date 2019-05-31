@@ -1,0 +1,71 @@
+.featured-prod__slider_item + .featured-prod__slider_item {
+  margin-left: 10px;
+}
+.featured-prod__slider_item {
+  @include flex-col-spc_btwn;
+  width: 270px;
+  height: 410px;
+  outline: 1px solid rgba(185, 185, 185, 1);
+  padding-bottom: 2px;
+}
+.featured-prod_item_lable {
+  width: 270px;
+  height: 290px;
+  background-image: url(../img/model-1.png);
+}
+.featured-prod_lable {
+  width: 82px;
+  height: 33px;
+}
+.lable_new {
+  @include flex-row-centr;
+  align-items: center;
+  background-color: $accent;
+  color: white;
+}
+.featured-prod_item_descript_top {
+  padding: 0 0 10px 10px;
+}
+// Второй заголовок в описании
+.prod_item_short-desc {
+  color: $accent;
+}
+
+.featured-prod_item_descript_bottom {
+  @include flex-row;
+  width: 100%;
+  box-shadow: 0 0 2px rgba(185, 185, 185, 1);
+}
+.featured-prod_bott-blc {
+  @include flex-row-centr;
+  align-items: center;
+  width: 55px;
+  height: 50px;
+  box-shadow: 0 0 2px rgba(185, 185, 185, 1);
+}
+.featured-prod_arrow {
+  background-image: url(../sprites/sprite.png);
+  background-position: 0px 0px;
+  width: 25px;
+  height: 12px;
+}
+.featured-prod_special {
+  background-image: url(../sprites/sprite.png);
+  background-position: 3px -65px;
+  width: 22px;
+  height: 21px;
+}
+.featured-prod_basket {
+  background-image: url(../sprites/sprite.png);
+  background-position: 2px -28px;
+  width: 22px;
+  height: 23px;
+}
+.featured-prod_price {
+  @include flex-row-centr;
+  align-items: center;
+  width: 39%;
+  font-size: 1.56em;
+  color: white;
+  background-color: $accent;
+}

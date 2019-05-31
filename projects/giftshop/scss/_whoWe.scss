@@ -1,0 +1,31 @@
+
+.who-we__title_wrap {
+  border-bottom:  1px solid $dark-text;
+  margin-bottom: 3.5vh;
+}
+.who-we__p {
+  padding-left: 30px;
+}
+// три изображения в блоке
+.who-we_images {
+  @include flex-row-spc_btwn;
+  padding: 1.5vw 0 1.5vw 0;
+  flex-wrap: wrap;
+}
+// кнопка регистрации
+.who-we__reg-btn_wrap {
+  width: 100%;
+  @include flex-row-centr;
+  border-bottom: 1px solid $dark-text;
+  margin-bottom: 3vh;
+}
+.who-we__reg-btn {
+  width: 50%;
+  height: 47px;
+  background-color: $blue;
+  font-size: 27px;
+  color: $light-text;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 3vh;
+}

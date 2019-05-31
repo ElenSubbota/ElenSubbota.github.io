@@ -1,0 +1,102 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-Base {
+  background-image: url(sprite.png);
+  background-position: 0px -646px;
+  width: 55px;
+  height: 54px;
+}
+.icon-Facebook {
+  background-image: url(sprite.png);
+  background-position: 0px -498px;
+  width: 55px;
+  height: 54px;
+}
+.icon-Google {
+  background-image: url(sprite.png);
+  background-position: 0px -351px;
+  width: 54px;
+  height: 53px;
+}
+.icon-Rss {
+  background-image: url(sprite.png);
+  background-position: 0px -424px;
+  width: 55px;
+  height: 54px;
+}
+.icon-arrow-left-right_gray {
+  background-image: url(sprite.png);
+  background-position: 0px 0px;
+  width: 19px;
+  height: 12px;
+}
+.icon-arrow-left {
+  background-image: url(sprite.png);
+  background-position: 0px -192px;
+  width: 15px;
+  height: 24px;
+}
+.icon-arrow-right {
+  background-image: url(sprite.png);
+  background-position: 0px -104px;
+  width: 15px;
+  height: 24px;
+}
+.icon-cart {
+  background-image: url(sprite.png);
+  background-position: 0px -148px;
+  width: 28px;
+  height: 24px;
+}
+.icon-cart_gray {
+  background-image: url(sprite.png);
+  background-position: 0px -32px;
+  width: 17px;
+  height: 15px;
+}
+.icon-flickr {
+  background-image: url(sprite.png);
+  background-position: 0px -720px;
+  width: 55px;
+  height: 54px;
+}
+.icon-sign_in {
+  background-image: url(sprite.png);
+  background-position: 0px -281px;
+  width: 50px;
+  height: 50px;
+}
+.icon-special {
+  background-image: url(sprite.png);
+  background-position: 0px -236px;
+  width: 23px;
+  height: 25px;
+}
+.icon-special_gray {
+  background-image: url(sprite.png);
+  background-position: 0px -67px;
+  width: 15px;
+  height: 17px;
+}
+.icon-twitter {
+  background-image: url(sprite.png);
+  background-position: 0px -572px;
+  width: 55px;
+  height: 54px;
+}

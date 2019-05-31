@@ -1,0 +1,1556 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+// @charset "utf-8";
+// // @import "compass/reset";
+// @import "gulp-sass";
+@import "media.scss";
+@import "settings";
+@import "variables";
+* {
+  box-sizing: border-box;
+}
+.product__icon-touch {
+  background-image: url('../img/cart.png');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+#angle-right-solid {
+  font-size: 1em;
+  fill: red;
+  background-size: 20px auto;
+}
+.absvg-inline--fa {
+  width: 2px;
+}
+body {
+  font-family: $basis-font;
+  background-color: $backg-basis;
+  padding: 0;
+  margin: 0;
+}
+.container {
+  display: block;
+  width: 80%;
+  max-width: 1170px;
+  margin: 0 auto;
+  // overflow: hidden;
+}
+.colr-accent {
+  background-color: $accent !important;
+}
+
+// основные стили для header
+
+.headr__top_wrapp,.headr__middl_wrapp,.headr__bottm_wrapp {
+  width: 100%;
+}
+.headr__top_wrapp {
+  min-height: 55px;
+  background-color: $header-top-color;
+}
+.headr__middl_wrapp {
+  min-height: 143px;
+  @include flex-row;
+  align-items: center;
+  background-color: $header-middl-color;
+}
+.headr__bottm_wrapp {
+  // min-height: 85px;
+  background-color: $backg-basis;
+  box-shadow: 0px 4px 10px 0px rgba(1, 2, 2, 0.3);
+}
+.headr__bottm  {
+  flex-wrap: wrap;
+}
+
+// HEADER-TOP
+.headr__top_wrapp {
+  @include flex-row-spc_btwn;
+  vertical-align: middle;
+}
+  .headr__top {
+    @include flex-row-spc_btwn;
+    align-items: center;
+  }
+  // левые кнопки в верхнем хедере
+  .headr__top_left-btns {
+    @include flex-row-spc_btwn;
+  }
+  .left-btns_list {
+    @include flex-row;
+  }
+  .left-btns_li {
+    border-right: 1px solid $light-text;
+    margin-right: 10px;
+  }
+  .left-btns_li:last-child {
+    border-right: none;
+  }
+  .left-btns_link {
+    font-size: .81em;
+    color: $light-text;
+    line-height: 1;
+  }
+
+ // стили иконок в >>headr__top<<
+.left-btns_svg, .rght-btns_svg  {
+  color: $light-icn;
+}
+  .left-btns_svg {
+    width: 8px;
+    height: auto;
+    margin: 0 10px 0 0;
+  }
+  // правые кнопки рядом с кнопкой меню
+  .rght-btns_svg {
+    width: 15px;
+    margin: 0 8px 0 30px;
+  }
+  .rght-btns_list {
+    @include flex-row-spc_btwn;
+    align-items: center;
+  }
+  .rght-btns__link {
+    font-size: .81em;
+    color:  $light-text;
+  }
+
+
+// BARS-MENU
+// стили для кнопки меню -->button<-- bars-menu
+.site-menu {
+  margin: 0 0 0 30px;
+}
+.bars-menu {
+  @include flex-row;
+  position: relative;
+  z-index: 999999;
+}
+  .bars-menu_btn {
+    @include flex-col;
+    position: relative;
+    top: 3px;
+
+  }
+  .bars-menu_btn_line {
+    width: 17px;
+    height: 2px;
+    margin-bottom: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .bars-menu_btn_line--top-hedr {
+    background-color: $light-icn;
+  }
+
+
+// SUBMENU
+// стили для открывающегося меню
+.bars-menu__nav_li {
+  font-size: 1.1em;
+}
+.bars-menu__nav_a {
+  color: $light-text;
+}
+.bars-menu__nav_a:active {
+  color: $accent;
+}
+#bars-menu_main-menu_inp {
+  display: none;
+}
+  .bars-menu_item > .bars-menu_list {
+    display: none;
+    /* position: absolute; */
+  }
+  .bars-menu_list {
+    position: absolute;
+  }
+  .bars-menu_nav #bars-menu_main-menu_lbl {
+    display: inline-block;
+    outline: none;
+  }
+  #bars-menu_main-menu_inp:checked ~ label + .bars-menu_list {
+    display: block;
+    outline: none;
+    border: none;
+    transition: 0.3s ease-in-out;
+  }
+  #bars-menu_main-menu_lbl {
+    display: block;
+    position: relative;
+    padding: 0 0 10px 0;
+  }
+
+
+// MIDDLE HEADER
+
+.headr__middl {
+  @include flex-row-spc_btwn;
+  align-items: center;
+}
+
+  // telefone
+  .tel {
+    @include flex-row-spc_btwn;
+    align-items: center;
+  }
+    .tel-svg {
+      width: 20px;
+      height: auto;
+      color: $accent;
+      margin-right: 0.8em;
+    }
+    .tel_numb {
+      font-size: 1.1em;
+      font-weight: 600;
+      color: $light-text;
+    }
+
+  // Logo
+  .logo {
+    @include flex-col;
+
+  }
+  // buy-basket блок с корзиной
+  .buy-basket_svg_wrapp {
+    width: 50px;
+    height: 50px;
+    @include flex-row;
+    justify-content: center;
+    align-items: center;
+    background-color: $accent;
+    border-radius: 3px;
+    position: relative;
+  }
+    .buy-basket_svg {
+      width: 25px;
+      height: auto;
+      color: $light-icn;
+    }
+    // кружочек со счетчиком покупок
+    .elips-counter-bask {
+      display: block;
+      position: absolute;
+      left: 45px;
+      width: 32px;
+      height: 30px;
+      background-color: $header-middl-color;
+      border-radius: 50%;
+      color: $light-text;
+    }
+    .counter-bask_numb {
+      position: absolute;
+      left: 10px;
+      top: 6px;
+    }
+
+
+
+
+
+// HEADER-BOTTOM
+
+// glob setting blocks
+
+.headr__bottm_wrapp {
+  @include flex-row;
+  align-items: center;
+  position: relative;
+  z-index: 1111;
+}
+  .headr__bottm {
+    @include flex-row-spc_btwn;
+    // overflow: hidden;
+  }
+  .bars-menu_search__wrap {
+    @include flex-row;
+    flex-basis: 45%;
+    flex-wrap: nowrap;
+    align-self: center;
+  }
+
+  // bars-menu
+  // иконка три линии
+.bars-menu--hedr-bott {
+  @include border-dark;
+  width: 212px;
+  min-height: 47px;
+  justify-content: center;
+  align-items: center;
+}
+  .bars-menu_btn_line--hedr-bott{
+    background-color: $accent;
+  }
+// стили для открывающегося меню
+#bars-menu_tw-menu-headr_inp {
+  display: none;
+}
+  .bars-menu_item > .bars-menu_list {
+    display: none;
+    /* position: absolute; */
+  }
+  .bars-menu_nav #bars-menu_tw-menu-headr_lbl {
+    display: inline-block;
+    outline: none;
+  }
+  #bars-menu_tw-menu-headr_inp:checked ~ label + .bars-menu_list {
+    display: block;
+    outline: none;
+    border: none;
+    transition: 0.3s ease-in-out;
+  }
+  #bars-menu_tw-menu-headr_lbl {
+    display: block;
+    position: relative;
+    padding: 0 0 10px 0;
+  }
+
+// navigation
+ .headr__nav_list {
+  @include flex-row-spc_btwn;
+}
+// текст внутри поля меню Select a category
+.bars-menu_tw-menu-headr_lbl_span {
+  position: relative;
+  top: 7px;
+  margin-left: 7px;
+  cursor: pointer;
+}
+// иконка стрелка вниз открывать меню
+.bars-menu_tw-menu-headr_lbl_span::after {
+  @include ic-arrow-down;
+  top: 15px;
+  margin-left: 8px;
+}
+
+
+// ----SEARCH--- in HEADER-BOTTOM
+// форма поиска в нижнем хедере
+.search__form {
+  @include flex-row;
+  position: relative;
+ }
+   .headr__search_inpt {
+    width: 277px;
+    min-height: 47px;
+    @include border-dark;
+    border-left: none;
+    outline: none;
+    padding: 0 0 0 13px;
+   }
+// delete btn
+  #search_btn {
+    display: none;
+  }
+// style for lable svg
+  .search_btn_lbl {
+    position: absolute;
+    left: 90%;
+    top: 15px;
+    cursor: pointer;
+  }
+  .search_btn_svg {
+    width: 15px;
+    height: 15px;
+    color: $dark-icn;
+  }
+
+// Навигация по сайту в нижнем хедере
+
+.headr-botm__nav {
+  @include flex-row-spc_btwn;
+  flex-basis: 45%;
+}
+  // .headr-botm__nav_list {
+  //   flex-basis: 100%;
+  //   @include flex-row-spc_btwn;
+  //   align-items: center;
+  // }
+  .headr-botm__nav_list  {
+    width: 100%;
+    @include flex-row;
+     align-items: center;
+     flex-wrap: nowrap;
+  }
+  .headr-botm__nav_li {
+    display: inline-block;
+    width: 14%;
+    font-size: calc(.8em + .2vw);
+
+  }
+  // пункт меню
+  .headr-botm__nav_lnk {
+    box-sizing:border-box;
+    // padding: 1.8em 1em 1.8em 1.1em;
+    padding: calc(1.6em + .4vw) 1em calc(1.6em + .4vw) 1em;
+    color: $dark-text;
+  }
+  // активный пункт главного меню
+  .headr-botm__nav_lnk--active {
+    background-color: $accent;
+    // border-top: 3px solid #363636;
+    -webkit-box-shadow: inset 0px 4px 0px 0px rgba(54,54,54,1);
+    -moz-box-shadow: inset 0px 4px 0px 0px rgba(54,54,54,1);
+    box-shadow: inset 0px 4px 0px 0px rgba(54,54,54,1);
+    color: $light-text;
+  }
+  // при наведении
+  .headr-botm__nav_lnk:hover {
+    background-color: $accent;
+    // border-top: 3px solid #363636;
+    -webkit-box-shadow: inset 0px 4px 0px 0px rgba(54,54,54,1);
+    -moz-box-shadow: inset 0px 4px 0px 0px rgba(54,54,54,1);
+    box-shadow: inset 0px 4px 0px 0px rgba(54,54,54,1);
+    color: $light-text;
+
+  }
+
+
+
+
+
+
+
+// Блок HOT DEALS
+
+.hot-deals {
+  @include flex-row-spc_btwn;
+  margin-bottom: 3vh;
+  }
+  .hot-deals__hot-deals {
+    flex-basis: 361px;
+    @include border-light;
+  }
+  .hot-deals_head {
+    flex-basis: 100%;
+    min-height: 50px;
+    @include flex-row-spc_btwn;
+    align-items: center;
+    background-color: $dark-gray;
+    padding: 0 20px;
+  }
+  .hot-deals_head_title {
+    font-family: "Poppins";
+    font-size: 1.25em;
+    color: $light-text;
+    @include bold-upper;
+    line-height: 2.1;
+  }
+  // переключатель в слайдере "три круга"
+  .circles_slide {
+    @include flex-row-spc_btwn;
+  }
+  .slid_circle-btn {
+    @include thr-circl-icn;
+    cursor: pointer;
+  }
+  // Основной контент в блоке hot_deals
+   .hot-deals_product {
+     min-height: 289px;
+     background-image: url(../img/house-2563853_640.jpg);
+     background-position: 62% 60%;
+     @include flex-col-spc_btwn;
+     align-items: center;
+     padding: 10px 0;
+   }
+   // стили для кнопки add-t-card
+   .add-t-card {
+     @include add-to-card;
+
+     & .add-t-card_svg {
+       @include add-to-card-svg;
+     }
+     .add-t-card__link {
+       padding: 30px;
+     }
+   }
+   .add-t-card_i {
+     display: flex;
+     order: -1;
+   }
+
+  // черные круги счетчика сколько дней/часов/минут осталось
+   .offer__circls-wrap {
+     @include flex-row-centr;
+   }
+   // блоки-круги
+   .offer__circl {
+     width: 75px;
+     height: 75px;
+     @include flex-col-centr;
+     background-color: $middle-gray;
+     border-radius: 50%;
+     margin-left: 5px;
+      // текст внутри
+      font-size: 0.815em;
+      color: $light-text;
+      @include bold-upper;
+      text-align: center;
+
+    & .offer__circl_p {
+      font-size: 1.5em;
+      line-height: 1.5;
+    }
+   }
+  // Нижняя часть блока товара
+
+  .product__footr {
+    @include flex-col-spc_btwn;
+  }
+  // Верхняя секция блока описания товара
+  .product__footr_top {
+    @include flex-col-spc_btwn;
+    align-items: center;
+    & .product_titl {
+      @include name-product;
+    }
+  }
+
+
+  .product__middl-line {
+    display: inline-flex;
+    width: 30px;
+    height: 3px;
+    background-color: $accent;
+      &::before {
+        content: '';
+        width: 10px;
+        height: 1px;
+        position: absolute;
+        background-color: $dark-gray;
+
+      }
+      &::after {
+        content: '';
+        width: 10px;
+        height: 1px;
+        position: absolute;
+        background-color: $dark-gray;
+      }
+    }
+
+
+    // контейнер для ряда иконок в футере блока продукта
+  .product__footr_bott {
+    @include flex-row-spc_btwn;
+    padding: 25px 15px;
+  }
+    .product__icon-touch_wrap {
+      @include flex-row-centr;
+      flex-basis: 50%;
+    }
+    .product__icon-touch {
+      @include product-touch-icon;
+      margin-right: 5px;
+    }
+    .product__prices {
+      @include flex-row-spc_arnd;
+      align-items: center;
+
+      & .product__old-price {
+        @include old-price;
+        margin-right: 7px;
+      }
+      & .product__rectngl-price {
+        @include triangl-price;
+      }
+    }
+
+.shop-now_blck {
+  flex-basis: 751px;
+  @include border-light;
+  position: relative;
+}
+.shop-now_blck {
+  @include flex-col-centr;
+  background-image: url(../img/coffee-1284041_640.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+  .furniture-shop {
+    height: 214px;
+    @include flex-col-centr;
+    align-items: center;
+    background-color: rgba(102, 102, 102, 0.7);
+    color: $light-text;
+    position: relative;
+  }
+  .furniture-shop__titl-1, .furniture-shop__titl-2 {
+    font-family: 'Poppins';
+    font-size: 3.375em;
+    text-transform: uppercase;
+
+  }
+  .furniture-shop__titl-1 {
+    font-weight: 300;
+  }
+  .furniture-shop__titl-2{
+    font-weight: 600;
+  }
+  .shop-now_btn--white {
+    width: 136px;
+    height: 54px;
+    position: absolute;
+    top: 180px;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+      font-size: 0.9em;
+      font-family: "Poppins";
+      color: $dark-text;
+      @include bold-upper;
+    }
+
+  .offr__slide_btns {
+    width: 100%;
+    @include flex-row;
+    align-items: center;
+    position: absolute;
+    bottom: 0px;
+  }
+  .btn_rectngl-last, .btn_rectngl-next {
+    min-height: 40px;
+    @include flex-col-centr;
+    flex-basis: 50%;
+    align-items: center;
+    background-color: $dark-gray;
+    cursor: pointer;
+  }
+  .btn_rectngl-next {
+    background-color: $accent;
+  }
+    .btn_rectngl-last:hover {
+      background-color: $light-gray;
+    }
+    .btn_rectngl-next:hover  {
+      background-color: $light-gray;
+    }
+  .arrow-svg {
+    width: 10px;
+    height: 10px;
+    background-color: $accent;
+  }
+
+// Секция предложений
+
+.offers__wrap  {
+  flex-basis: 100%;
+  min-height: 170px;
+  @include flex-row-centr;
+  margin: 4em 0 0 0;
+}
+  .offr__offers {
+    flex-basis: 100%;
+    min-height: 120px;
+    @include flex-row-spc_btwn;
+        flex-wrap: wrap;
+  }
+  // стили для каждого отдельного блока с условиями
+  .offr__bl {
+    flex-basis: 265px;
+    min-height: 121px;
+    align-self: center;
+    @include flex-col-centr;
+    flex-wrap: wrap;
+    @include border-light;
+    position: relative;
+    margin-bottom:  4vh;
+  }
+  // внешний блок для иконки
+  .offr__bl_i {
+    width: 75px;
+    height: 75px;
+    @include flex-row-centr;
+    align-items: center;
+    border-radius: 50%;
+    @include border-light;
+    position: absolute;
+    top: -35px;
+      &:hover {
+        @include border-accent ;
+      }
+  }
+  // при наведении на внешний блок иконки у внутреннего сменится фон
+    .offr__bl_i:hover .offr__bl_i--inset {
+      background-color: $accent;
+    }
+  // внутренний блок для иконки
+  .offr__bl_i--inset {
+    width: 65px;
+    height: 65px;
+    @include flex-row-centr;
+    align-items: center;
+    border-radius: 50%;
+    @include border-light;
+      &:hover {
+        background-color: $accent;
+        @include border-accent;
+      }
+  }
+  // ссылка иконки в блоке
+  .offr__bl_link {
+    @include flex-row-centr;
+    cursor: pointer;
+  }
+  // заголовок блока и описание под ним
+  .offr__bl_tilt {
+    font-family: $basis-font;
+    font-size: 1.3em;
+    color: $dark-text;
+    @include bold-upper;
+    text-align: center;
+    padding: 45px 0 10px 0;
+  }
+  .offr__bl_descript {
+    font-family: $basis-font;
+    font-size: 1.4em;
+    color: $dark-text;
+    text-align: center;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+
+
+
+  // Секция sale
+.sale__wrap {
+  flex-basis: 100%;
+  min-height: 422px;
+  @include flex-row-spc_btwn;
+  flex-wrap: nowrap;
+  margin: 0 0 3vh 0;
+}
+// стили  левой и правой колонки
+  .sale__col {
+    flex-basis: 555px;
+    min-height: 420px;
+    @include flex-col-spc_btwn;
+    align-items: center;
+    margin: 2vh 0 0 0;
+  }
+  // стили первой колонки
+  .sale__col_col-1 {
+    @include flex-row-centr;
+    align-items: center;
+    background-color: #6a6a6a;
+    padding: 3vh;
+  }
+  // внутренний блок первой колонки
+    .sale__col_col-1--inset {
+      @include flex-row;
+      align-items: flex-end;
+      flex-shrink: 1;
+      flex-basis: 492px;
+      min-height: 360px;
+      background-image: url(../img/living-room-2155376_640.jpg);
+      padding: 18px;
+      // описание текст
+        & .sale__col_col-1_descript {
+          font-family: $basis-font;
+          font-size: 2.25em;
+          color: $light-text;
+          text-transform: uppercase;
+        }
+        // заголовок главный
+        & .sale__col_col-1_title {
+          font-family: $basis-font;
+          font-size: 3.5em;
+          color: $light-text;
+          text-transform: uppercase;
+        }
+    }
+    // блок указана скидка
+    .sale__col_col-1_discount {
+      @include flex-row-centr;
+      align-items: center;
+      width: 150px;
+      min-height: 78px;
+      border: 5px solid $light-icn;
+      font-size:  3.2em;
+      font-weight: bold;
+      color: $light-text;
+    }
+
+
+
+// стили для второй колонки в секции sale
+
+.sale__col_col-2 {
+    @include flex-col-spc_btwn;
+}
+  // блоки внутри второй колонки
+  .sale__col_col-2_bl {
+    display: flex;
+    flex-basis: 100%;
+    min-height: 194px;
+    @include border-light;
+  }
+  // певый блок второй колонки секции sale
+  .sale__col_col-2_bl--1 {
+    @include flex-col-centr;
+    width: 100%;
+    align-items: center;
+    background-image: url(../img/interior-2591367_640.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 90%;
+    // стили для обертки-фона заголовка
+      & .office-chair-collection_link {
+          width: 50%;
+          min-height: 130px;
+          background-color: rgba(128, 128, 128, 0.5);
+          @include flex-col-centr;
+          align-items: center;
+      }
+    // стили для заголовков блока
+      & .sale__col-2_titl--bold {
+        font-size: 1.875em;
+        @include bold-upper;
+        font-family: $basis-font;
+        color: $dark-text;
+      }
+      & .sale__col-2_titl--light {
+        font-size: 1.875em;
+        font-weight: 100;
+        text-transform: uppercase;
+        color: $dark-text;
+      }
+      & .sale__col-2_titl--norm {
+        font-size: 1.1em;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        color: $dark-text;
+      }
+      & .sale__col-2_titl--price {
+        font-size: 2.25em;
+        font-weight: 600px;
+        color: $accent;
+      }
+  }
+    // второй блок второй колонки секции sale
+  .sale__col_col-2_bl--2 {
+    @include flex-col-centr;
+    width: 100%;
+    align-items: center;
+    background-image: url(../img/office-2617384_640.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 90%;
+    margin-top: 30px;
+    padding: 10px;
+    // обертка к заголовку и описанию
+      & .sale__col_col-2_bl--2_wrap {
+        width: 100%;
+        @include flex-col-centr;
+        align-items: flex-end;
+      }
+    // стили для заголовка и описания
+      & .sale__col-2_bl-2_titl--bold {
+        color: $accent;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+      & .sale__col-2_bl-2_titl--light {
+        color: $accent;
+        text-transform: uppercase;
+        font-size: 1.5em;
+      }
+      & .sale__col-2_bl-2_descript{
+        font-size: 1.125em;
+        text-transform: uppercase;
+        padding-right: 20px;
+      }
+  }
+
+// секция new-furnitr
+.new-furnitr_wrap {
+  min-height: 1000px;
+  @include flex-col;
+}
+.new-furnitr__header_wrap {
+  min-height: 20px;
+  @include flex-row-spc_btwn;
+}
+// обертка для титульника и навигации для позиционир и бордера
+.new-furnitr_titl-navig_wrap {
+  width: 90%;
+  @include flex-row-spc_btwn;
+
+}
+.new-furnitr_titl-wrap {
+  width: 20%;
+  position: relative;
+}
+  // Заголовок
+  .new-furnitr_titl {
+    font-family: $basis-font;
+    font-size: 1.25em;
+    @include bold-upper;
+    color: $accent;
+    line-height: 2.4;
+     & .new-furnitr_titl_span {
+        border-bottom: 3px solid $accent;
+     }
+  }
+    // навигация секции  new-furnitr
+  .new-furnitr_navig {
+    width: 60%;
+    @include flex-row-spc_btwn;
+  }
+  .new-furnitr__list {
+    @include flex-row-spc_btwn;
+  }
+  .new-furnitr_link {
+    font-family: $basis-font;
+    font-size: 1.1em;
+    color: $dark-text;
+    font-weight: 600;
+    line-height: 2.4;
+    padding-right: 20px;
+  }
+  .new-furnitr_li--active {
+    border-bottom: 3px solid $accent;
+  }
+  .new-furnitr_li:hover {
+    border-bottom: 3px solid $accent;
+  }
+  .new-furnitr {
+    position: relative;
+  }
+  // кнопки переключатели слайдера
+  .new-furnitr_slidr-btn {
+
+  }
+  .circles_slide {
+  }
+
+
+  // Блок с галереей продуктов
+  .new-furnitr_products {
+    flex-basis: 100%;
+    @include flex-row-spc_btwn;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    align-items: none;
+  }
+  // каждый блок продукта
+  .product_bl {
+    width: 23%;
+    flex-basis: 264px;
+    min-height: 410px;
+    @include border-light;
+    overflow: hidden;
+    margin-bottom: 30px;
+  }
+  .product__header {
+    width: 100%;
+    min-height: 260px;
+    background-image: url(../img/chair-3274474_640.jpg);
+    background-size: cover;
+    background-position: 90% 50%;
+    background-repeat: no-repeat;
+  }
+  // контейнер со всеми кнопками в хедере продукта
+  .product__header_all-btns {
+    width: 100%;
+    min-height: 260px;
+    @include flex-col-spc_btwn;
+    position: relative;
+  }
+
+  // кнопка sale  в верху хедера продукта
+  .product__header_sale {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    border-radius: 50%;
+    background-color: $dark-gray;
+    cursor: pointer;
+    font-family: "Poppins";
+    font-size: 0.6em;
+    color: $light-text;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 5.231;
+    position: absolute;
+    top: -20px;
+  }
+  .product__header_sale_text {
+    display: flex;
+    position: relative;
+    margin-top: 3px;
+  }
+  .product__header_sale_p {
+    display: block;
+    position: relative;
+    text-align: center;
+  }
+  // нижние кнопки в хедере продукта
+  .product__header_btns-wrap {
+    width: 100%;
+    min-height: 200px;
+    @include flex-row-spc_arnd;
+    position: absolute;
+    bottom: 0;
+    display: none;
+  }
+  .product__header_all-btns:hover .product__header_btns-wrap {
+    display: flex;
+    position: relative;
+    top: 222px;
+  }
+  // кнопка Quick View в хедере продукта
+  .product__header_quick-btn {
+    width: 88px;
+    height: 38px;
+    background-color: $dark-gray;
+    font-family: "Poppins";
+    font-size: 0.8em;
+    color: $light-text;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 3.231;
+    text-align: center;
+    cursor: pointer;
+  }
+  .basket-icon {
+    order: -1;
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+
+
+
+// Секция в furnitr-gallry
+.furnitr-gallry {
+  width: 100%;
+}
+.furnitr-gallry_wrap {
+  @include flex-row-spc_btwn;
+  margin-bottom: 3vh;
+}
+// блок с вкладками
+.furnitr-gallry__bl {
+  flex-basis: 555px;
+  width: 45%;
+  height: 605px;
+  border-bottom: 1px solid $fly-gray;
+}
+.furnitr-gallry__bl-left_titl {
+  @include section-title ;
+  line-height: 3.5;
+  text-transform: uppercase;
+}
+.furnitr-gallry__bl-left_titl_span {
+  border-bottom: 3px solid $accent;
+}
+
+// .furnitr-gallry__inp {
+// 	display: none;
+// }
+// .furnitr-gallry__inp:checked + .tabs {
+// 	background: #CCC;
+// }
+// .furnitr-gallry__inp:checked + .tabs + .furnitr-gallry__inp + .tabs + .furnitr-gallry__articl { /* Страшно? */
+// 	display: block;
+// }
+// .furnitr-gallry__inp:checked + .tabs + .furnitr-gallry__articl  + .furnitr-gallry__articl  {
+// 	display: block;
+// }
+// .furnitr-gallry__articl  {
+// 	display: none;
+// }
+
+.furnitr-gallry__inp {
+		position: absolute;
+		display: none;
+	}
+
+	.furnitr-gallry__inp:checked + .tabs {
+		background-color: rgba(255, 255, 255, 0);
+    color: $accent;
+    border-top: 3px solid $accent;
+		margin-bottom: 0;
+		z-index: 1;
+	}
+
+	.furnitr-gallry__inp:checked + .tabs  + .furnitr-gallry__inp + .tabs  + .furnitr-gallry__inp + .tabs  + .furnitr-gallry__inp + .tabs  + .furnitr-gallry__articl {
+		display: block;
+	}
+
+	.furnitr-gallry__inp:checked + .tabs  + .furnitr-gallry__inp + .tabs  + .furnitr-gallry__inp + .tabs  + .furnitr-gallry__articl + .furnitr-gallry__articl {
+		display: block;
+	}
+
+	.furnitr-gallry__inp:checked + .tabs  + .furnitr-gallry__inp + .tabs  + .furnitr-gallry__articl + .furnitr-gallry__articl + .furnitr-gallry__articl {
+		display: block;
+	}
+
+	.furnitr-gallry__inp:checked + .tabs  + .furnitr-gallry__articl + .furnitr-gallry__articl + .furnitr-gallry__articl + .furnitr-gallry__articl {
+		display: block;
+	}
+
+	.furnitr-gallry__articl {
+		display: none;
+		width: 100%;
+    height: 409px;
+		background: #CCC;
+		border: 1px solid #999;
+		position: relative;
+	}
+  .furnitr-gallry__articl--1 {
+    background-image: url(../img/hotel-room-1447201_640.jpg) !important;
+  }
+  .furnitr-gallry__articl--2 {
+    background-image: url(../img/desk-3223810_640.jpg) !important;
+  }
+  .furnitr-gallry__articl--3  {
+    background-image: url(../img/home-1622401_640.jpg) !important;
+  }
+  .furnitr-gallry__articl--4  {
+    background-image: url(../img/wood-926606_640.jpg) !important;
+  }
+	.tabs  {
+    width: 25%;
+    height: 47px;
+    @include flex-row-centr;
+		border: 1px solid $fly-gray;
+		border-bottom: 0;
+		margin-top: 10px;
+    top: 45px;
+    z-index: 111;
+    background-color: white;
+		display: inline-block;
+		position: relative;
+		cursor: pointer;
+	}
+  .tabs_p {
+    font-size: 1em;
+    @include bold-upper;
+    text-align: center;
+    line-height: 2.5;
+  }
+	.tabs:hover {
+    color: $accent;
+    border-top: 3px solid $accent;
+	}
+	.tabs:active {
+		background: #DDD;
+	}
+	.furnitr-gallry__tab {
+    height: 480px;
+    @include flex-row-spc_btwn;
+    flex-wrap: wrap;
+		position: relative;
+    top: -50px;
+		-webkit-animation: 0.1s hack infinite;
+    // анимация ничего не делает, только как хак для вебкита
+	}
+	@-webkit-keyframes hack {
+		from {margin: 0; padding: 0;}
+		to {margin: 0; padding: 0;}
+	}
+
+  // Внутренний контент в основном блоке  галереи новой коллеции
+
+  .furnitr-gallry_display-content {
+    width: 100%;
+    min-height: 297px;
+    @include flex-row-spc_btwn;
+    position: relative;
+    top: -300px;
+    padding: 10px;
+  }
+  // блочок с кнопками в левой части
+  .furnitr-gallry_display_btns {
+    width: 50%;
+  }
+  .furnitr-gallry_touch_wrap {
+    @include flex-col-centr;
+    align-self: center;
+  }
+  .furnitr-gallry_icon-touch {
+    margin-top: 10px;
+    @include border-light;
+  }
+  // содержание правой части - рейтин и цены
+  .furnitr-gallry_display_price-rating-bl {
+    width: 251px;
+    height: 106px;
+    @include flex-col-centr;
+    align-items: center;
+    background: rgb(255, 255, 255);
+    position: relative;
+    box-shadow: 0px 3px 6px 0px rgba(1, 2, 2, 0.24);
+    margin-top: 150px;
+  }
+  .furnitr-gallry_display_price-rating-bl:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-top: 30px solid black;
+    border-right: 30px solid rgba(255, 255 ,255, 0);
+  }
+  .furnitr-gallry_display_price-rating-bl::before {
+    content: '';
+     position: absolute;
+     right: 0;
+     top: 77px;
+     border-bottom: 30px solid black;
+     border-left:  30px solid rgba(255, 255 ,255, 0);
+  }
+
+  // круглый блок с ценами - старая и новая цена
+  // обертка для нашег
+  .furnitr-gallry_display_circl-price_wrap {
+    height: 110px;
+    position: relative;
+    top: -50px;
+  }
+    .furnitr-gallry_display_circl-price {
+      width: 110px;
+      height: 110px;
+      @include flex-col-centr;
+      align-items: center;
+      border-radius: 50%;
+      background-color: rgba(123, 123, 124, 0.8);
+      color: $light-text;
+    }
+    .new-price {
+      font-size: 1.3em;
+    }
+    .old-price {
+      @include old-price;
+      font-size: 1.1em;
+      color: $light-text;
+      line-height: 1.7;
+    }
+  .furnitr-gallry_display_rating {
+    align-self: center;
+    position: relative;
+    top: -50px;
+  }
+  .star_sprite_wrap {
+    text-align: center;
+  }
+  // заголвоок над рейтингом
+  .product_titl {
+    @include name-product;
+  }
+
+  // СЛАЙДЕР -ЛЕНТА в нижней части блока
+  .furnitr-gallry_slider-lenta_wrap {
+    width: 100%;
+    @include flex-row-spc_btwn;
+    position: relative;
+    top: -50px;
+    padding: 10px 0 10px 0;
+  }
+  .furnitr-gallry_slider_btn-last, .furnitr-gallry_slider_btn-next  {
+    width: 33px;
+    background-color: $dark-gray;
+    color: $light-text;
+    @include flex-col-centr;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  // при наведении на кнопку меняется цвет стрелки в ней
+  .furnitr-gallry_slider_btn-last:hover .furnitr-gallry_slider_btn-last_arrow {
+    color: $accent;
+  }
+  .furnitr-gallry_slider_btn-next:hover .furnitr-gallry_slider_btn-last_arrow  {
+    color: $accent;
+  }
+  // слайд в слайдере
+  .furnitr-gallry_slider_slid {
+    width: 70px;
+    height: 70px;
+    background-color: $light-gray;
+  }
+
+
+
+ // ВТОРОЙ (правый) БЛОК в секции furnitr-gallry
+
+ .furnitr-gallry__bl--2 {
+   background-image: url(../img/bed-1839184_640.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   height: 604px;
+   @include flex-col;
+   padding: 60px;
+ }
+ // внутренний контент блока
+  // текст "from"
+  .furnitr-gallry__bl--2_text {
+    font-family: $basis-font;
+    font-size: $basis-font-size;
+    color: $dark-text;
+    @include bold-upper;
+  }
+  .furnitr-gallry__bl--2_price {
+    font-family: $basis-font;
+    font-size: 3em;
+    color: $salat;
+  }
+  .furnitr-gallry__bl--2_titl {
+    font-family: $basis-font;
+    font-size: 3em;
+    color: $accent;
+    font-weight: bold;
+    margin: 20px 0 20px 0;
+  }
+  // кнопка shop now
+
+  .furnitr-gallry__bl_shop-now-btn {
+    width: 136px;
+    height: 54px;
+    font-size: 0.9em;
+    font-family: "Poppins";
+    background-color: rgb(121, 174, 48);
+    color: rgb(255, 255, 255);
+    @include bold-upper;
+    border-radius: 2px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+// СЕКЦИЯ latest blog
+
+.latst-blog__wrap {
+  height: 680px;
+}
+  .latst-blog_main-titl {
+    @include section-title;
+  }
+  .latst-blog_articls_wrap {
+    @include flex-row-spc_btwn;
+    align-items: center;
+    border-bottom: 1px solid $fly-gray;
+  }
+  .latst-blog_articl {
+    width: 31%;
+    flex-basis: 360px;
+    height: 605px;
+  }
+  // верхняя часть блока с фото
+  .latst-blog_articl_header {
+    width: 100%;
+    height: 290px;
+    @include flex-col-centr;
+    justify-content: flex-end;
+    background-image: url(../img/house-2596975_640.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+  .latst-blog_articl_header_info {
+    width: 80%;
+    flex-basis: 62px;
+    @include flex-row-centr;
+    align-self: center;
+    background-color: rgba(255, 255, 255, 1);
+  }
+    .latst-blog_articl_header_data, .latst-blog_articl_header_commnts {
+      width: 45%;
+      @include flex-row-centr;
+      align-items: center;
+    }
+    .latst-blog_articl_header_small-text {
+      font-size: 0.8em;
+      font-family: $basis-font;
+      color: rgb(103, 103, 103);
+      line-height: 1.846;
+      margin-left: 5px;
+    }
+
+    // Нижний блок в блоке статьи
+
+
+    .latst-blog_articl_bottom {
+      min-height: 255px;
+      @include flex-col-spc_btwn;
+      padding: 25px 30px 40px 35px;
+    }
+
+    // заголовок над блоколм текста
+    .latst-blog_articl_bottom-titl {
+      font-size: 1em;
+      font-family: $basis-font;
+      color: $accent;
+      line-height: 1.5;
+      font-weight: bold;
+      padding-bottom: 15px;
+    }
+    // текст основной пааграф
+    .latst-blog_articl_text {
+      font-size: 0.9em;
+      font-family: "Myriad Pro";
+      color: $dark-text;
+      line-height: 1.714;
+      padding-bottom: 60px;
+    }
+    .latst-blog_articl_btn-read-mr {
+      width: 146px;
+      height: 46px;
+      background-color: $accent;
+      color: $light-text;
+      border: none;
+      outline: none;
+      align-self: center;
+      cursor: pointer;
+    }
+
+
+
+// СЕКЦИЯ brand-slider
+
+.brand-slider_wrap {
+  width: 100%;
+  min-height: 140px;
+  @include flex-row-spc_btwn;
+  border-bottom: 1px solid $fly-gray;
+}
+  // кнопка назад
+  .brand-slider__btn-last, .brand-slider__btn-next {
+    width: 33px;
+    height: 95px;
+    font-size: 1.2em;
+    color: $light-icn;
+    @include flex-col-centr;
+    align-items: center;
+    background-color: $dark-gray;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  // при наведении на кнопку меняется цвет стрелки в ней
+  .brand-slider__btn-last:hover .brand-slider__btn-arrow {
+    color: $accent;
+  }
+  .brand-slider__btn-next:hover .brand-slider__btn-arrow {
+    color: $accent;
+  }
+  // слайд в слайдере
+  .brand-slider__slider_slid {
+    width: 140px;
+    height: 90px;
+    background-image: url(../img/brand.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include border-light;
+  }
+
+
+
+// СЕКЦИЯ client-fdback
+
+.client-fdback_wrap {
+  @include flex-col-centr;
+  align-items: center;
+}
+  .client-fdback_titl {
+    @include  section-title;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin-top: 5vh;
+  }
+  .client-fdback_quot {
+    font-size: 5em;
+    font-weight: 600;
+  }
+  // основной текст секции
+  .client-fdback_text_wrap {
+    width: 85%;
+  }
+  .client-fdback_text {
+    font-size: 0.8em;
+    font-family: "Poppins";
+    color: rgb(103, 103, 103);
+    text-align: center;
+    line-height: 1.786;
+  }
+
+  // блок с подписью и фото клиента
+  .client-fdback_bl-pers {
+    width: 100%;
+    @include flex-row-centr;
+    margin: 2vh 0 2vh 0;
+  }
+  .client-fdback_bl_pers_foto-wrap {
+    width: 58px;
+    height: 50px;
+    background-color: $fly-gray;
+    border-radius: 5px;
+    @include border-light;
+    overflow: hidden;
+    margin: 0 20px 0 0 ;
+  }
+  .client-fdback_bl_pers_data-wrap {
+    @include flex-col-centr;
+    align-items: center;
+  }
+
+
+
+// footer
+
+footer {
+  background-color: #363636;
+}
+  .footr_top {
+    @include flex-row-spc_btwn;
+    flex-wrap: wrap;
+  }
+  .footr_top_block {
+    width: 20%;
+    flex-basis: 165px;
+    @include flex-col-centr;
+  }
+  .footr_top_block_orders {
+    position: relative;
+    top: 19px;
+  }
+  .footr_titl {
+    font-size: 1.375em;
+    font-family: $basis-font;
+    color: $light-text;
+    font-weight: bold;
+    line-height: 1.364;
+    margin: 5.5vh 0 3vh 0;
+  }
+  .footr_top_link {
+    font-size: 0.8em;
+    font-family: $basis-font;
+    color: rgb(169, 169, 169);
+    line-height: 2.143;
+    margin-bottom: 1vh;
+  }
+
+  // нижняя часть футера
+
+  .footr_bott  {
+    @include flex-row-spc_btwn;
+    background-color: #363636;
+    margin: 3vh 0 3vh 0;
+  }
+  .footr_bott_text {
+    font-size: 0.8em;
+    color: rgb(169, 169, 169);
+    line-height: 1.857;
+  }
+
+
+
+
+
+@import "media";

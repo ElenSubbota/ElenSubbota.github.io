@@ -1,0 +1,48 @@
+//Блок с вкладками в 1-м блоке
+
+.furnitr-gallry_tabs {
+  @include flex-row;
+}
+.furnitr-gallry_tabs_li {
+  display: inline-block;
+  width: 25%;
+  background-color: $fly-gray;
+}
+.furnitr-gallry_tabs_link {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0;
+  height: 30px;
+  line-height: 30px;
+}
+.furnitr-gallry_tabs-content {
+  width: 100%;
+  height: 407px;
+  overflow: hidden;
+}
+.furnitr-gallry_tabs-content_list {
+  list-style: none;
+  height: 407px;
+  // overflow-y: hidden;   при включенном фон у всех вкладок один
+}
+.furnitr-gallry_tabs-content_li {
+  width: 100%;
+  height: 407px;
+  border: 1px solid $fly-gray;
+}
+.furnitr-gallry_tabs-content_item {
+  padding: 20px;
+}
+.furnitr-gallry_tabs-content_li--one {
+  background-image: url(../img/adorable-1866531_640.jpg);
+}
+.furnitr-gallry_tabs-content_li--two {
+  background-image: url(../img/desk-3223810_640.jpg);
+}
+.furnitr-gallry_tabs-content_li--thre {
+  background-image: url(../img/interior-2591365_640.jpg);
+}
+.furnitr-gallry_tabs-content_li--four {
+  background-image: url(../img/wood-926606_640.jpg);
+}

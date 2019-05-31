@@ -1,0 +1,345 @@
+@media screen and (max-width: 330px) {
+
+  header {
+    display: flex;
+    min-height: 8.25em;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .logo_img {
+    width: 80%;
+    height: auto;
+  }
+  .nav_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(24, 24, 24);
+    left: 20px;
+  }
+  .nav_li {
+    font-size: 1.5em;
+    margin: 0 0 10px 0;
+  }
+  .header__nav {
+    width: 20%;
+  }
+  /* стили для адаптивного меню  */
+  .header__nav > ul {
+    display: none;
+    position: absolute;
+    width: 88%;
+    height: 180px;
+    top: 120px;
+    z-index: 99999;
+  }
+  nav label {
+    display: inline-block;
+    outline: none;
+  }
+  #chek_menu:checked ~ label + ul {
+    display: block;
+    outline: none;
+    border: none;
+  }
+  #mobile_menu_label {
+    display: block;
+    position: relative;
+  }
+  main {
+    display: flex;
+    flex-direction: row;
+    align-self: stretch;
+    flex-wrap: wrap;
+  }
+  article {
+    flex-basis: 100%;
+  }
+  aside {
+    flex-basis: 100%;
+    min-width: 260px;
+    order: -1;
+  }
+  .aside-wrap {
+    width: 100%;
+  }
+  .content-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  .list__numb-page {
+    display: flex;
+    width: 95%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .numb-page_a--active {
+    padding: 5px 7px 6px 7px;
+  }
+  .aside-wrap {
+
+  }
+  .list__social {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .subscribe-wrap, .follow-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .subscrib {
+    margin: 0 0 0 5px;
+  }
+  .list__social_icon {
+    width: 100%;
+    height: auto;
+  }
+  .search {
+    display: flex;
+    width: 100%;
+    min-height: 50px;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+  }
+  .aside_title {
+    display: none;
+  }
+  .search_area {
+    width: 80%;
+    height: 30px;
+    background-color: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, .8);
+    border-radius: 4px;
+    box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.08);
+    outline: none;
+    border: none;
+    padding-left: 10px;
+  }
+  .newsletter {
+    width: 100%;
+    min-height: 30px;
+    border-bottom: 1px solid rgb(17, 17, 17);
+  }
+  .aside__gallery {
+    display: none;
+  }
+  .twit-fid {
+    display: none;
+  }
+  .flickr-feed {
+    display: none;
+  }
+
+
+/*------------------- PAGE Article --------------*/
+
+  .comm_form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .person_data {
+    flex-basis: 100%;
+  }
+  .comment {
+    flex-basis: 100%;
+  }
+
+  /*------------------- PAGE CONTACTS --------------*/
+
+  .setting-connect {
+    flex-direction: column;
+      flex-wrap: nowrap;
+  }
+  .addresses {
+    flex-basis: 100%;
+  }
+  .user-form {
+    flex-basis: 95%;
+  }
+  .connect__form_inp {
+    width: 95%;
+  }
+}
+
+@media screen and (min-width: 331px ) and (max-width : 615px)  {
+  header {
+    display: flex;
+    min-height: 8.25em;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .logo_img {
+    width: 80%;
+    height: auto;
+  }
+  .nav_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(24, 24, 24);
+    left: 20px;
+  }
+  .nav_li {
+    font-size: 1.5em;
+    margin: 0 0 10px 0;
+  }
+  .header__nav {
+    width: 20%;
+  }
+  /* стили для адаптивного меню  */
+  .header__nav > ul {
+    display: none;
+    position: absolute;
+    width: 88%;
+    height: 180px;
+    top: 120px;
+    z-index: 99999;
+  }
+  nav label {
+    display: inline-block;
+    outline: none;
+  }
+  #chek_menu:checked ~ label + ul {
+    display: block;
+    outline: none;
+    border: none;
+  }
+  #mobile_menu_label {
+    display: block;
+    position: relative;
+  }
+  main {
+    display: flex;
+    flex-direction: row;
+    align-self: stretch;
+    flex-wrap: wrap;
+  }
+  article {
+    flex-basis: 100%;
+  }
+  aside {
+    flex-basis: 100%;
+    min-width: 260px;
+    order: -1;
+  }
+  .aside-wrap {
+    width: 100%;
+  }
+  .content-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  .list__numb-page {
+    display: flex;
+    width: 95%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .numb-page_a--active {
+    padding: 5px 9px 6px 9px;
+  }
+  .aside-wrap {
+
+  }
+  .list__social {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .subscribe-wrap, .follow-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .subscrib {
+    margin: 0 0 0 5px;
+  }
+  .list__social_icon {
+    width: 100%;
+    height: auto;
+  }
+  .search {
+    display: flex;
+    width: 100%;
+    min-height: 50px;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+  }
+  .aside_title {
+    display: none;
+  }
+  .search_area {
+    width: 80%;
+    height: 30px;
+    background-color: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, .8);
+    border-radius: 4px;
+    box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.08);
+    outline: none;
+    border: none;
+    padding-left: 10px;
+  }
+  .newsletter {
+    width: 100%;
+    min-height: 30px;
+    border-bottom: 1px solid rgb(17, 17, 17);
+  }
+  .aside__gallery {
+    display: none;
+  }
+  .twit-fid {
+    display: none;
+  }
+  .flickr-feed {
+    display: none;
+  }
+
+
+/*------------------- PAGE Article --------------*/
+
+  .comm_form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .person_data {
+    flex-basis: 100%;
+  }
+  .comment {
+    flex-basis: 100%;
+  }
+
+
+    /*------------------- PAGE CONTACTS --------------*/
+
+    .setting-connect {
+      flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .addresses {
+      flex-basis: 100%;
+    }
+    .user-form {
+      flex-basis: 95%;
+    }
+    .connect__form_inp {
+      width: 95%;
+    }
+}
+@media only screen and (min-width: 616px) and (max-width: 740px) {}
+  @media only screen and (min-width: 741px) and (max-width: 1125px) {}
+    @media only screen and (min-width: 1120px) and (max-width: 1183px)  {}
+      @media only screen and (min-width: 1184px) and (max-width: 1521px) {}

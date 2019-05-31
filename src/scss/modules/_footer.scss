@@ -1,0 +1,16 @@
+footer {
+  height: 10vh;
+  background-color: rgba(105, 105, 105, 1);
+  @include flex-col-centr;
+  text-align: center;
+  align-items: center;
+  color: white;
+}
+.footer_text-wrap {
+  height: 100%;
+}
+
+.footer_span {
+    position: relative;
+    top: 4vh;
+}

@@ -1,0 +1,25 @@
+
+@font-face{
+  font-family: 'lemontuesday';
+  src:  url('../static/fonts/lemontuesday-400-normal.ttf') format('truetype');
+  src: url('../static/fonts/lemontuesday-400-normal.woff') format('woff'),
+    url('../static/fonts/lemontuesday-400-normal.woff2') format('woff2');
+}
+@font-face{
+  font-family: 'OpenSansBold';
+  src:  url('../static/fonts/OpenSansBold/OpenSansBold.ttf') format('truetype');
+  src: url('../static/fonts/OpenSansBold/OpenSansBold.eot') format('eot'),
+    url('../static/fonts/OpenSansBold/OpenSansBold.woff') format('woff');
+}
+@font-face{
+  font-family: 'OpenSansRegular';
+  src:  url('../static/fonts/OpenSansRegular/OpenSansRegular.eot') format('eot');
+  src: url('../static/fonts/OpenSansRegular/OpenSansRegular.ttf') format('truetype'),
+    url('../static/fonts/OpenSansRegular/OpenSansRegular.woff') format('woff');
+}
+@font-face{
+  font-family: 'RobotoRegular';
+  src:  url('../static/fonts/RobotoRegular/RobotoRegular.eot') format('eot');
+  src: url('../static/fonts/RobotoRegular/RobotoRegular.ttf') format('truetype'),
+    url('../static/fonts/RobotoRegular/RobotoRegular.woff') format('woff');
+}

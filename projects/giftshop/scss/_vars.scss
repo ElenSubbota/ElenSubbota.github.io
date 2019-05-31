@@ -1,0 +1,24 @@
+@charset "utf-8"; // Variables fonts
+$basis-font: "Lato-reg";
+$basis-font-size: 16px;// color
+$backg-basis: #ffffff;
+$header-top-color: #434343;
+$header-middl-color: #2a2a2a;
+$accent: #f0626e;
+$blue: #05aecc;
+$dark-gray: #434343;
+$middle-gray: #3e3e3e;
+$light-gray: #7b7b7c;
+$fly-gray: #e2e2e2; // text
+$accent-text: #f0626e;
+$dark-text: #434343;
+$light-text: #ffff; // icons
+$light-icn: #ffff;
+$dark-icn: #2a2a2a;
+
+$grid-gutter-width: 30px;
+$grid-columns: 12;
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px);
+
+$gutter: $grid-gutter-width;

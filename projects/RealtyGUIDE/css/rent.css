@@ -1,0 +1,471 @@
+*:before, *:after {
+  box-sizing: border-box;
+}
+body {
+  /*  background-color: rgba(250, 255, 255, 0.4);*/
+  background: rgba(250, 250, 250, 1);
+  font-size: 14px;
+}
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 5% 0 5%;
+  overflow: hidden;
+}
+a {
+  color: inherit;
+}
+
+/*.header__background {
+  background-image: url("../img/glass-3276648_1920.jpg");
+  padding-top: 33.7%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}*/
+.header__logo {
+  background: rgba(110, 110, 110, 0.6);
+  height: 45px;
+  width: 100%;
+  position: fixed;
+  z-index: 50;
+}
+#logo_full {
+  display: block; /*включить логотип для полноэкранного сайта*/
+}
+#logo_mobile {
+  display: none; /*выключить мобильный логотип*/
+}
+.logo {
+  float: left;
+  z-index: 40;
+  position: relative;
+}
+
+/*МЕНЮ НАВИГАЦИИ ПО САЙТУ*/
+.header__nav {
+  /*  width: 50%;*/
+  float: right;
+  z-index: 40;
+  position: relative;
+}
+input[name="menu"] {
+  display: none;
+  outline: none;
+  border: none;
+}
+label[for="header__nav-input"] {
+  display: none;
+}
+#nav ul {
+  z-index: 40;
+  text-align: center;
+}
+nav li {
+  display: inline-block;
+  vertical-align: center;
+  border-left: 1px solid lightgrey;
+}
+nav li:hover {
+}
+nav a {
+  color: rgba(255, 255, 255, 1);
+  font-size: 1.2em;
+  font-weight: 500;
+  padding: 0 10px 0 10px;
+}
+#entry__img {
+  position: relative;
+  padding-top: 3px;
+}
+.tw_colums {
+  display: block;
+  height: 100vh;
+}
+.left-colum {
+  display: block;
+  width: 25%;
+  height: 100%;
+  background-color: rgba(224, 255, 255, .8);
+}
+.main {
+  display: flex;
+  width: 75%;
+  height: 100%;
+  background-color: rgba(255, 218, 185, .6);
+  flex-direction:row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+h1 {
+  height: 100px;
+  width: 50px;
+  border: 1px solid red;
+}
+.filter__mobile {
+  display: none;
+}
+.filter {
+  max-width: 90%;
+  min-height: 350px;
+  position: absolute;
+  top: 50px;
+  margin: auto;
+  padding-right: ;
+  border-radius: 7px;
+  flex-direction:row;
+}
+.filter__select {
+  width: 95%;
+  height: 30px;
+  margin:  5px 0 5px 10px;
+}
+.filter h3 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 300;
+  margin: 10px 0 10px 0;
+  padding: 20px 0 0 0;
+}
+.filter p {
+  margin-left: 10px;
+}
+option {
+  font-size: 16px;
+}
+.but__search {
+  width: 230px;
+  min-height: 40px;
+  border-radius: 5px;
+  margin: 5px 0 10px 10px;
+  font-size: 16px;
+  color: #1b1b1b;
+  border: none;
+}
+.but__search:hover {
+background-color: rgb(215, 142, 31);
+}
+
+@media screen and (max-width: 330px) {
+  .container {
+    width: 100%;
+  }
+  .container__tw-columns {
+    width: 100%;
+    min-height: 3500px;
+  }
+  .left-colum {
+    display: none;  /*убрали левую колонку*/
+  }
+  .main {
+    width: 98%;  /*растянули блок основного контента */
+  }
+  .header__logo {
+    height: 40px;
+  }
+  #logo_full {
+    display: none;
+  }
+  #logo_mobile {
+    display: block;
+    padding-top: 5px;
+  }
+  label[for="header__nav-input"] {
+    display: inline-block;
+    position: relative;
+    float: right;
+    padding-right: 25px;
+    padding-top: 5px;
+    cursor: pointer;
+  }
+  nav > ul {
+    display: none;
+    outline: none;
+  }
+  nav li {
+    display: block;
+    position: relative;
+    font-size: 15px;
+    padding-bottom: 8px;
+    padding-top: 5px;
+    outline: none;
+    background-color: rgba(89, 89, 89, 0.5);
+    border: none;
+  }
+  input[type="checkbox"]:checked ~ label + ul {
+    display: block;
+  }
+  .filter__mobile {
+    display: block;
+  }
+  .filter__mobile {
+    max-width: 90%;
+    min-height: 350px;
+    margin: auto;
+    padding-bottom: 20px;
+    border-radius: 7px;
+  }
+  .filter__select {
+    width: 95%;
+    height: 30px;
+    margin:  5px 0 5px 10px;
+  }
+  .filter__mobile h3 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 300;
+    margin: 8px 0 10px 0;
+    padding: 10px 0 0 0;
+  }
+  .filter__mobile p {
+    padding-left: 10px;
+    font-size: 12px;
+  }
+  option {
+    font-size: 16px;
+  }
+  .but__search :hover {
+
+  }
+}
+@media screen and (min-width: 331px ) and (max-width : 615px)  {
+  .container {
+    width: 100%;
+  }
+  .container__tw-columns {
+    width: 100%;
+    height: 3500px;
+  }
+  .left-colum {
+    display: none;  /*убрали левую колонку*/
+  }
+  .right-colum {
+    width: 100%;  /*растянули блок основного контента */
+  }
+  .header__logo {
+    height: 40px;
+  }
+  #logo_full {
+    display: none;
+  }
+  #logo_mobile {
+    display: block;
+    padding-top: 5px;
+  }
+  label[for="header__nav-input"] {
+    display: inline-block;
+    position: relative;
+    float: right;
+    padding-right: 25px;
+    padding-top: 5px;
+    cursor: pointer;
+  }
+  nav > ul {
+    display: none;
+    outline: none;
+  }
+  nav li {
+    display: block;
+    position: relative;
+    font-size: 15px;
+    padding-bottom: 8px;
+    padding-top: 5px;
+    outline: none;
+    background-color: rgba(89, 89, 89, 0.5);
+    border: none;
+  }
+  input[type="checkbox"]:checked ~ label + ul {
+    display: block;
+  }
+  .filter__mobile {
+    display: block;
+  }
+  .filter__mobile {
+    width: 90%;
+    min-height: 350px;
+    margin: auto;
+    padding-bottom: 20px;
+    border-radius: 7px;
+  }
+  .filter__select {
+    width: 95%;
+    height: 30px;
+    margin:  5px 0 5px 10px;
+  }
+  .filter__mobile h3 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 300;
+    margin: 8px 0 10px 0;
+    padding: 10px 0 0 0;
+  }
+  .filter__mobile p {
+    padding-left: 10px;
+    font-size: 12px;
+  }
+  option {
+    font-size: 16px;
+  }
+  .but__search :hover {
+
+  }
+}
+@media only screen and (min-width: 616px) and (max-width: 740px) {
+  .container {
+    width: 100%;
+  }
+  .container__tw-columns {
+    width: 100%;
+    min-height: 3500px;
+  }
+  .block__useful-newsletter {
+    display: none;
+  }
+  .left-colum {
+    display: none;  /*убрали левую колонку*/
+  }
+  .right-colum {
+    width: 100%;  /*растянули блок основного контента */
+  }
+  label[for="header__nav-input"] {
+    display: inline-block;
+    position: relative;
+    float: right;
+    padding-right: 25px;
+    padding-top: 10px;
+    cursor: pointer;
+  }
+  nav > ul {
+    display: none;
+    outline: none;
+  }
+  nav li {
+    display: block;
+    position: relative;
+    font-size: 15px;
+    padding-bottom: 8px;
+    padding-top: 5px;
+    outline: none;
+    background-color: rgba(89, 89, 89, 0.5);
+    border: none;
+  }
+  input[type="checkbox"]:checked ~ label + ul {
+    display: block;
+  }
+  .filter__mobile {
+    display: block;
+  }
+  .filter__mobile {
+    width: 90%;
+    min-height: 350px;
+    margin: auto;
+    padding-bottom: 20px;
+    border-radius: 7px;
+  }
+  .filter__select {
+    width: 95%;
+    height: 30px;
+    margin:  5px 0 5px 10px;
+  }
+  .filter__mobile h3 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 300;
+    margin: 8px 0 10px 0;
+    padding: 10px 0 0 0;
+  }
+  .filter__mobile p {
+    padding-left: 10px;
+    font-size: 12px;
+  }
+  option {
+    font-size: 16px;
+  }
+  .but__search :hover {
+
+  }
+}
+@media only screen and (min-width: 741px) and (max-width: 1125px) {
+  .container {
+    width: 100%;
+  }
+  .container__tw-columns {
+    width: 100%;
+    min-height: 3500px;
+  }
+  .left-colum {
+    display: none;  /*убрали левую колонку*/
+  }
+  .right-colum {
+    width: 100%;  /*растянули блок основного контента */
+  }
+  label[for="header__nav-input"] {
+    display: inline-block;
+    position: relative;
+    float: right;
+    padding-right: 25px;
+    padding-top: 10px;
+    cursor: pointer;
+  }
+  nav > ul {
+    display: none;
+    outline: none;
+  }
+  nav li {
+    display: block;
+    position: relative;
+    font-size: 15px;
+    padding-bottom: 8px;
+    padding-top: 5px;
+    outline: none;
+    background-color: rgba(89, 89, 89, 0.5);
+    border: none;
+  }
+  input[type="checkbox"]:checked ~ label + ul {
+    display: block;
+  }
+  .filter__mobile {
+    display: block;
+  }
+  .filter__mobile li {
+    display: inline-block;
+    margin-top: 0;
+  }
+  .filter__mobile {
+    max-width: 90%;
+    min-height: 100px;
+    margin: auto;
+	  padding-bottom: 20px;
+    border-radius: 7px;
+  }
+  .filter__select {
+    width: 95%;
+    height: 30px;
+    margin:  5px 0 5px 10px;
+  }
+  .filter__mobile h3 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 300;
+    margin: 20px 0 30px 0;
+    padding: 10px 0 0 0;
+  }
+  .filter__mobile p {
+    padding-left: 10px;
+    font-size: 12px;
+  }
+  option {
+    font-size: 16px;
+  }
+  .but__search {
+    width: 150px;
+    min-height: 30px;
+    border-radius: 5px;
+    margin:   5px 0 10px 32px;
+    font-size: 20px;
+    color: #1b1b1b;
+    border: none;
+    box-shadow: none;
+  }
+}

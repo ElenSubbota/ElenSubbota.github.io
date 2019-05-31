@@ -1,0 +1,215 @@
+// HEADER TOP
+
+.header-top_wrap {
+  grid-template-columns: 1fr 5fr;
+  grid-gap: 10px;
+}
+.logo-wrap {
+  @include flex-row-centr;
+  align-items: center;
+}
+.header-top__list {
+  @include flex-row;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+  height: 40px;
+}
+.header-top_li {
+  padding: 1vw 0 1vw 2vw;
+}
+
+// HEADER TOP styles for adaptive
+
+// button for gumburger
+
+.header-top_menu-btn {
+  display: block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: $accent;
+  &_span, &_span:before, &_span:after  {
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: $light-icn;
+    left: 50%;
+    margin-left: -10px;
+    top: 50%;
+    margin-top: -1px;
+  }
+  &_span:before {
+    content: '';
+    margin-top: -7px;
+    transition: all .2s;
+  }
+  &_span:after {
+    content: '';
+    margin-top: 5px;
+    transition: all .2s;
+  }
+}
+.header-top_menu-btn_active .header-top_menu-btn_span {
+  background-color: transparent;
+  &:before {
+    transform: rotate(135deg);
+    margin-top: 0;
+  }
+  &:after {
+    transform: rotate(-135deg);
+    margin-top: 0;
+  }
+}
+// Off btn in desktop version
+.header-top_menu-btn  {
+  display: none;
+  position: relative;
+}
+
+// HEADER MIDDLE
+
+.header-middle__list {
+    @include flex-row;
+    justify-content: flex-end;
+    background-color: #f6f6f6;
+}
+.header-middle_li:nth-child(2n+1) {
+    background-color: $blue;
+    transition: .5s;
+    &:hover {
+      background-color: darken($blue, 5%);
+    }
+}
+.header-middle_li:nth-child(2n) {
+    background-color: $accent;
+    transition: .5s;
+    &:hover {
+      background-color: darken($accent, 5%);
+    }
+}
+
+.header-middle_li {
+  @include flex-row-centr;
+  width: 117px;
+  min-height: 5rem;
+  // padding: 2vw 2vw 2vw 2vw;
+  margin: 0 0 0 5px;
+}
+
+.header-middl_link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: $light-text;
+  line-height: 1.75;
+  letter-spacing: 2px;
+  display: block;
+  text-align: center;
+  position: relative;
+  top: calc(50% - 16px);
+  font-size: 1rem;
+  line-height: calc(1.5em + .2vw);
+}
+.header-middl_link:hover {
+  color: $light-text;
+}
+.header-middl_link:active {
+  color: $fly-gray;
+}
+
+// top-block in header-middle_menu for mobile
+.header-middle_menu {
+  display: block;
+  background-color: $blue;
+  height: 50px;
+}
+.header-middle_menu_images {
+  @include flex-row-centr;
+  align-items: center;
+}
+// Скрываем в десктопной версии верхний блок меню (нужен для мобильной версии)
+.header-middle_menu {
+  display: none;
+}
+.header-middle_menu_img {
+  margin-left: 10px;
+}
+.header-middle_menu_sign-in {
+  height: 30px;
+  width: auto;
+}
+
+// HEADER BOTTOM
+
+.header-bottom__nav {
+  width: 100%;
+}
+// remove btn "CATEGORIES" in header-BOTTOM-menu  out desktop-version
+.header-bottom__menu {
+  display: none;
+}
+.header-bottom__list {
+  @include flex-row-centr;
+  background-color: $blue;
+  margin: 0;
+}
+.header-bottom__li {
+  display: block;
+  position: relative;
+  width: 9%;
+  height: 70px;
+  text-align: center;
+  top: calc(50% - 16px);
+  transition: .5s;
+}
+.header-bottom__li:hover {
+  background-color: white;
+  a {
+    color: $accent;
+  }
+}
+.header-bottom__li--big {
+  width: 10%;
+}
+.header-bottom_link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: $light-text;
+  position: relative;
+  padding-top: 25px;
+}
+
+
+// стили для фиксации нижнего меню в хедере при прокрутке
+// вспомогательные счетчики высоты блоков и координата верхней точки странице при прокрутке
+.show-navPos,
+.show-winPos {
+  position:fixed;
+  top:10px;
+  right:10px;
+  background:red;
+  color:#fff;
+}
+.show-winPos {
+  background-color: blue;
+  top:50px;
+}
+.header-bottom__nav {
+  display: block;
+  z-index: 100;
+}
+// блок меню фиксируется
+.header-bottom__fixed {
+  display: block;
+  position: fixed;
+  top: 0;
+}
+// тень для длока меню, появляется при прокрутке
+.header-bottom__list_shadow {
+  -webkit-box-shadow: 0px 7px 17px -2px rgba(117,117,117,1);
+   -moz-box-shadow: 0px 7px 17px -2px rgba(117,117,117,1);
+   box-shadow: 0px 7px 17px -2px rgba(117,117,117,1);
+}

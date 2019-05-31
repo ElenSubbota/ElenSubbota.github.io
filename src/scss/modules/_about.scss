@@ -1,0 +1,69 @@
+.about {
+  height: 100%;
+  padding-top: 7%;
+  padding-bottom: 10vh;
+}
+.about_wrap {
+  @include flex-row-centr;
+  padding: 0 5% 0 5%;
+}
+.about_bl {
+}
+.about_bl_img {
+  width: 35%;
+  margin-right: 5rem;
+}
+.about_bl_row {
+  @include flex-row-spc_btwn;
+}
+.about_bl_left {
+  width: 200px;
+  padding-right: 2rem;
+}
+// заголовки "образование" и ""доп.образ""
+.about_bl_left_title {
+  display: block;
+  width: 10rem;
+}
+// социальные кнопки и E-mail
+.about_bl_intro-2__wrap {
+  padding-left: 30%;
+}
+.about_bl_social {
+  @include flex-row;
+}
+.github, .vk, .inst {
+  width: 50px;
+  height: 50px;
+}
+
+@media only screen and (max-width: 376px) {
+  .about {
+    height: 100%;
+  }
+  .about_wrap {
+    @include flex-col-centr;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+  .about_bl_row {
+    @include flex-col-centr;
+  }
+  .about_bl_img-foto {
+    width: 260px;
+    height: auto;
+  }
+}
+@media only screen and (min-width: 376px) and (max-width: 559px) {
+  .about {
+    height: 100%;
+  }
+  .about_wrap {
+    @include flex-col-centr;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+  .about_bl_row {
+    @include flex-col-centr;
+  }
+}

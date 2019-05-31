@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Realty Guide</title>
+    <link rel="stylesheet" type="text/css" href="./css/rent.css">
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+</head>
+<body>
+  <header class="header__background">
+    <div class="header__logo">
+      <div class="container">
+        <div class="logo">
+          <img src="./img/logo_realty4.png" id="logo_full">  <!--ЛОГО ДЛЯ ПОЛНОЭКРАННОГО-->
+          <img src="./img/logo_realty4__mob-vers.png" id="logo_mobile"> <!--ЛОГО ДЛЯ МОБИЛЬНЫХ-->
+        </div>
+        <div class="header__nav">
+          <nav>
+            <input type="checkbox" name="menu" id="header__nav-input"/>
+            <label for="header__nav-input"><img src="./img/polosy_menu.png" alt="img"></label>
+            <ul class="header__nav-list">
+              <li><a href="./realtyGideindex.html">Главная</a></li>
+              <li><a href="./about_us.html">О нас</a></li>
+              <li><a href="./rent.html">Аренда</a></li>
+              <li><a href="./sale.html">Купля/продажа</a></li>
+              <li><a href="./contacts.html">Контакты</a></li>
+              <li><a href="tel:+79119112233">+79119112233</a></li>
+              <li><img src="./img/icons8-user-24.png" id="entry__img"><a href="#">Войти</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="container">
+    <div class="tw_colums">
+      <section class="left-colum container">
+          <p>ghthth</p>
+          <!-- ФИЛЬТР-->
+           <div class="filter">
+             <h3>Найти предложение</h3>
+             <form action="">
+               <ul>
+                 <li><p>Категория</p>
+                   <label>
+                     <select class="filter__select">
+                       <option>Снять</option>
+                       <option>Купить</option>
+                     </select>
+                   </label>
+                 </li>
+                 <li><p>Тип</p>
+                   <label>
+                     <select class="filter__select">
+                       <option>1-комнат.кв</option>
+                       <option>2-комнат.кв</option>
+                       <option>3-комнат.кв и больше</option>
+                       <option>Студия</option>
+                       <option>Комерческая недвижимость</option>
+                       <option>Все</option>
+                     </select>
+                   </label>
+                 </li>
+                 <li><p>Район</p>
+                   <label>
+                     <select class="filter__select">
+                       <option>Все</option>
+                       <option>Арбат</option>
+                       <option>Басманный</option>
+                       <option>Замоскворечье</option>
+                       <option>Красносельский</option>
+                       <option>Мещанский</option>
+                       <option>Пресненский</option>
+                       <option>Таганский</option>
+                       <option>Тверской</option>
+                       <option>Хамовники</option>
+                       <option>Якиманка</option>
+                     </select>
+                   </label>
+                 </li>
+                 <li><p>Площадь</p>
+                   <label>
+                     <select class="filter__select">
+                       <option>до 60 кв.м</option>
+                       <option>от 60 до 150 кв.м</option>
+                       <option>свыше 150 кв.м</option>
+                       <option>Любая</option>
+                     </select>
+                   </label>
+                 </li>
+                 <li><p>Цена</p>
+                   <label>
+                     <select class="filter__select">
+                       <option>до 5</option>
+                       <option>от 5 до 10</option>
+                       <option>от 10 до 15</option>
+                       <option>Все</option>
+                     </select>
+                   </label>
+                 </li>
+                 <li>
+                   <button class="but__search"<p>Поиск</p></button>
+                 </li>
+               </ul>
+             </form>
+           </div>
+        </section>
+        <section class="main container">
+        <div class="title"><h1>Аренда</h1></div>
+        <!-- ФИЛЬТР for mobile-->
+        <div class="filter__mobile"> <!--фильтр включается для мобильной версии-->
+          <h3>Найти предложение</h3>
+          <form action="">
+            <ul>
+              <li>
+                <p>Категория</p>
+                <label>
+                  <select class="filter__select">
+                    <option>Снять</option>
+                    <option>Купить</option>
+                  </select>
+                </label>
+              </li>
+              <li>
+                <p>Тип</p>
+                <label>
+                  <select class="filter__select">
+                    <option>Все</option>
+                    <option>1-комнат.кв</option>
+                    <option>2-комнат.кв</option>
+                    <option>3-комнат.кв и больше</option>
+                    <option>Студия</option>
+                    <option>Комерческая недвижимость</option>
+                  </select>
+                </label>
+              </li>
+              <li><p>Район</p>
+                <label>
+                  <select class="filter__select">
+                    <option>Все</option>
+                    <option>Арбат</option>
+                    <option>Басманный</option>
+                    <option>Замоскворечье</option>
+                    <option>Красносельский</option>
+                    <option>Мещанский</option>
+                    <option>Пресненский</option>
+                    <option>Таганский</option>
+                    <option>Тверской</option>
+                    <option>Хамовники</option>
+                    <option>Якиманка</option>
+                  </select>
+                </label>
+              </li>
+              <li><p>Площадь</p>
+                <label>
+                  <select class="filter__select">
+                    <option>Любая</option>
+                    <option>до 60 кв.м</option>
+                    <option>от 60 до 150 кв.м</option>
+                    <option>свыше 150 кв.м</option>
+                  </select>
+                </label>
+              </li>
+              <li><p>Цена</p>
+                <label>
+                  <select class="filter__select">
+                    <option>Не важно</option>
+                    <option>до 5</option>
+                    <option>от 5 до 10</option>
+                    <option>от 10 до 15</option>
+                  </select>
+                </label>
+              </li>
+              <li>
+                <button class="but__search"><p>Поиск</p></button>
+              </li>
+            </ul>
+          </form>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

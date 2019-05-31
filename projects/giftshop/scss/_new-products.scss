@@ -1,0 +1,38 @@
+.new-products__titles-blc {
+  @include flex-row-spc_btwn;
+  border-bottom: 1px solid rgba(128, 128, 128, 1);
+  margin: 3vh 0 3vh 0;
+}
+
+.new-products_item {
+  width: 372px;
+  height: 200px;
+  @include flex-row-centr;
+  align-items: center;
+  background-image: url(../img/purse-1031547_640.jpg);
+  &:hover {
+    cursor: pointer;
+  }
+}
+.new-products_item:hover .top-section__item_descr {
+  opacity: 1;
+}
+// title
+.section__title {
+  @include section-title;
+}
+// button for slider
+.new-products__slider_btns {
+  @include flex-row-centr;
+}
+.new-products__slider_btn {
+  width: 70px;
+  height: 77px;
+  @include flex-row-centr;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 1);
+  &:hover {
+    background-color: $accent;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,573 @@
+@charset "utf-8";
+
+// Responsive mobile firs
+
+@media only screen and (max-width: 320px) {
+  header {
+    width: 100%;
+  }
+  .container {
+    // width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  .headr__top_wrapp {
+  }
+  .headr__top  {
+    flex-wrap: wrap;
+  }
+
+  // кнопки usd english help
+  .headr__top_left-btns {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .headr__top_rght-btns {
+    width: 100%;
+  }
+  .headr-botm__nav {
+    display: none;
+  }
+  // стили для подменю в бургер-меню
+  .header__bars-menu_list{
+    width: calc(100% - (-290px));
+    margin-left: -255px;
+    text-align: center;
+    padding: 50%;
+    line-height: 2;
+    background-color: rgba(105, 105, 105, 1);
+  }
+  // При нажатии на кнопку бургер-меню добавляется класс .bars-menu_btn_active и для каждого спана устанавливаются стили чтобы появлялся "крестик" вместо 3-х полосок
+  .bars-menu_btn_active .bars-menu_btn_line--1 {
+    height: 0;
+  }
+  .bars-menu_btn_active .bars-menu_btn_line--2 {
+    opacity: 1;
+    transform: rotate(45deg);
+  }
+  .bars-menu_btn_active .bars-menu_btn_line--3  {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -4px;
+  }
+
+
+  .headr__middl {
+    flex-wrap: wrap;
+  }
+  .bars-menu_search__wrap {
+    flex-wrap: wrap;
+  }
+  .headr__search_inpt {
+    border-left: 1px solid #2a2a2a;
+  }
+
+
+
+  .hot-deals {
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .shop-now_blck {
+    display: none;
+  }
+
+  .sale__wrap {
+    flex-wrap: wrap;
+  }
+
+  .offr__bl {
+      flex-basis: 100%;
+      margin-bottom: 6vh;
+      min-height: 180px;
+  }
+
+  .sale__col_col-1 {
+    margin-right: none;
+  }
+
+
+  .new-furnitr_products {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .product_bl {
+    width: 100%;
+  }
+  .new-furnitr_navig {
+    display: none;
+  }
+  .furnitr-gallry_slider-lenta_wrap {
+    display: none;
+  }
+  .furnitr-gallry_wrap {
+    flex-wrap: wrap;
+  }
+  .tabs_p {
+    font-size: 0.8em;
+  }
+  .furnitr-gallry__bl-left_titl {
+    margin-left: 25px;
+  }
+
+
+  .latst-blog  {
+    display: none;
+  }
+  .brand-slider {
+    display: none;
+  }
+
+
+  .footr_top {
+    flex-direction: column;
+  }
+  .footr_top_block {
+    width: 100%;
+    align-items: center;
+  }
+
+
+  .footr_top_list {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 331px ) and (max-width : 615px)  {
+  header {
+    width: 100%;
+  }
+  .container {
+    // width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  .headr__top_wrapp {
+  }
+  .headr__top  {
+    flex-wrap: wrap;
+  }
+  // кнопки usd english help
+  .headr__top_left-btns {
+    justify-content: center;
+  }
+  .headr__top_rght-btns {
+    width: 100%;
+  }
+  .headr-botm__nav {
+    display: none;
+  }
+  // стили для подменю в бургер-меню
+  .header__bars-menu_list{
+    width: calc(100% - (-290px));
+    margin-left: -255px;
+    text-align: center;
+    padding: 50%;
+    line-height: 2;
+    background-color: rgba(105, 105, 105, 1);
+  }
+  // При нажатии на кнопку бургер-меню добавляется класс .bars-menu_btn_active и для каждого спана устанавливаются стили чтобы появлялся "крестик" вместо 3-х полосок
+  .bars-menu_btn_active .bars-menu_btn_line--1 {
+    height: 0;
+  }
+  .bars-menu_btn_active .bars-menu_btn_line--2 {
+    opacity: 1;
+    transform: rotate(45deg);
+  }
+  .bars-menu_btn_active .bars-menu_btn_line--3  {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -4px;
+  }
+
+
+  .headr__middl {
+    flex-wrap: wrap;
+  }
+  .bars-menu_search__wrap {
+    flex-wrap: wrap;
+  }
+  .headr__search_inpt {
+    border-left: 1px solid #2a2a2a;
+  }
+
+
+
+  .hot-deals {
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .shop-now_blck {
+    display: none;
+  }
+
+  .sale__wrap {
+    flex-wrap: wrap;
+  }
+
+
+  .offr__bl {
+      flex-basis: 100%;
+      margin-bottom: 6vh;
+      min-height: 180px;
+  }
+
+
+  .sale__col_col-1 {
+    margin-right: none;
+  }
+
+  .new-furnitr_products {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .product_bl {
+    width: 100%;
+  }
+
+
+
+  .new-furnitr_navig {
+    display: none;
+  }
+  .furnitr-gallry_slider-lenta_wrap {
+    display: none;
+  }
+  .furnitr-gallry_wrap {
+    flex-wrap: wrap;
+  }
+  .tabs_p {
+    font-size: 0.8em;
+  }
+  .furnitr-gallry__bl-left_titl {
+    margin-left: 25px;
+  }
+
+
+  .latst-blog  {
+    display: none;
+  }
+  .brand-slider {
+    display: none;
+  }
+
+  .footr_top {
+    flex-direction: column;
+  }
+  .footr_top_block {
+    width: 100%;
+    align-items: center;
+  }
+  .footr_top_list {
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 616px) and (max-width: 740px) {
+  header {
+    width: 100%;
+  }
+  .container {
+    // width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  .headr__top_wrapp {
+  }
+  .headr__top  {
+    flex-wrap: wrap;
+  }
+  // кнопки usd english help
+  .headr__top_left-btns {
+    justify-content: center;
+    width: 100%;
+  }
+  .headr__top_rght-btns {
+    width: 100%;
+  }
+  .headr-botm__nav {
+    display: none;
+  }
+  // стили для подменю в бургер-меню
+  .header__bars-menu_list{
+    width: calc(100% - (-290px));
+    margin-left: -255px;
+    text-align: center;
+    padding: 50%;
+    line-height: 2;
+    background-color: rgba(105, 105, 105, 1);
+  }
+  // При нажатии на кнопку бургер-меню добавляется класс .bars-menu_btn_active и для каждого спана устанавливаются стили чтобы появлялся "крестик" вместо 3-х полосок
+  .bars-menu_btn_active .bars-menu_btn_line--1 {
+    height: 0;
+  }
+  .bars-menu_btn_active .bars-menu_btn_line--2 {
+    opacity: 1;
+    transform: rotate(45deg);
+  }
+  .bars-menu_btn_active .bars-menu_btn_line--3  {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -4px;
+  }
+
+
+  .headr__middl {
+    flex-wrap: wrap;
+  }
+  .bars-menu_search__wrap {
+    flex-wrap: wrap;
+  }
+
+
+  .hot-deals {
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .shop-now_blck {
+    display: none;
+  }
+
+  .sale__wrap {
+    flex-wrap: wrap;
+  }
+
+
+  .offr__bl {
+      flex-basis: 100%;
+      margin-bottom: 6vh;
+      min-height: 180px;
+  }
+
+
+  .sale__col_col-1 {
+    margin-right: none;
+  }
+
+  .new-furnitr_products {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .product_bl {
+    width: 100%;
+  }
+
+  .new-furnitr_navig {
+    display: none;
+  }
+  .furnitr-gallry_slider-lenta_wrap {
+    display: none;
+  }
+  .furnitr-gallry_wrap {
+    flex-wrap: wrap;
+  }
+  .tabs_p {
+    font-size: 0.8em;
+  }
+  .furnitr-gallry__bl-left_titl {
+    margin-left: 25px;
+  }
+
+
+  .latst-blog  {
+    display: none;
+  }
+  .brand-slider {
+    display: none;
+  }
+
+  .footr_top_list {
+    text-align: center;
+  }
+
+}
+  @media only screen and (min-width: 741px) and (max-width: 1125px) {
+    header {
+      width: 100%;
+    }
+    .container {
+      // width: 100%;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+    .headr__top_wrapp {
+    }
+    .headr__top  {
+      flex-wrap: wrap;
+    }
+    // кнопки usd english help
+    .headr__top_left-btns {
+      justify-content: center;
+      width: 100%;
+    }
+    .headr__top_rght-btns {
+      width: 100%;
+    }
+    .headr-botm__nav {
+      display: none;
+    }
+    .bars-menu_search__wrap {
+      flex-basis: 100%;
+      justify-content: space-between;
+    }
+    .headr__search_inpt {
+      border-left: 1px solid #2a2a2a;
+    }
+
+    // стили для подменю в бургер-меню
+    .header__bars-menu_list{
+      width: calc(100% - (-290px));
+      margin-left: -255px;
+      text-align: center;
+      padding: 50%;
+      line-height: 2;
+      background-color: rgba(105, 105, 105, 1);
+    }
+    // При нажатии на кнопку бургер-меню добавляется класс .bars-menu_btn_active и для каждого спана устанавливаются стили чтобы появлялся "крестик" вместо 3-х полосок
+    .bars-menu_btn_active .bars-menu_btn_line--1 {
+      height: 0;
+    }
+    .bars-menu_btn_active .bars-menu_btn_line--2 {
+      opacity: 1;
+      transform: rotate(45deg);
+    }
+    .bars-menu_btn_active .bars-menu_btn_line--3  {
+      transform: rotate(-45deg);
+      position: relative;
+      top: -4px;
+    }
+
+
+    .headr__middl {
+      flex-wrap: wrap;
+    }
+    .bars-menu_search__wrap {
+      flex-wrap: wrap;
+    }
+
+
+    .hot-deals {
+      flex-wrap: wrap;
+      overflow: hidden;
+    }
+    .hot-deals__hot-deals{
+      margin: 0 auto;
+    }
+    .shop-now_blck {
+      display: none;
+    }
+
+    .sale__wrap {
+      flex-wrap: wrap;
+    }
+    .sale__col_col-1 {
+      width: 100%;
+      flex-basis: 100%;
+    }
+
+    .sale__col_col-2 {
+      width: 100%;
+      flex-basis: 100%;
+    }
+    .sale__col_col-2_bl {
+      min-height: 300px;
+    }
+
+
+    .new-furnitr_products {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .product_bl {
+      width: 100%;
+      min-height: 500px;
+    }
+    .product__header_all-btns {
+      min-height: 300px;
+    }
+
+
+    .furnitr-gallry__bl {
+      flex-basis: 100%;
+      width: 100%;
+    }
+
+
+    .new-furnitr_navig {
+      display: none;
+    }
+    .furnitr-gallry_slider-lenta_wrap {
+      display: none;
+    }
+    .furnitr-gallry_wrap {
+      flex-wrap: wrap;
+    }
+    .tabs_p {
+      font-size: 0.8em;
+    }
+    .furnitr-gallry__bl-left_titl {
+      margin-left: 25px;
+    }
+
+
+    .latst-blog  {
+      display: none;
+    }
+    .brand-slider {
+      display: none;
+    }
+
+  .footr_top_list {
+    text-align: center;
+  }
+}
+    @media only screen and (min-width: 1120px) and (max-width: 1183px)  {
+      .container {
+        width: 100%;
+        margin: 0 auto;
+      }
+    }
+      @media only screen and (min-width: 1184px) and (max-width: 1521px) {
+        .container {
+          width: 100%;
+          margin: 0 auto;
+        }
+      }
+
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
+/* Extra large devices (large laptops and desktops, 1470px and up) */
+@media only screen and (min-width: 1470px) {
+
+}

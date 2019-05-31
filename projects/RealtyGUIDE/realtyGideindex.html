@@ -1,0 +1,433 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="./css/realtyGide.css">
+  <link rel="stylesheet" type="text/css" href="./css/reset.css">
+  <title>Realty Guide</title>
+</head>
+<body>
+  <header class="header__background">
+    <div class="header__logo">
+      <div class="container">
+        <div class="logo">
+          <img src="./img/logo_realty4.png" id="logo_full">  <!--ЛОГО ДЛЯ ПОЛНОЭКРАННОГО-->
+          <img src="./img/logo_realty4__mob-vers.png" id="logo_mobile"> <!--ЛОГО ДЛЯ МОБИЛЬНЫХ-->
+        </div>
+        <div class="header__nav">
+        <nav>
+          <input type="checkbox" name="menu" id="header__nav-input"/>
+          <label for="header__nav-input"><img src="./img/polosy_menu.png" alt="img"></label>
+          <ul class="header__nav-list">
+            <li><a href="#">Главная</a></li>
+            <li><a href="./about_us.html">О нас</a></li>
+            <li><a href="./rent.html">Аренда</a></li>
+            <li><a href="./sale.html">Купля/продажа</a></li>
+            <li><a href="./contacts.html">Контакты</a></li>
+            <li><a href="tel:+79119112233">+79119112233</a></li>
+            <li><img src="./img/icons8-user-24.png" id="entry__img"><a href="#">Войти</a></li>
+          </ul>
+        </nav>
+        </div>
+      </div>
+    </div>
+    <div class="header__slider">
+      <ul id="slides">
+        <li class="slide showing"></li>
+        <li class="slide"></li>
+        <li class="slide"></li>
+        <li class="slide"></li>
+        <li class="slide"></li>
+      </ul>
+      <div class="header__contacts">
+        <p class="tel-numb__text">тел: +7 (945) 333-04-398;</p> <p class="tel-numb__text tel__tw-row"> +7 (945) 333-04-398;</p>
+        <p class="tel-numb__text"><a href="#" class="link_instgrm">@realtyguide.inst</a></p>
+        <div class="social">
+          <a href="https://www.instagram.com/"> <img src="./img/icons8-instagram-48.png" alt="instagram"></a>
+          <a href="https://www.facebook.com/"> <img src="./img/icons8-facebook-48.png" alt="facebook"></a>
+          <a href="https://vk.com/"><img src="./img/icons8-vk.com-48.png" alt="vk"></a>
+        </div>
+      </div>
+        <!--БЛОК С РАССЫЛКОЙ-->
+      <div class="block__useful-newsletter">
+        <h3>Вы можете получать бесплатную рассылку интересных предложений на Ваш почтовый ящик:</h3>
+        <input type="text" name="email" id="user__email" placeholder="varlamov@gmail.com">
+        <input type="button" name="enter" class="but__enter" value="Пришлите!">
+        <p>*Рассылка бесплатная, можно отказаться в &nbsp;любой момент</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="tw-columns">
+  <!--ОБЩИЙ КОНТЕЙНЕР ДЛЯ ДВУХ КОЛОНОК ОСНОВНОГО КОНТЕНТА-->
+    <div class="container__tw-columns">
+    <!--ЛЕВАЯ КОЛОНКА-->
+      <div class="sidebar__left">
+       <!-- ФИЛЬТР-->
+        <div class="filter">
+          <h3>Найти предложение</h3>
+          <form action="">
+            <ul>
+              <li><p>Категория</p>
+                <label>
+                  <select class="filter__select">
+                    <option>Снять</option>
+                    <option>Купить</option>
+                  </select>
+                </label>
+              </li>
+              <li><p>Тип</p>
+                <label>
+                  <select class="filter__select">
+                    <option>1-комнат.кв</option>
+                    <option>2-комнат.кв</option>
+                    <option>3-комнат.кв и больше</option>
+                    <option>Студия</option>
+                    <option>Комерческая недвижимость</option>
+                    <option>Все</option>
+                  </select>
+                </label>
+              </li>
+              <li><p>Район</p>
+                <label>
+                  <select class="filter__select">
+                    <option>Все</option>
+                    <option>Арбат</option>
+                    <option>Басманный</option>
+                    <option>Замоскворечье</option>
+                    <option>Красносельский</option>
+                    <option>Мещанский</option>
+                    <option>Пресненский</option>
+                    <option>Таганский</option>
+                    <option>Тверской</option>
+                    <option>Хамовники</option>
+                    <option>Якиманка</option>
+                  </select>
+                </label>
+              </li>
+              <li><p>Площадь</p>
+                <label>
+                  <select class="filter__select">
+                    <option>до 60 кв.м</option>
+                    <option>от 60 до 150 кв.м</option>
+                    <option>свыше 150 кв.м</option>
+                    <option>Любая</option>
+                  </select>
+                </label>
+              </li>
+              <li><p>Цена</p>
+                <label>
+                  <select class="filter__select">
+                    <option>до 5</option>
+                    <option>от 5 до 10</option>
+                    <option>от 10 до 15</option>
+                    <option>Все</option>
+                  </select>
+                </label>
+              </li>
+              <li>
+                <button class="but__search"<p>Поиск</p></button>
+              </li>
+            </ul>
+          </form>
+        </div>
+
+      <!-- БЛОК НОВОСТЕЙ (ВСЕ ЕЩЕ ЛЕВАЯ КОЛОНКА)-->
+        <div class="sidebar__news">
+          <img src="./img/apartment/condo-2618421_247.jpg" alt="">
+          <a href="./news_housing_complex.html"><p>Новый жилищный комплекс на Затонной</p></a>
+        </div>
+        <div class="sidebar__news">
+          <img src="./img/apartment/bath-753272_247.jpg" alt="">
+          <a href="./news_calculation_of_finishing_material_for_the_bathroom.html"><p>Взгляд экспертов на расчет отделочного материала для ванной</p></a>
+        </div>
+
+      </div>
+
+    <!--ПРАВАЯ КОЛОНКА - ОСНОВНОЙ КОНТЕНТ-->
+        <div class="main">
+          <!-- ФИЛЬТР for mobile-->
+          <div class="filter__mobile"> <!--фильтр включается для мобильной версии-->
+            <h3>Найти предложение</h3>
+            <form action="">
+              <ul>
+                <li>
+                  <p>Категория</p>
+                  <label>
+                    <select class="filter__select">
+                      <option>Снять</option>
+                      <option>Купить</option>
+                    </select>
+                  </label>
+                </li>
+                <li>
+                  <p>Тип</p>
+                  <label>
+                    <select class="filter__select">
+                      <option>Все</option>
+                      <option>1-комнат.кв</option>
+                      <option>2-комнат.кв</option>
+                      <option>3-комнат.кв и больше</option>
+                      <option>Студия</option>
+                      <option>Комерческая недвижимость</option>
+                    </select>
+                  </label>
+                </li>
+                <li><p>Район</p>
+                  <label>
+                    <select class="filter__select">
+                      <option>Все</option>
+                      <option>Арбат</option>
+                      <option>Басманный</option>
+                      <option>Замоскворечье</option>
+                      <option>Красносельский</option>
+                      <option>Мещанский</option>
+                      <option>Пресненский</option>
+                      <option>Таганский</option>
+                      <option>Тверской</option>
+                      <option>Хамовники</option>
+                      <option>Якиманка</option>
+                    </select>
+                  </label>
+                </li>
+                <li><p>Площадь</p>
+                  <label>
+                    <select class="filter__select">
+                      <option>Любая</option>
+                      <option>до 60 кв.м</option>
+                      <option>от 60 до 150 кв.м</option>
+                      <option>свыше 150 кв.м</option>
+                    </select>
+                  </label>
+                </li>
+                <li><p>Цена</p>
+                  <label>
+                    <select class="filter__select">
+                      <option>Не важно</option>
+                      <option>до 5</option>
+                      <option>от 5 до 10</option>
+                      <option>от 10 до 15</option>
+                    </select>
+                  </label>
+                </li>
+                <li>
+                  <button class="but__search"><p>Поиск</p></button>
+                </li>
+              </ul>
+            </form>
+          </div>
+          <div class="landing-block__services">
+		  <h2><a href="about_us.html">Услуги<a></h2>
+            <div class="img__services-full"> <!--блок для полноэкранного режима-->
+              <div class="img__services"><a href="./about_us.html#realty-base"><img src="./img/icons8-search-100.png" >
+                <p>Найдем объекты, которые будут соответствовать Вашим требованиям</p></a>
+              </div>
+              <div class="img__services"><a href="./about_us.html#quick-search"><img src="./img/icons8-timesheet-100.png">
+                <p>В кротчайшие сроки педоставим Вам лучшие варианты</p></a>
+              </div>
+              <div class="img__services"><a href="./about_us.html#documents-escort"><img src="./img/icons8-brief-100.png">
+                <p>Осуществляем правове сопровождение сделок</p></a>
+              </div>
+              <div class="img__services"><a href="./about_us.html#documents-escort"><img src="./img/icons8-services-100.png">
+                <p>Надежные механизмы защиты от правовых ошибок</p></a>
+              </div>
+            </div>
+            <div class="img__services-mobile">  <!--блок для мобильных-->
+              <div class="img__services"><a href="./about_us.html#realty-base"><img src="./img/icons8-search-50.png" >
+                <p>Найдем объекты, которые будут соответствовать Вашим требованиям</p></a>
+              </div>
+              <div class="img__services"><a href="./about_us.html#quick-search"><img src="./img/icons8-timesheet-50.png">
+                <p>В кротчайшие сроки педоставим Вам лучшие варианты</p></a>
+              </div>
+              <div class="img__services"><a href="./about_us.html#documents-escort"><img src="./img/icons8-brief-50.png">
+                <p>Осуществляем правове сопровождение сделок</p></a>
+              </div>
+              <div class="img__services"><a href="./about_us.html#documents-escort"><img src="./img/icons8-services-50.png">
+                <p>Надежные механизмы защиты от правовых ошибок</p></a>
+              </div>
+            </div>
+          </div>
+          <hr>
+
+        <!--блок-  АРЕНДА-->
+          <!--блок- 1-ая линия-->
+          <section class="rent-product">
+
+            <h2><a href="./rent.html">Аренда недвижимости</a></h2>
+            <div class="rent-product__row-1">
+                <a href="#"><div class="rent-product__row-1_img">
+                  <figure class="foto_width-337"><img src="./img/apartment/apartment-1966535_337.jpg" alt=""></figure>
+                  <figure class="foto_width-212"><a href="#"><img src="./img/apartment/apartment-1966535_212.jpg" alt=""></figure>
+                  <figure class="foto_width-162"><a href="#"><img src="./img/apartment/apartment-1966535_162.jpg" alt=""></figure>
+                  <p>3-х комнатная квартира на Новом Арбате</p>
+                </div></a>
+
+                <a href="#">
+                  <div class="rent-product__row-1_img">
+                    <figure class="foto_width-337"><img src="./img/apartment/apartment-2094661_337.jpg" alt=""></figure>
+                    <figure class="foto_width-212"><img src="./img/apartment/apartment-2094661_212.jpg" alt=""></figure>
+                    <figure class="foto_width-162"><img src="./img/apartment/apartment-2094661_162.jpg" alt=""></figure>
+                    <p>3-х комнатная квартира на Новом Арбате</p></div>
+                </a>
+
+                <a href="#">
+                  <div class="rent-product__row-1_img">
+                    <figure class="foto_width-337"><img src="./img/apartment/apartment-2094700_337.jpg" alt=""></figure>
+                    <figure class="foto_width-212"><img src="./img/apartment/apartment-2094700_212.jpg" alt=""></figure>
+                    <figure class="foto_width-162"><img src="./img/apartment/apartment-2094700_162.jpg" alt=""></figure>
+                    <p>3-х комнатная квартира на Новом Арбате</p></div>
+                </a>
+            </div>
+
+          <!--блок аренды-  2-ая линия-->
+
+          <div class="rent-product__row-1">
+            <a href="#">
+              <div class="rent-product__row-1_img">
+                <figure class="foto_width-337"><img src="./img/apartment/apartment-1966535_337.jpg" alt=""></figure>
+                <figure class="foto_width-212"><img src="./img/apartment/apartment-1966535_212.jpg" alt=""></figure>
+                <figure class="foto_width-162"><img src="./img/apartment/apartment-1966535_162.jpg" alt=""></figure>
+                <p>3-х комнатная квартира на Новом Арбате</p></div>
+            </a>
+            <a href="#">
+              <div class="rent-product__row-1_img">
+                <figure class="foto_width-337"><img src="./img/apartment/apartment-2094661_337.jpg" alt=""></figure>
+                <figure class="foto_width-212"><img src="./img/apartment/apartment-2094661_212.jpg" alt=""></figure>
+                <figure class="foto_width-162"><img src="./img/apartment/apartment-2094661_162.jpg" alt=""></figure>
+                <p>3-х комнатная квартира на Новом Арбате</p></div>
+            </a>
+            <a href="#">
+              <div class="rent-product__row-1_img">
+                <figure class="foto_width-337"><img src="./img/apartment/apartment-2094700_337.jpg" alt=""></figure>
+                <figure class="foto_width-212"><img src="./img/apartment/apartment-2094700_212.jpg" alt=""></figure>
+                <figure class="foto_width-162"><img src="./img/apartment/apartment-2094700_162.jpg" alt=""></figure>
+                <p>3-х комнатная квартира на Новом Арбате</p></div>
+            </a>
+          </div>
+            <div class="button__see-more">
+              <a href="./rent.html"><input type="button" name="butt__see-more-rent" value="Больше предложений" class="but__enter but__see-more"></a>
+            </div>
+
+          </section>
+
+        <!--блок-  ПРОДАЖА-->
+          <!--блок-  1-ая линия-->
+          <section class="sale-product">
+
+            <h2><a href="./sale.html">Продажа недвижимости</a></h2>
+            <div class="rent-product__row-1">
+              <a href="#">
+                <div class="rent-product__row-1_img">
+                  <figure class="foto_width-337"><img src="./img/apartment/apartment-1966535_337.jpg" alt=""></figure>
+                  <figure class="foto_width-212"><img src="./img/apartment/apartment-1966535_212.jpg" alt=""></figure>
+                  <p>3-х комнатная квартира на Новом Арбате</p></div>
+              </a>
+              <a href="#">
+                <div class="rent-product__row-1_img">
+                  <figure class="foto_width-337"><img src="./img/apartment/apartment-2094661_337.jpg" alt=""></figure>
+                  <figure class="foto_width-212"><img src="./img/apartment/apartment-2094661_212.jpg" alt=""></figure>
+                  <p>3-х комнатная квартира на Новом Арбате</p></div>
+              </a>
+              <a href="#">
+                <div class="rent-product__row-1_img">
+                  <figure class="foto_width-337"><img src="./img/apartment/apartment-2094700_337.jpg" alt=""></figure>
+                  <figure class="foto_width-212"><img src="./img/apartment/apartment-2094700_212.jpg" alt=""></figure>
+                  <p>3-х комнатная квартира на Новом Арбате</p></div>
+              </a>
+            </div>
+
+            <!--блок-  2-ая линия-->
+            <div class="rent-product__row-1">
+              <a href="#">
+                <div class="rent-product__row-1_img">
+                  <figure class="foto_width-337"><img src="./img/apartment/apartment-1966535_337.jpg" alt=""></figure>
+                  <figure class="foto_width-212"><img src="./img/apartment/apartment-1966535_212.jpg" alt=""></figure>
+                  <p>3-х комнатная квартира на Новом Арбате</p></div>
+              </a>
+              <a href="#">
+                <div class="rent-product__row-1_img">
+                  <figure class="foto_width-337"><img src="./img/apartment/apartment-2094661_337.jpg" alt=""></figure>
+                  <figure class="foto_width-212"><img src="./img/apartment/apartment-2094661_212.jpg" alt=""></figure>
+                  <p>3-х комнатная квартира на Новом Арбате</p></div>
+              </a>
+              <a href="#">
+                <div class="rent-product__row-1_img">
+                  <figure class="foto_width-337"><img src="./img/apartment/apartment-2094700_337.jpg" alt=""></figure>
+                  <figure class="foto_width-212"><img src="./img/apartment/apartment-2094700_212.jpg" alt=""></figure>
+                  <p>3-х комнатная квартира на Новом Арбате</p></div>
+              </a>
+            </div>
+            <div class="button__see-more">
+              <a href="./sale.html"><input type="button" name="butt__see-more_sale" value="Больше предложений" class="but__enter but__see-more"></a>
+            </div>
+
+          </section>
+
+        <!--блок-  ЛУЧШИЕ ПРЕДЛОЖЕНИЯ-->
+          <!--блок-  1-ая линия-->
+          <section class="top-product">
+
+            <h2><a href="./best_deals.html">Лучшие предложения</a></h2>
+            <div class="rent-product__row-1">
+              <a href="#">
+                <div class="rent-product__row-1_img">
+                  <figure class="foto_width-337"><img src="./img/apartment/apartment-1966535_337.jpg" alt=""></figure>
+                  <figure class="foto_width-212"><img src="./img/apartment/apartment-1966535_212.jpg" alt=""></figure>
+                  <p>3-х комнатная квартира на Новом Арбате</p></div>
+              </a>
+              <a href="#">
+                <div class="rent-product__row-1_img">
+                  <figure class="foto_width-337"><img src="./img/apartment/apartment-2094661_337.jpg" alt=""></figure>
+                  <figure class="foto_width-212"><img src="./img/apartment/apartment-2094661_212.jpg" alt=""></figure>
+                  <p>3-х комнатная квартира на Новом Арбате</p></div>
+              </a>
+              <a href="#">
+                <div class="rent-product__row-1_img">
+                  <figure class="foto_width-337"><img src="./img/apartment/apartment-2094700_337.jpg" alt=""></figure>
+                  <figure class="foto_width-212"><img src="./img/apartment/apartment-2094700_212.jpg" alt=""></figure>
+                  <p>3-х комнатная квартира на Новом Арбате</p></div>
+              </a>
+            </div>
+
+            <!--блок-  2-ая линия-->
+            <div class="rent-product__row-1">
+              <a href="#">
+                <div class="rent-product__row-1">
+                  <a href="#">
+                    <div class="rent-product__row-1_img">
+                      <figure class="foto_width-337"><img src="./img/apartment/apartment-1966535_337.jpg" alt=""></figure>
+                      <figure class="foto_width-212"><img src="./img/apartment/apartment-1966535_212.jpg" alt=""></figure>
+                      <p>3-х комнатная квартира на Новом Арбате</p></div>
+                  </a>
+                  <a href="#">
+                    <div class="rent-product__row-1_img">
+                      <figure class="foto_width-337"><img src="./img/apartment/apartment-2094661_337.jpg" alt=""></figure>
+                      <figure class="foto_width-212"><img src="./img/apartment/apartment-2094661_212.jpg" alt=""></figure>
+                      <p>3-х комнатная квартира на Новом Арбате</p></div>
+                  </a>
+                  <a href="#">
+                    <div class="rent-product__row-1_img">
+                      <figure class="foto_width-337"><img src="./img/apartment/apartment-2094700_337.jpg" alt=""></figure>
+                      <figure class="foto_width-212"><img src="./img/apartment/apartment-2094700_212.jpg" alt=""></figure>
+                      <p>3-х комнатная квартира на Новом Арбате</p></div>
+                  </a>
+                </div>
+                <div class="button__see-more">
+                  <a href="./best_deals.html"><input type="button" name="butt__see-more_best-deals" value="Больше предложений" class="but__enter but__see-more"></a>
+                </div>
+            </div>
+
+          </section>
+        </div>
+      </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p class="foot_signature">RealtyGide (c) 2019</p>
+    </div>
+</body>
+</html>

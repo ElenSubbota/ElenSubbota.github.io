@@ -1,0 +1,87 @@
+@import "foundation";
+
+.no-bg {
+  background: transparent !important;
+}
+
+.custom-pb {
+  padding-bottom: 10px !important;
+}
+
+.tiny-text {
+  font-size: 12px;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.basic-link {
+  text-decoration: underline;
+  color: #000;
+}
+
+.logo-title {
+  font-family: 'Myriad Pro', Arial;
+  font-size: 26px;
+  padding: 0;
+  margin: 0;
+  line-height: 1 !important;
+}
+.preheader-text {
+  font-family: 'Myriad Pro', Arial;
+  font-size: 11px !important;
+}
+.header-text {
+  font-family: 'Myriad Pro', Arial;
+  font-size: 13px !important;
+}
+// MAIN TITLE PAGE
+.main-titl-page {
+  font-size: 1.125em;
+}
+.main-btn {
+  background-color: red !important;
+  border: 7px solid red;
+  border-left-width: 40px;
+  border-right-width: 40px;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.gray-line {
+
+  height: 1px;
+  background: #dadad2;
+}
+.phone-img {
+  display: block;
+  text-align: center;
+}
+
+table.button {
+  margin-bottom: 0;
+  table {
+    td {
+      padding: map-get($button-padding, default);
+      a {
+        padding: 0px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .phone-img {
+    // margin: 0 auto;
+    color: red;
+
+  }
+}
+// @media screen and (min-width: 331px ) and (max-width : 615px) {}
+// @media only screen and (min-width: 616px) and (max-width: 740px) {}
+//  @media only screen and (min-width: 741px) and (max-width: 1125px){}
+//  @media only screen and (min-width: 1120px) and (max-width: 1183px) {}
+//  @media only screen and (min-width: 1184px) and (max-width: 1521px)  {}

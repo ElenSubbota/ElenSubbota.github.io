@@ -1,0 +1,134 @@
+.header__landing {
+  position: relative;
+  margin: 0;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+  background-image: url("../img/inside-1499607_1920.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.main {
+  width: 75%;
+}
+.sidebar__right {
+  width: 25%;
+  min-height: 2000px;
+  height: 100%;
+  position: relative;
+  float: right;
+   /* background: #ffb9b3; */
+}
+.tw-columns__margin {
+  padding-top: 45px;
+}
+.tw-columns__margin  span {
+  margin-left: 20px;
+}
+.comand li {
+     list-style: none;
+     position: relative;
+     padding: 0 0 0 0;
+     margin-right: 40px;
+     border: 1px solid yellow;
+   }
+  .comand ul {
+     border: 1px solid black;
+     padding: 0;
+   }
+.comand  p {
+     padding: 5px;
+     border: 1px solid red;
+     margin-right: 20px;
+   }
+.comand img {
+     display: inline-block;
+     width: 40px;
+     position: absolute;
+     top: calc(50% - 30px);
+     right: -30px;
+   }
+   .block__useful-newsletter_about-us_mobile {
+     display: none;
+     position: relative;
+     margin-left: 30px;
+   }
+   .block__useful-newsletter_about-us {
+     width: 250px;
+     height: 300px;
+     top: 600px;
+     left: 10px;
+     background: rgba(224, 255, 255, 0.8);
+     box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+   }
+   #user__email {
+     width: 200px;
+     min-height: 40px;
+     border-radius: 5px;
+     outline: none;
+     background-color: rgba(255, 255, 255, 0.8);
+     font-size: 16px;
+     color: #333333;
+     padding-left: 10px;
+     margin: 5px;
+     box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+   }
+   .but__enter {
+     width: 215px;
+     min-height: 40px;
+     border-radius: 5px;
+     margin: 5px 0 10px 5px;
+     background-color: rgba(215, 142, 41, 0.9);
+     font-size: 16px;
+     color: #1b1b1b;
+     border: none;
+     padding: 0;
+   }
+   .but__enter:hover {
+     background-color: rgb(215, 142, 31);
+   }
+   .main h1, .main h3 {
+     margin: 20px 0 20px 0;
+   }
+@media screen and (max-width: 330px) {
+  .main {
+    width: 100%;
+  }
+   .sidebar__right {
+   display: none;
+   }
+   .block__useful-newsletter_about-us_mobile {
+     display: block;
+   }
+}
+@media screen and (min-width: 331px ) and (max-width : 615px) {
+  .main {
+    width: 100%;
+  }
+  .sidebar__right {
+  display: none;
+ }
+ .block__useful-newsletter_about-us_mobile {
+   display: block;
+ }
+}
+ @media only screen and (min-width: 616px) and (max-width: 740px) {
+ .main {
+   width: 100%;
+ }
+ .sidebar__right {
+ display: none;
+ }
+ .block__useful-newsletter_about-us_mobile {
+   display: block;
+ }
+}
+@media only screen and (min-width: 741px) and (max-width: 1125px) {
+  .main {
+    width: 100%;
+  }
+  .sidebar__right {
+  display: none;
+  }
+  .block__useful-newsletter_about-us_mobile {
+    display: block;
+  }
+}

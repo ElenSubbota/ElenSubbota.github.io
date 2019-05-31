@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/main.css"/>
+  <link rel="stylesheet" href="./css/normalize.css"/>
+  <link rel="stylesheet" href="./libs/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="./libs/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
+  <title>GiftShop</title>
+</head>
+<body>
+  <header>
+    <div class="show-navPos">navPos</div>
+    <div class="show-winPos">winPos</div>
+    <div class="header-top container">
+      <div class="header-top_wrap grid">
+        <div class="logo-wrap">
+          <a href="#"><img src="./img/logo.png" alt="logo"></a>
+        </div>
+        <div class="header-top__nav-wrap">
+
+          <nav class="header-top__nav">
+            <!-- button for gamburger (menu in top header) -->
+            <a href="#header-top__list" class="header-top_menu-btn">
+              <span class="header-top_menu-btn_span"></span>
+            </a>
+            <div class="header-top_menu">
+              <ul class="header-top__list">
+                <li class="header-top_li"><a href="#" class="header-top_link">Sell</a></li>
+                <li class="header-top_li"><a href="#" class="header-top_link">Registry</a></li>
+                <li class="header-top_li"><a href="#" class="header-top_link">Community</a></li>
+                <li class="header-top_li"><a href="#" class="header-top_link">Blogs</a></li>
+                <li class="header-top_li"><a href="#" class="header-top_link">Mobile</a></li>
+                <li class="header-top_li"><a href="#" class="header-top_link">Gift Cards</a></li>
+              </ul>
+            </div>
+          </nav>
+
+          <div class="header-middle__nav-wrap">
+            <nav>
+              <a href="#" class="header-middle_menu">
+                <div class="header-middle_menu_images">
+                  <img src="./img/sign_in.png" alt="sign in" class=" header-middle_menu_img header-middle_menu_sign-in">
+                  <img src="./img/special.png" alt="special" class="header-middle_menu_img">
+                  <img src="./img/cart.png" alt="cart" class="header-middle_menu_img">
+                </div>
+              </a>
+              <ul class="header-middle__list">
+                <li class="header-middle_li"><a href="#" class="header-middl_link">Register</a></li>
+                <li class="header-middle_li"><a href="#" class="header-middl_link">Sign in</a></li>
+                <li class="header-middle_li"><a href="#" class="header-middl_link">Whislost</a></li>
+                <li class="header-middle_li"><a href="#" class="header-middl_link">Cart</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-bottom container">
+      <div class="header-bottom__wrap">
+        <nav class="header-bottom__nav">
+            <a href="#" class="header-bottom__menu">Categories<span class="header-bottom__menu_icon triangle-bottom"></span></a>
+          <ul class="header-bottom__list">
+            <li class="header-bottom__li"><a href="#" class="header-bottom_link">Art</a></li>
+            <li class="header-bottom__li header-bottom__li--big"><a href="#" class="header-bottom_link">Home&nbsp;&&nbsp;Living</a></li>
+            <li class="header-bottom__li"><a href="#" class="header-bottom_link">Jewelry</a></li>
+            <li class="header-bottom__li"><a href="#" class="header-bottom_link">Women</a></li>
+            <li class="header-bottom__li"><a href="#" class="header-bottom_link">Men</a></li>
+            <li class="header-bottom__li"><a href="#" class="header-bottom_link">Kids</a></li>
+            <li class="header-bottom__li"><a href="#" class="header-bottom_link">Vintage</a></li>
+            <li class="header-bottom__li"><a href="#" class="header-bottom_link">Weddings</a></li>
+            <li class="header-bottom__li"><a href="#" class="header-bottom_link">More</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="top-section container">
+    <div class="top-section__wrap grid">
+              <!-- БЛОК 1 -->
+      <div class="top-section__item top-section__item--1 ">
+      <a href="#" class="a">
+        <div class="top-section__item--1_title-bl">
+          <h2 class="top-section__item_big-title">Men’s Wear</h2>
+          <p >Lorem Ipsum is simply dummy text of the
+            printing and typesetting industry. Lorem
+          </p>
+        </div>
+        <div class="top-section__item--1_descript-bl"><p>Lorem Ipsum is simply dummy text</p>
+        </div>
+      </a>
+      </div>
+      <!-- БЛОК 2 -->
+      <div class="top-section__item top-section__item--2">
+        <div class="top-section__item--2_title-bl">
+          <h2 class="top-section__item_big-title top-section__item_big-title_women">Woman’s Wear</h2>
+          <p>Lorem Ipsum is simply dummy text of the
+            printing and typesetting industry. Lorem
+          </p>
+        </div>
+      </div>
+
+      <!-- БЛОК 3 -->
+      <div class="top-section__item top-section__item--3">
+        <!-- блок с всплывающей при наведении ценой -->
+        <div class="top-section__item_descr item_descr__item--3">
+          <div class="top-section__item_descr_shop">
+            <p>Baby Shop</p>
+          </div>
+          <div class="top-section__item_descr_present tooltip" data-title="add to cart!">
+            <div class="">
+              <img src="./img/special.png" alt="special" class="header-middle_menu_img" />
+            </div>
+          </div>
+          <div class="top-section__item_descr_cart tooltip" data-title="add to cart!">
+            <div>
+              <img src="./img/cart.png" alt="cart" class="header-middle_menu_img">
+            </div>
+          </div>
+          <div class="top-section__item_descr_price">
+            $99.00
+          </div>
+        </div>
+      </div>
+
+
+      <!-- БЛОК 4 -->
+      <div class="top-section__item top-section__item--4">
+        <form class="top-section__serch_form">
+          <input data-tooltip="подсказка длиннее, чем элемент" type="search" class="top-section__item_search" placeholder="Search your product here ( e.g.: Silver diamond ring )">
+          <button class="search-btn"><img src="./img/search.png" alt=""></button>
+        </form>
+      </div>
+
+      <!-- БЛОК 5 -->
+      <div class="top-section__item top-section__item--5">
+        <!-- блок со всплывающей при наведении ценой -->
+        <div class="top-section__item_descr top-section__item--5_desc">
+          <div class="top-section__item_descr_craft">
+            <p class="descr_craft_p">CRAFTS</p>
+          </div>
+          <div class="top-section__item_descr_present tooltip" data-title="add to cart!">
+            <div class="">
+              <img src="./img/special.png" alt="special" class="header-middle_menu_img" />
+            </div>
+          </div>
+          <div class="top-section__item_descr_cart tooltip" data-title="add to cart!">
+            <div>
+              <img src="./img/cart.png" alt="cart" class="header-middle_menu_img">
+            </div>
+          </div>
+          <div class="top-section__item_descr_price">
+            $99.00
+          </div>
+        </div>
+      </div>
+
+      <!-- БЛОК 6 -->
+      <div class="top-section__item top-section__item--6">
+        <!-- блок с всплывающей при наведении ценой -->
+        <div class="jewelry-lable">
+          <div class="jewelry_red-tangle">
+            <div class="jewelry_red_circle"><img src="./img/right-arrow.png" alt="arrow" class="arrow-right"></div>
+            <div class="jewelry_red-triangle">
+            </div>
+          </div>
+          <p class="jewelry_p">Jewelry</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+  <section class="new-products container">
+    <div class="new-products__titles-blc">
+      <h2 class="section__title"><a href="#">New Products</a></h2>
+      <div class="new-products__slider_btns">
+        <div class="new-products__slider_btn newProductsSliderBtnLeft"><img src="./img/arrow-left.png" alt="left"></div>
+        <div class="new-products__slider_btn newProductSliderBtnRight"><img src="./img/arrow-right.png" alt="right"></div>
+      </div>
+    </div>
+<!-- SLIDER new-products  -->
+    <div class="owl-carousel newproducts-carousel">
+      <!-- 1 BLOCK in carousel -->
+      <div class="new-products_item">
+        <!-- блок с всплывающей при наведении ценой -->
+      <div class="top-section__item_descr">
+        <div class="top-section__item_descr_shop">
+          <p>Baby Shop</p>
+        </div>
+        <div class="top-section__item_descr_present">
+          <div class="">
+            <img src="./img/special.png" alt="special" class="header-middle_menu_img" />
+          </div>
+        </div>
+        <div class="top-section__item_descr_cart">
+          <div>
+            <img src="./img/cart.png" alt="cart" class="header-middle_menu_img">
+          </div>
+        </div>
+        <div class="top-section__item_descr_price">
+          <p>$99.00</p>
+        </div>
+      </div></div>
+      <!-- 2 BLOCK in carousel -->
+      <div class="new-products_item">
+        <!-- блок с всплывающей при наведении ценой -->
+      <div class="top-section__item_descr">
+        <div class="top-section__item_descr_shop">
+          <p>Baby Shop</p>
+        </div>
+        <div class="top-section__item_descr_present">
+          <div class="">
+            <img src="./img/special.png" alt="special" class="header-middle_menu_img" />
+          </div>
+        </div>
+        <div class="top-section__item_descr_cart">
+          <div>
+            <img src="./img/cart.png" alt="cart" class="header-middle_menu_img">
+          </div>
+        </div>
+        <div class="top-section__item_descr_price">
+          <p>$99.00</p>
+        </div>
+      </div> </div>
+      <!-- 3 BLOCK in carousel -->
+      <div class="new-products_item">
+        <!-- блок с всплывающей при наведении ценой -->
+      <div class="top-section__item_descr">
+        <div class="top-section__item_descr_shop">
+          <p>Baby Shop</p>
+        </div>
+        <div class="top-section__item_descr_present">
+          <div class="">
+            <img src="./img/special.png" alt="special" class="header-middle_menu_img" />
+          </div>
+        </div>
+        <div class="top-section__item_descr_cart">
+          <div>
+            <img src="./img/cart.png" alt="cart" class="header-middle_menu_img">
+          </div>
+        </div>
+        <div class="top-section__item_descr_price">
+          <p>$99.00</p>
+        </div>
+      </div> </div>
+      <!-- 4 BLOCK in carousel -->
+      <div class="new-products_item">
+        <!-- блок с всплывающей при наведении ценой -->
+      <div class="top-section__item_descr">
+        <div class="top-section__item_descr_shop">
+          <p>Baby Shop</p>
+        </div>
+        <div class="top-section__item_descr_present">
+          <div class="">
+            <img src="./img/special.png" alt="special" class="header-middle_menu_img" />
+          </div>
+        </div>
+        <div class="top-section__item_descr_cart">
+          <div>
+            <img src="./img/cart.png" alt="cart" class="header-middle_menu_img">
+          </div>
+        </div>
+        <div class="top-section__item_descr_price">
+          <p>$99.00</p>
+        </div>
+      </div> </div>
+      <!-- 5 BLOCK in carousel -->
+      <div class="new-products_item">
+         <!-- блок с всплывающей при наведении ценой -->
+      <div class="top-section__item_descr">
+        <div class="top-section__item_descr_shop">
+          <p>Baby Shop</p>
+        </div>
+        <div class="top-section__item_descr_present">
+          <div class="">
+            <img src="./img/special.png" alt="special" class="header-middle_menu_img" />
+          </div>
+        </div>
+        <div class="top-section__item_descr_cart">
+          <div>
+            <img src="./img/cart.png" alt="cart" class="header-middle_menu_img">
+          </div>
+        </div>
+        <div class="top-section__item_descr_price">
+          <p>$99.00</p>
+        </div>
+      </div> </div>
+      <!-- 6 BLOCK in carousel -->
+      <div class="new-products_item">
+         <!-- блок с всплывающей при наведении ценой -->
+      <div class="top-section__item_descr">
+        <div class="top-section__item_descr_shop">
+          <p>Baby Shop</p>
+        </div>
+        <div class="top-section__item_descr_present">
+          <div class="">
+            <img src="./img/special.png" alt="special" class="header-middle_menu_img" />
+          </div>
+        </div>
+        <div class="top-section__item_descr_cart">
+          <div>
+            <img src="./img/cart.png" alt="cart" class="header-middle_menu_img">
+          </div>
+        </div>
+        <div class="top-section__item_descr_price">
+          <p>$99.00</p>
+        </div>
+      </div> </div>
+      <!-- 7 BLOCK in carousel -->
+      <div class="new-products_item">
+        <!-- блок с всплывающей при наведении ценой -->
+      <div class="top-section__item_descr">
+        <div class="top-section__item_descr_shop">
+          <p>Baby Shop</p>
+        </div>
+        <div class="top-section__item_descr_present">
+          <div class="">
+            <img src="./img/special.png" alt="special" class="header-middle_menu_img" />
+          </div>
+        </div>
+        <div class="top-section__item_descr_cart">
+          <div>
+            <img src="./img/cart.png" alt="cart" class="header-middle_menu_img">
+          </div>
+        </div>
+        <div class="top-section__item_descr_price">
+          <p>$99.00</p>
+        </div>
+      </div> </div>
+    </div>
+  </section>
+
+
+
+
+   <section class="featured-prod container">
+
+     <div class="new-products__titles-blc">
+       <h2 class="section__title"><a href="#">Featured Products</a></h2>
+       <div class="new-products__slider_btns">
+         <div class="new-products__slider_btn featProductsSliderBtnLeft"><img src="./img/arrow-left.png" alt="left"></div>
+         <div class="new-products__slider_btn featProductSliderBtnRight"><img src="./img/arrow-right.png" alt="right"></div>
+       </div>
+     </div>
+  <!-- SLIDER featured product -->
+    <div class="owl-carousel featprod-carousel">
+
+      <div class="featured-prod__slider_item">
+        <div class="featured-prod_item_foto">
+          <div class="featured-prod_item_lable">
+            <p class="featured-prod_lable lable_new">New</p>
+          </div>
+        </div>
+        <div class="featured-prod_item_descript">
+          <div class="featured-prod_item_descript_top">
+            <h3>Product Title here</h3>
+            <h4 class="prod_item_short-desc">Short Description here</h4>
+          </div>
+          <div class="featured-prod_item_descript_bottom">
+            <div class="featured-prod_bott-blc">
+              <p class="featured-prod_arrow"></p>
+            </div>
+            <div class="featured-prod_bott-blc">
+              <p class="featured-prod_special"></p>
+            </div>
+            <div class="featured-prod_bott-blc">
+              <p class="featured-prod_basket"></p>
+            </div>
+            <div class="featured-prod_price">$99.<sup>00</sup></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="featured-prod__slider_item">
+        <div class="featured-prod_item_foto">
+          <div class="featured-prod_item_lable">
+            <p class="featured-prod_lable lable_new">New</p>
+          </div>
+        </div>
+        <div class="featured-prod_item_descript">
+          <div class="featured-prod_item_descript_top">
+            <h3>Product Title here</h3>
+            <h4 class="prod_item_short-desc">Short Description here</h4>
+          </div>
+          <div class="featured-prod_item_descript_bottom">
+            <div class="featured-prod_bott-blc">
+              <p class="featured-prod_arrow"></p>
+            </div>
+            <div class="featured-prod_bott-blc">
+              <p class="featured-prod_special"></p>
+            </div>
+            <div class="featured-prod_bott-blc">
+              <p class="featured-prod_basket"></p>
+            </div>
+            <div class="featured-prod_price">$99.<sup>00</sup></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="featured-prod__slider_item">
+        <div class="featured-prod_item_foto">
+          <div class="featured-prod_item_lable">
+            <p class="featured-prod_lable lable_new">New</p>
+          </div>
+        </div>
+        <div class="featured-prod_item_descript">
+          <div class="featured-prod_item_descript_top">
+            <h3>Product Title here</h3>
+            <h4 class="prod_item_short-desc">Short Description here</h4>
+          </div>
+          <div class="featured-prod_item_descript_bottom">
+            <div class="featured-prod_bott-blc">
+              <p class="featured-prod_arrow"></p>
+            </div>
+            <div class="featured-prod_bott-blc">
+              <p class="featured-prod_special"></p>
+            </div>
+            <div class="featured-prod_bott-blc">
+              <p class="featured-prod_basket"></p>
+            </div>
+            <div class="featured-prod_price">$99.<sup>00</sup></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="featured-prod__slider_item">
+        <div class="featured-prod_item_foto">
+          <div class="featured-prod_item_lable">
+            <p class="featured-prod_lable lable_new">New</p>
+          </div>
+        </div>
+        <div class="featured-prod_item_descript">
+          <div class="featured-prod_item_descript_top">
+            <h3>Product Title here</h3>
+            <h4 class="prod_item_short-desc">Short Description here</h4>
+          </div>
+          <div class="featured-prod_item_descript_bottom">
+            <div class="featured-prod_bott-blc">
+              <p class="featured-prod_arrow"></p>
+            </div>
+            <div class="featured-prod_bott-blc">
+              <p class="featured-prod_special"></p>
+            </div>
+            <div class="featured-prod_bott-blc">
+              <p class="featured-prod_basket"></p>
+            </div>
+            <div class="featured-prod_price">$99.<sup>00</sup></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="featured-prod__slider_item">
+        <div class="featured-prod_item_foto">
+          <div class="featured-prod_item_lable">
+            <p class="featured-prod_lable lable_new">New</p>
+          </div>
+        </div>
+        <div class="featured-prod_item_descript">
+          <div class="featured-prod_item_descript_top">
+            <h3>Product Title here</h3>
+            <h4 class="prod_item_short-desc">Short Description here</h4>
+          </div>
+          <div class="featured-prod_item_descript_bottom">
+            <div class="featured-prod_bott-blc">
+              <p class="featured-prod_arrow"></p>
+            </div>
+            <div class="featured-prod_bott-blc">
+              <p class="featured-prod_special"></p>
+            </div>
+            <div class="featured-prod_bott-blc">
+              <p class="featured-prod_basket"></p>
+            </div>
+            <div class="featured-prod_price">$99.<sup>00</sup></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="featured-prod__slider_item">
+        <div class="featured-prod_item_foto">
+          <div class="featured-prod_item_lable">
+            <p class="featured-prod_lable lable_new">New</p>
+          </div>
+        </div>
+        <div class="featured-prod_item_descript">
+          <div class="featured-prod_item_descript_top">
+            <h3>Product Title here</h3>
+            <h4 class="prod_item_short-desc">Short Description here</h4>
+          </div>
+          <div class="featured-prod_item_descript_bottom">
+            <div class="featured-prod_bott-blc">
+              <p class="featured-prod_arrow"></p>
+            </div>
+            <div class="featured-prod_bott-blc">
+              <p class="featured-prod_special"></p>
+            </div>
+            <div class="featured-prod_bott-blc">
+              <p class="featured-prod_basket"></p>
+            </div>
+            <div class="featured-prod_price">$99.<sup>00</sup></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="featured-prod__slider_item">
+        <div class="featured-prod_item_foto">
+          <div class="featured-prod_item_lable">
+            <p class="featured-prod_lable lable_new">New</p>
+          </div>
+        </div>
+        <div class="featured-prod_item_descript">
+          <div class="featured-prod_item_descript_top">
+            <h3>Product Title here</h3>
+            <h4 class="prod_item_short-desc">Short Description here</h4>
+          </div>
+          <div class="featured-prod_item_descript_bottom">
+            <div class="featured-prod_bott-blc">
+              <p class="featured-prod_arrow"></p>
+            </div>
+            <div class="featured-prod_bott-blc">
+              <p class="featured-prod_special"></p>
+            </div>
+            <div class="featured-prod_bott-blc">
+              <p class="featured-prod_basket"></p>
+            </div>
+            <div class="featured-prod_price"><p>$99.<sup>00</sup></p></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="who-we container">
+    <div class="who-we__title_wrap">
+      <h2 class="who-we_titl section__title">Who We Are</h2>
+    </div>
+    <p class="who-we__p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <div class="who-we_images">
+      <div class="who-we_images_wrap">
+        <a href="#"><img src="./img/chose-1.png" alt="chose" class="who-we_img"></a>
+      </div>
+      <div class="who-we_images_wrap">
+        <a href="#"><img src="./img/chose-2.png" alt="chose" class="who-we_img"></a>
+      </div>
+      <div class="who-we_images_wrap">
+        <a href="#"><img src="./img/chose-3.png" alt="chose" class="who-we_img"></a>
+      </div>
+    </div>
+    <div class="who-we__reg-btn_wrap">
+      <button type="button" name="button" class="who-we__reg-btn">Register Now</button>
+    </div>
+  </section>
+
+
+  <footer class="container">
+    <div class="footer__wrap">
+      <div class="footr_blc footr_blc-1">
+        <h3 class="footr_titl">shopping with us</h3>
+        <a href="#">why shop with us?</a>
+        <a href="#">how it works</a>
+        <a href="#">delivery</a>
+        <a href="#">returns</a>
+        <a href="#">where's my order</a>
+        <a href="#">contact & help</a>
+        <a href="#">wedding list</a>
+        <a href="#">wish lists</a>
+        <a href="#">gift vouchers</a>
+      </div>
+      <div class="footr_blc footr_blc-2">
+        <h3 class="footr_titl">about us</h3>
+        <a href="#">why shop with us?</a>
+        <a href="#">how it works</a>
+        <a href="#">delivery</a>
+        <a href="#">returns</a>
+        <a href="#">where's my order</a>
+        <a href="#">contact & help</a>
+        <a href="#">wedding list</a>
+      </div>
+      <div class="footr_blc footr_blc-3">
+        <h3 class="footr_titl">with us</h3>
+        <a href="#">why shop with us?</a>
+        <a href="#">how it works</a>
+        <a href="#">delivery</a>
+        <a href="#">returns</a>
+      </div>
+      <div class="footr_blc footr_blc-4">
+        <h3 class="footr_titl">Signup newsletter</h3>
+        <form action="" class="footr_subsc">
+          <input type="email" name="email" value="e.g.: abc@domain.com" class="email_for_subscr">
+          <button class="footr_suscr_btn">Subscribe Now</button>
+        </form>
+        <div class="footr__social">
+          <h3>Keep in touch</h3>
+          <div class="footr__social_item_wrap">
+            <div class="footr__social_item footr__social_item-1"><a href="#" class="footr__social_item_link"></a></div>
+            <div class="footr__social_item footr__social_item-2"><a href="#" class="footr__social_item_link"></a></div>
+            <div class="footr__social_item footr__social_item-3"><a href="#" class="footr__social_item_link"></a></div>
+            <div class="footr__social_item footr__social_item-4"><a href="#" class="footr__social_item_link"></a></div>
+            <div class="footr__social_item footr__social_item-5"><a href="#" class="footr__social_item_link"></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footr__bottom">
+      <div class="footr__bottom_blc">
+        <p>Copyright © 2014 Gift Shop,  All right reserved</p>
+      </div>
+      <div class="footr__bottom_blc">
+        <p>Designed by <span class="accent_text">Amysxain</span></p>
+      </div>
+    </div>
+
+  </footer>
+
+
+  <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+ <script type="text/javascript" src="./js/main.js"></script>
+<script src="./libs/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+
+</body>
+</html>

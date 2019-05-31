@@ -1,0 +1,54 @@
+
+.resume_title_wrap {
+  width: 100%;
+  height: 5rem;
+  background-color: rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 5px 1px 25px -10px rgba(157,154,166,1);
+  -moz-box-shadow: 5px 1px 25px -10px rgba(157,154,166,1);
+  box-shadow: 5px 1px 25px -10px rgba(157,154,166,1);
+  margin-bottom: 3rem;
+
+}
+.resume__wrap {
+  @include flex-col;
+}
+.resume__wrap_row {
+  @include flex-row-spc_arnd;
+  margin-bottom: 5vh;
+}
+.resume__wrap_row-1 {
+  margin-bottom: 3rem;
+}
+.resume__wrap_titl {
+  width: 20rem;
+}
+.resume__wrap_left-bl {
+  width: 50%;
+  max-width: 300px;
+}
+.resume__wrap_right-bl {
+  @include flex-col-centr;
+  width: 50%;
+}
+.resume_big-title, .resume_two-title {
+  text-align: center;
+}
+
+
+
+@media only screen and (max-width: 559px) {
+  .resume__wrap_row {
+    @include flex-col;
+  }
+  .resume__wrap_left-bl {
+    @include flex-row-centr;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+  }
+  // блок с описанием навыков (правый в десктопе)
+  .resume__wrap_right-bl {
+    width: 100%;
+  }
+
+}

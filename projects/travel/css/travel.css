@@ -1,0 +1,806 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css?family=PT+Serif:400,700');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+/*'PT Sans', sans-serif; - вместо Myriad Pro*/
+
+body {
+  font-size: 16px;
+font-family: Montserrat, sans-serif, 'PT Serif', serif;
+}
+*, *:before, *:after {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    transition: .3s ease-in-out;
+}
+.container {
+    margin: auto;
+    width: 80%;
+    overflow: hidden;
+}
+.clearfix:after {
+    content:'';
+    display: table;
+    width: 100%;
+    clear: both;
+}
+header {
+  min-height: 693px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-image: url("../img/Group1.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.header2 {
+  background-color: rgba(200, 189, 168, 0.7);
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.logo {
+  position: relative;
+  padding-top: 40px;
+  padding-left: 20px;
+  float: left;
+}
+/*НАВИГАЦИЯ МЕНЮ*/
+input[type="checkbox"] {
+  display: none;
+  outline: none;
+  border: none;
+}
+nav label {
+  display: none;
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  cursor: pointer;
+  outline: none;
+  transition: 0.3s;
+}
+nav label:hover{
+   color: #f00;
+  outline: none;
+}
+nav ul {
+  padding-top: 72px;
+  position: relative;
+  list-style-type: none;
+  text-transform: uppercase;
+  float: right;
+}
+nav li	{
+  display: inline;
+  padding: 0 20px 0 20px;
+  float: left;
+  font-size: 1.125em;
+}
+ul a{
+  text-decoration: none;
+  color: rgba(22, 22, 22, 1);
+  font-weight: bold;
+}
+ul a:active {
+  color: #C0C0C0;
+}
+ul a:hover {
+  color: #D3D3D3;
+}
+h1 {
+  display: block;
+  float:left;
+  position: absolute;
+  top: 30%;
+  padding-left: 20px;
+  text-align: center;
+  font-size: 5.625em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+h1 span {
+  color: rgba(208, 57, 88, 1);
+  padding-right: 50px;
+}
+.titles_two {
+  position: absolute;
+  width: 500px;
+  top: 65%;
+  padding-left: 30px;
+  font-family: PT Serif, serif;
+  line-height: 3vh;
+  font-weight: normal;
+}
+/*БЛОК РЕГИСТРАЦИИ*/
+.request {
+  position: absolute;
+  top: 50%;
+  right: 200px;
+  max-height: 520px;
+  max-width: 400px;
+  background: rgba(208, 57, 88, 1);
+  border-radius: 5px;
+  box-shadow: 0 2px 6px 0 rgba(155, 45, 125, 0.68), 5px 0 0 6px rgba(127, 39, 29, 0.08), 5px 0 0 9px rgba(127, 39, 29, .1);
+  z-index: 15;
+}
+.request h2 {
+  text-align: center;
+  display: block;
+  position: relative;
+  top: 35px;
+  font-family: PT Serif, serif;
+  font-size: 1.6em;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+}
+.list_request{
+  list-style-type: none;
+  margin: 70px 25px 25px 25px;
+}
+.li_request {
+  width: 350px;
+  height: 57px;
+  margin-bottom: 15px;
+  text-indent: 20px;
+  font-size: 1.25em;
+  border-radius: 5px;
+  border: none;
+  outline:none;  /*  убираем обводку при выделении поля ввода*/
+}
+.check_accept {
+  font-family: PT Serif, serif;
+  font-size: 1.25em;
+  color: white;
+}
+#accept {
+  display: none;
+}
+.checkbox-custom {
+  position: relative;
+  display: inline-block;/* Обязательно задаем, чтобы мы могли абсолютным образом позиционировать псевдоэлемент внютри нашего кастомного чекбокса */
+  width: 20px;             /* Обязательно задаем ширину */
+  height: 20px; /* Обязательно задаем высоту */
+  background-color: white;
+  border: none;
+  border-radius: 3px;
+}
+.checkbox-custom,
+.label {
+  display: inline-block;
+  vertical-align: middle;
+}
+.label {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+}
+/* Если реальный чекбокс у нас отмечен, то тогда добавляем данный признак и к нашему кастомному чекбоксу  */
+#accept:checked + .checkbox-custom::before {
+  content: "";             /* Добавляем наш псевдоэлемент */
+  display: block;
+  position: absolute;      /* Позиционируем его абсолютным образом */
+  /* Задаем расстояние от верхней, правой, нижней и левой границы */
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  background: url("../img/galochka.png");     /* !!!!!добавляем цвет фона - квадрат активный, добавляю картинку - не работает=( Добавляем фон. Если требуется, можете поставить сюда картинку в
+   виде "галочки", которая будет символизировать, что чекбокс отмечен */
+  border-radius: 2px;
+  opacity: 0;
+  transition: all .2s;
+}
+.butt_send {      /* кнопка send*/
+  background: rgba(22, 22, 22, 1);
+  font-family: Montserrat, sans-serif;
+  text-transform: uppercase;
+  color: white;
+  font-weight: normal ;
+  position: relative;
+  top: 20px;
+}
+.butt_send:hover {   /*кнопка send при наведении*/
+  box-shadow: inset 2px 2px 10px 5px rgba(84, 104, 137, 1);
+}
+.butt_send:active {     /*кнопка send при нажатии*/
+  background: rgba(84, 104, 137, 1);
+}
+
+/*СЕКЦИЯ СЕРВИСА*/
+
+.cont_img-services_fonversion {
+  display: none;
+}
+
+.title_our-servic {
+  font-size:3.125em;
+  color: rgba(0, 0, 0, 1);
+  padding-top: 40px;
+}
+.title_our {
+  color: rgba(208, 57, 88, 1);
+  padding-left: 30px;
+}
+/* Изображения в сервисе (4 штуки)  */
+/*Разбили на 2 блока, в первом блоке картинка обтекание слева, во втором три картинки обтекают справа и задана ширина в 33%ю*/
+.container {
+  width: 80%;
+}
+.cont_img-services {
+  width: 100%;
+  margin: 20px;
+  padding: 50px 0 50px 0;
+/*  background: #f5f5f5;*/
+}
+.cont_img-services article {
+  float: left;
+}
+.img-services {
+  overflow: hidden;  /*скрываем выпадающее */
+}
+.img-services article {
+  width: 33.3333%;  /* для 3-х картинок во втором блоке*/
+  margin-left: -5px;
+}
+.article {   /*дополнительный блок для выравнивания всего этого добра*/
+  width: 200px;
+  min-height: 250px;
+  position: relative;
+  float: right;
+  /*border: 1px solid red;*/
+}
+.article img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+  margin-top: auto;
+}
+.img {
+  min-height: 200px;
+  margin-bottom: 50px;
+/*  border: 2px solid limegreen;*/
+}
+article div p { /*выравнивание текста по центру (margin)+прижать его к низу блока (bottom)*/
+  display: block;
+  position: absolute;
+  width: 200px;
+  margin: auto;
+  bottom: 0;
+  font-family: 'PT Serif', serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* СЕКЦИЯ our story с кнопкой */
+
+.sect_our-story {
+  background-color: rgba(208, 57, 88, 1);
+  max-width: 100%;
+}
+.our-story {
+  min-height: 120px;
+}
+.our-story h3 {
+  display: block;
+  max-width: 800px;
+  position: relative;
+  top: 30px;
+  padding-left: 30px;
+  font-family: 'PT Serif', serif;
+  font-size: 1.25em;
+  font-weight: 100;
+  letter-spacing: 1px;
+  color: white;
+}
+.butt_our-story {
+  position: relative;
+  float: right;
+  top: -25px;
+  right: 20px;
+}
+.butt_our-stor {
+  width: 270px;
+  height: 65px;
+  font-family: Montserrat, sans-serif, PT Serif, serif;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  font-weight: bold;
+  background: rgba(227, 213, 184, 1);
+  box-shadow: inset 2px 2px 10px 5px rgba(137, 135, 112, .2);
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+.butt_our-stor:hover {
+  background: rgba(0, 0, 8, 1);
+  box-shadow: inset 2px 2px 10px 5px rgba(84, 104, 137, 1);
+  color: white;
+}
+.butt_our-stor:active {
+  background: rgba(84, 104, 137, 1);
+}
+
+/*СЕКЦИЯ ПРАЙСА-ПРЕДЛОЖЕНИЙ*/
+
+.sect_pricing {
+  background-color: rgba(227, 213, 184, 0.9);
+  width: 100%;
+}
+.pricing {
+  width: 100%;
+  min-height: 600px;
+}
+.pricing h2 {
+  display: block;
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+  font-family: Montserrat, sans-serif;
+  font-size: 50px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 1);
+}
+.blocks_pric {
+  max-width: 2000px;
+  min-height: 600px ;
+  margin: auto;
+/*  border: 2px solid rebeccapurple;*/
+}
+.con_pricing {
+  width: 31%;
+  min-height: 600px;
+  background: rgba(255, 255, 255, 1);
+  margin-left: 30px;
+ /* border: 2px solid rebeccapurple;*/
+  border-radius: 5px 5px 0 0;    /*скосить углы у контейнеров предложений*/
+  position: relative;
+  float: left;
+  font-family: PT Serif, serif;
+  text-align: center;
+}
+.triangle {    /*этикетка "популярное" на среднем блоке в pricing*/
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-bottom: 150px solid transparent;
+  border-left: 150px solid rgba(180, 169, 147, 1);
+}
+.triangle p {    /*в этом месте мы начинаем вертеть надпись на этикетке*/
+  display: block;
+  position: absolute;
+  left: -145px;
+  top: 30px;
+  font-size: 1.3em;
+  -webkit-transform: rotate(-45deg); /*/Chrome, Safari*/
+  -moz-transform: rotate(-45deg); /*Firefox*/
+  -o-transform: rotate(-45deg); /*Opera*/
+  -ms-transform: rotate(-45deg); /*IE*/
+  transform: rotate(-45deg); /*браузеры без префексов*/
+}
+.con_pricing ul {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  font-family: PT Serif, serif;
+  font-size:1.3em;
+  font-stretch: extra-condensed;
+  line-height: 40px;
+  list-style-type: none;
+/*  border: 1px solid red;*/
+}
+.con_pricing h3 {
+  margin-top: 30px;
+  padding: 20px 0 20px 0 ;
+  font-family: PT Serif, serif;
+  font-size: 1.45em;
+  font-weight: normal;
+}
+.con_pricing h4{
+  font-family: Montserrat, sans-serif;
+  font-size: 3.75em;
+  padding: 10px 0 30px 0 ;
+  color: rgba(208, 57, 88, 1);
+}
+.block_butt_sign-up {   /*блок под кнопочки в PRICING*/
+  width: 100%;
+  min-height: 50px;
+  position: absolute;
+  bottom: 0;
+/*  border: 1px solid red;*/
+}
+.butt_sign-up {    /* кнопочки в PRICING*/
+  min-width: 250px;
+  min-height: 60px;
+  position: relative;
+  display: block;
+  margin: auto;
+  background: rgba(227, 213, 184, 1);
+  border: none;
+  border-radius: 10px;
+  font-size: 1.35em;
+  text-transform: uppercase;
+  font-weight: bolder;
+  outline: none;
+}
+.butt_sign-up:hover {
+  background-color: rgba(208, 57, 88, 1);
+  color: #ffffff;
+}
+
+/*СЕКЦИЯ ГАЛЕРЕИ*/
+
+.cont_testim-gallery {    /*на уровне контейнера секции - класс "контейнер для двух нижних блоков"*/
+  width: 80%;
+  min-height: 400px;
+  margin-top: 150px;
+/*  border: 1px solid firebrick;*/
+}
+.testim-gallery {         /*общий контейнер для двух нижних блоков с фото*/
+  width: 49%;
+/*  position: relative;*/
+  float: left;
+  min-height: 500px;
+/*  border: 1px solid firebrick;*/
+}
+.testimonial {        /*левый контейнер*/
+  max-width: 49%;
+/*  border: 5px solid fuchsia;*/
+}
+.testimonial h2 {
+  font-size:3.125em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.text_bravo {
+  color: rgba(208, 57, 88, 1);
+}
+.testimon_1bl,  .testimon_2bl {
+/*  border: 1px solid red;*/
+  padding-left: 20px;
+  padding-top: 30px;
+}
+/*ГАЛЕРЕЯ*/
+.gallery {
+ /* padding-left: 150px;*/
+  position: relative;
+  float: right;
+  max-width: 49%;
+/*  border: 1px solid mediumseagreen;*/
+}
+.gallery h2{
+  text-align: center;
+  margin-bottom: 40px;
+  font-size:3.125em;
+  color: rgba(208, 57, 88, 1);
+  text-transform: uppercase;
+}
+.img_all_gallery {   /*общий контейнер под изо в галерее*/
+  max-width: 600px;
+  min-height: 300px;
+  display: block;
+  overflow: hidden;
+  margin: 0 auto;
+/*  border: 3px solid red;*/
+}
+.img_gallery  {
+  width: 33%;
+  position: relative;
+  display: block;
+  float: left;
+/*  border: 1px solid firebrick;*/
+}
+.img_gallery img {
+  display: block;
+  margin: auto;
+}
+#link_viev-more {    /* ссылка увидеть больше изо!*/
+  text-transform: uppercase;
+  font-family: Montserrat, sans-serif;
+  font-size: 1.25em;
+  font-weight: bold;
+  color: rgba(208, 57, 88, 1);
+}
+.gallery p { /*задаем  max-width для контейнера ссылки (т.е. для p), чтобы центрировать ссылку под галереей*/
+  max-width: 250px;
+  /*border: 1px solid firebrick;*/
+  display: block;
+  margin: auto;
+}
+
+/*FOOTER*/
+
+footer {
+  min-height: 185px;
+  background-color: black;
+  position: relative;
+  z-index: 10;
+}
+.footer {
+  min-height: 180px;
+}
+footer img {
+  position: relative;
+  float: right;
+  top: 10px;
+  z-index: 20;
+}
+footer address {
+  display: block;
+  position: relative;
+  top: 70px;
+  font-family: PT Serif, serif;
+  font-style: normal;
+  font-size: 1.25em;
+  color: #e6e6e6;
+}
+#foot_des-con {
+  color: rgba(208, 57, 88, 1);
+}
+
+
+/*ДЛЯ МОБИЛЬНЫХ*/
+
+
+@media screen and (max-width: 767px) {
+  .container {
+    width: 100%;
+  }
+  nav label {
+    display: inline-block;
+    outline: none;
+  }
+  nav > ul {
+    display: none;
+    outline: none;
+  }
+  nav li {
+    display: block;
+    position: relative;
+    float: right;
+    top: -60px;
+    font-size: 15px;
+    padding-bottom: 8px;
+    outline: none;
+  }
+  input[type="checkbox"]:checked ~ label + ul {
+    display: block;
+    outline: none;
+  }
+  #lampochka {
+    padding-top: -20px;
+  }
+  .request {
+    display: none;
+  }
+  .titles h1 {
+    display: inline;
+    text-align: center;
+    width: 100%;
+    font-size: 50px;
+    top: 35%;
+  }
+  .titles_two {
+    width: 98%;
+    text-align: center;
+    position: absolute;
+    font-size: 12px;
+    word-spacing: 5px;
+    line-height: 30px;
+    top: 60%;
+  }
+
+  /*СЕКЦИЯ title_our-servic*/
+  .title_our-servic h2 {
+    font-size: 35px;
+    text-align: center;
+  }
+  article {
+    display: block;
+    position: relative;
+    width: 100%;
+    float: none;
+    overflow: auto;
+  }
+  .cont_img-services {
+    display: none;
+  }
+  .img-services {
+    display: none;
+  }
+  .cont_img-services_fonversion {
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+  .cont_img-services_fonversion img {
+    max-width: 100px;
+  }
+  .cont_img-services_fonversion label {
+    width: 300px;
+  }
+  .img {
+    min-height: 50px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+  }
+  article {
+    max-width: 200px;
+    min-height: 100px;
+    float: none;
+    position: relative;
+    display: inline;
+  }
+  .article {
+    width: 200px;
+    min-height: 200px;
+    position: relative;
+    float: none;
+    left: 25%;
+  }
+
+  /*  секия our-story*/
+  .our-story {
+    height: 300px;
+  }
+  .our-story h3 {
+    max-width: 100%;
+    top: 50px;
+    padding-left: 20px;
+    padding-right: 5px;
+  }
+  .butt_our-story {
+    position: relative;
+    float: none;
+    top: 70px;
+    left: 15%;
+  }
+  .con_pricing {
+    width: 32%;
+    min-height: 600px;
+    background: rgba(255, 255, 255, 1);
+    margin-left: 4px;
+  }
+  .triangle { /*этикетка "популярное" на среднем блоке в pricing*/
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-bottom: 150px solid transparent;
+    border-left: 150px solid rgba(180, 169, 147, 1);
+  }
+  .triangle p { /*в этом месте мы начинаем вертеть надпись на этикетке*/
+    display: block;
+    position: absolute;
+    left: -145px;
+    top: 30px;
+    font-size: 1.3em;
+    -webkit-transform: rotate(-45deg);
+ Chrome, Safari -moz-transform: rotate(- 45 deg);
+   Firefox -o-transform: rotate(- 45 deg);
+   Opera -ms-transform: rotate(- 45 deg);
+   IE transform: rotate(- 45 deg);
+  }
+
+  /*СЕКЦИЯ ПРАЙСА-ПРЕДЛОЖЕНИЙ*/
+  .pricing h2 {
+    font-size: 35px;
+  }
+  .pricing {
+    width: 100%;
+    height: 300px;
+  }
+  .blocks_pric {
+    max-width: 2000px;
+    min-height: 400px;
+  }
+  .con_pricing {
+    width: 30%;
+    margin-left: 10px;
+    min-height: 500px;
+  }
+  .triangle { /*этикетка "популярное" на среднем блоке в pricing*/
+    border-bottom: 80px solid transparent;
+    border-left: 80px solid rgba(180, 169, 147, 1);
+  }
+  .triangle p { /*в этом месте мы начинаем вертеть надпись на этикетке*/
+    left: -80px;
+    top: 20px;
+    font-size: 1em;
+  }
+  .con_pricing h3 {
+    margin-top: 50px;
+    font-size: 1.1em;
+  }
+  .con_pricing h4 {
+    font-size: 2.5em;
+  }
+  .con_pricing ul {
+    font-size: 1.1em;
+    line-height: 30px;
+    height: 215px;
+  }
+  .block_butt_sign-up { /*блок под кнопочки в PRICING*/
+    width: 100%;
+    min-height: 20px;
+    position: absolute;
+    bottom: 0;
+    /*  border: 1px solid red;*/
+  }
+  .butt_sign-up { /* кнопочки в PRICING*/
+    min-width: 100px;
+    min-height: 60px;
+    font-size: 1.35em;
+  }
+  /*СЕКЦИЯ ГАЛЕРЕИ*/
+
+  .cont_testim-gallery {    /*на уровне контейнера секции - класс "контейнер для двух нижних блоков"*/
+    margin-top: 50px;
+  }
+  .testim-gallery {         /*общий контейнер для двух нижних блоков с фото*/
+    width: 100%;
+    /*position: relative;*/
+    float: none;
+  }
+  .testimonial {        /*левый контейнер*/
+    max-width: 100%;
+  }
+  .testimonial h2 {
+    font-size:2em;
+  }
+  .testimonial img {
+    display: block;
+    margin: auto;
+  }
+  /*ГАЛЕРЕЯ*/
+  .gallery {
+    float: none;
+    max-width: 100%;
+  }
+  .gallery h2{
+    font-size:2em;
+    padding-top: 20px;
+  }
+  .img_all_gallery {   /*общий контейнер под изо в галерее*/
+    width: 100%;
+  }
+  .img_gallery  {
+    width: 50%;
+    float: left;
+  }
+  .img_gallery img {
+    display: block;
+    margin: auto;
+  }
+  .gallery p { /*задаем  max-width для контейнера ссылки (т.е. для p), чтобы центрировать ссылку под галереей*/
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  /*FOOTER*/
+  .footer {
+    min-height: 180px;
+  }
+  footer img {
+    display: block;
+    margin: auto;
+    top: -30px;
+    width: 20%;
+    float: none;
+  }
+  footer address {
+    text-align: center;
+    font-size: 15px;
+  }
+}

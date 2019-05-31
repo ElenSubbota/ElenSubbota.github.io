@@ -1,0 +1,95 @@
+.footer__wrap {
+  @include flex-row-spc_btwn;
+  flex-wrap: wrap;
+  border-bottom: 1px solid $dark-gray;
+  padding-bottom: 2vh;
+  margin-bottom: 2vh;
+  overflow: hidden;
+
+}
+.footr_blc {
+  @include flex-col;
+}
+.footr_blc-1, .footr_blc-2, .footr_blc-3 {
+  width: 21%;
+}
+.footr_blc-3 {
+  overflow: hidden;
+}
+.footr_blc-4 {
+  @include flex-col-spc_btwn;
+  flex-basis: 35%;
+}
+.footr_titl {
+  font-size: 20px;
+  color: $dark-text;
+  text-transform: uppercase;
+}
+.footr_subsc {
+  @include flex-col;
+}
+// форма ввода email
+.email_for_subscr {
+  height: 70px;
+}
+// кнопка регистрации
+.footr_suscr_btn {
+  height: 51px;
+  background-color: $blue;
+  border: none;
+  color: $light-text;
+  text-transform: uppercase;
+
+}
+// Блок к социальными кнопками
+.footr__social {
+  @include flex-col-spc_btwn;
+}
+.footr__social_item_wrap {
+  @include flex-row-centr;
+}
+.footr__social_item {
+  width: 55px;
+  height: 55px;
+  margin-left: 7px;
+}
+.footr__social_item-1 {
+  background-image: url(../sprites/sprite.png);
+  background-position: 0 -424px;
+}
+.footr__social_item-2 {
+  background-image: url(../sprites/sprite.png);
+  background-position: 0 -496px;
+}
+.footr__social_item-3 {
+  background-image: url(../sprites/sprite.png);
+  background-position: 0 -573px;
+}
+.footr__social_item-4 {
+  background-image: url(../sprites/sprite.png);
+  background-position: 0 -720px;
+}
+.footr__social_item-5 {
+  background-image: url(../sprites/sprite.png);
+  background-position: 0 -350px;
+}
+
+// Ссылки социальных кнопок
+
+.footr__social_item_link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+// BOTTOM footer
+
+.footr__bottom {
+  @include flex-row-spc_btwn;
+  flex-wrap: wrap;
+  border-bottom: 1px solid $dark-gray;
+  margin-bottom: 5vh;
+  padding-bottom: 2vh;
+}
+.accent_text {
+  color: $accent;
+}

@@ -1,0 +1,329 @@
+.top-section__wrap {
+  grid-template-columns: 4fr 3fr;
+  grid-gap: 10px;
+  margin-top: 15px;
+  // background-color: red;
+}
+.top-section__item {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+.top-section__item--1 {
+  min-height: 60vh;
+  background-image: url(../img/men_720.jpg);
+  grid-row: 1 / 3;
+}
+.top-section__item--2 {
+  min-height: 55%;
+  background-image: url(../img/young_1280.jpg);
+}
+.top-section__item--3 {
+  min-height: 35%;
+  background-image: url(../img/children_1280.jpg);
+}
+.top-section__item--4 {
+  min-height: 25%;
+  background-color: $accent;
+}
+.top-section__item--5 {
+  min-height: 75%;
+  background-image: url(../img/bag-640.jpg);
+}
+.top-section__item--6 {
+  min-height: 50vh;
+  background-image: url(../img/compass_640.jpg);
+  grid-column: 2;
+  grid-row: 3 / 5;
+}
+
+
+// Стилизация внутреннего контента блоков
+//
+//
+.top-section__item_descr {
+  max-width: 293px;
+  height: 55px;
+  @include flex-row-centr;
+  opacity: 0;
+  position: relative;
+  z-index: 3;
+  transition: all 0.5s;
+}
+.top-section__item:hover .top-section__item_descr {
+  opacity: 1;
+}
+.top-section__item_descr_shop {
+  width: 30%;
+  background-color: $blue;
+  display: flex;
+  align-items: center;
+}
+.top-section__item_descr_present {
+  width: 50px;
+  background-color: darken($blue, 5%);
+  @include flex-row-centr;
+  align-items: center;
+}
+.top-section__item_descr_cart {
+  width: 50px;
+  background-color: $accent;
+
+}
+.top-section__item_descr_price {
+  width: 87px;
+  background-color: #323232;
+  opacity: .9;
+}
+.top-section__item_descr_shop, .top-section__item_descr_present, .top-section__item_descr_cart, .top-section__item_descr_price {
+  @include flex-row-centr;
+  align-items: center;
+  color: $light-text;
+}
+
+.header-middle_menu_img {
+  margin: 0;
+}
+
+
+// ЗАТЕМНЕНИЕ БЛОКОВ при наведении
+// все кроме --4 (блок с search-полем)
+.top-section__item--1::before, .top-section__item--2::before, .top-section__item--3::before, .top-section__item--5::before, .top-section__item--6::before {
+ content:'';
+ opacity: 0;
+}
+.top-section__item--1:hover::before, .top-section__item--2:hover::before, .top-section__item--3:hover::before, .top-section__item--5:hover::before, .top-section__item--6:hover::before  {
+  content:'';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(54, 47, 79, .5);
+  box-shadow:  inset rgba(0,0,0,.6) 0 -9px 18px,
+               inset rgba(0,0,0,.3) 0 15px 20px;
+  opacity: 1;
+  transition: all 1s;
+}
+.a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+// TOOLTIP
+
+.tooltip:before,
+.tooltip:after {
+  display: block;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  margin-bottom: 15px;
+  transition: opacity .7s, margin-bottom .7s;
+  left: 50%;
+}
+
+.tooltip {
+  color: #1f8b8a;
+  position: relative;
+  cursor: pointer;
+
+}
+
+.tooltip:before {
+  bottom: 60px;
+  left: 50%;
+  padding: 7px;
+  width: 100px;
+  margin-left: -50px;
+  color: $dark-text;
+  background-color: white;
+  content: attr(data-title);
+  border-radius: 5px;
+  border: 1px solid $accent;
+  box-shadow: border-box;
+  text-align: center;
+  z-index: 2;
+}
+
+.tooltip:after {
+  content: "";
+  // border-top: 10px solid white;
+  // border-left: 10px solid transparent;
+  // border-right: 10px solid transparent;
+  // bottom: 52px;
+  // margin-left: -10px;
+  width: 0;
+  height: 0;
+  bottom: 41px;
+  margin-left: -10px;
+  border-style: solid;
+  border-width: 10px 10px 10px 10px; /* размер и форма */
+  border-color: white transparent transparent transparent;  /* red — цвет */
+  filter: drop-shadow(0 0 2px $accent);  /* тень */
+}
+
+.tooltip:hover:before,
+.tooltip:hover:after {
+  opacity: 1;
+  margin-bottom: 0;
+  visibility: visible;
+}
+
+// Блок с заголовком внутри блока
+.top-section__item--1_title-bl, .top-section__item--2_title-bl {
+  background-color: rgba(54, 47, 79, .8);
+  color: $light-text;
+}
+.top-section__item--1_title-bl {
+  width: 53%;
+  margin-top: 50%;
+  text-align: justify;
+  padding: 15px;
+  position: relative;
+  z-index: 5;
+}
+.top-section__item--1_descript-bl {
+  width: 53%;
+  background-color: #f0626e;
+  color: $light-text;
+  line-height: 3;
+  text-align: center;
+  text-transform: uppercase;
+  opacity: .9;
+  margin: 5px 0 15px 0;
+}
+// Большие заголовки в блоках
+.top-section__item_big-title  {
+  font-size: 3.625em;
+  color: $accent-text;
+}
+
+// БЛОК 2
+
+.top-section__item--2_title-bl {
+  width: 65%;
+  top: 55%;
+  position: relative;
+  text-align: justify;
+  padding: 15px;
+
+}
+.top-section__item_big-title_women {
+    font-size: 2em;
+}
+
+// БЛОК 3
+
+.item_descr__item--3 {
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+}
+
+// ПОЛЕ ПОИСКА В БЛОКЕ --4
+
+.top-section__item--4 {
+  @include flex-row-centr;
+  align-items: center;
+}
+// форма
+.top-section__serch_form {
+  width: 80%;
+  @include flex-row;
+  justify-content: center;
+}
+// поле поиска
+.top-section__item_search {
+  width: 85%;
+  height: 70px;
+}
+// кнопка
+.search-btn {
+  background-color: transparent;
+  border: none;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.jewelry_red-tangle {
+  width: 98px;
+  height: 87px;
+  position: absolute;
+  top: 20px;
+  right: 0;
+  background-color: $accent;
+}
+// треугольник-уголок
+.jewelry_red-triangle {
+    display: inline-block;
+    position: absolute;
+    top: 87px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 9px 9px 0;
+    border-color: transparent $accent transparent transparent;
+}
+// белый круг
+.jewelry_red_circle  {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 10px;
+  left: 23px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+}
+// стрелка в право
+.arrow-right {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 12px;
+  left: 13px;
+}
+// БЛОК 5
+.top-section__item--5_desc {
+  max-width: 380px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+// подблок CRAFTS в всплывающем окне
+.top-section__item_descr_craft {
+  width: 10vw;
+  background-color: rgba(54, 47, 79, .5);
+  & .descr_craft_p {
+    font-size: 28px;
+    color: white;
+    text-align: center;
+    line-height: 2;
+  }
+}
+
+
+// 6 БЛОК
+
+.jewelry-lable {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 90px;
+  // height: 350px;
+  height: 80%;
+  background-color: rgba(54, 47, 79, .6);
+}
+
+// текст Jewelry
+.jewelry_p {
+  font-size: 4rem;
+  position: relative;
+  top: 65%;
+  color: $light-text;
+  -moz-transform: rotate(270deg); /* Для Firefox */
+  -ms-transform: rotate(270deg); /* Для IE */
+  -webkit-transform: rotate(270deg); /* Для Safari, Chrome, iOS */
+  -o-transform: rotate(270deg); /* Для Opera */
+   transform: rotate(270deg);
+}

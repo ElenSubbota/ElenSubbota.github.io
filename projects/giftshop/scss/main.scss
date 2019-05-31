@@ -1,0 +1,36 @@
+// @import "gulp-sass";
+// @import "settings";
+@import "vars";
+@import 'fonts';
+@import "libs";
+@import "mixins";
+@import "header.scss";
+@import "footer";
+@import "top-section";
+@import "new-products";
+@import "featuredProd";
+@import "whoWe";
+@import "media.scss";
+
+p {
+  margin: 0;
+}
+.grid {
+  display: grid;
+}
+
+.container {
+  display: block;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0;
+}
+body {
+  font-family: $basis-font;
+  font-size: $basis-font-size;
+}
+
+.new-products__slider {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}

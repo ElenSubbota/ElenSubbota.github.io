@@ -1,0 +1,192 @@
+@charset "utf-8"; // Variables fonts
+$basis-font: "Poppins";
+$basis-font-size: 16px;// color
+$backg-basis: #ffffff;
+$header-top-color: #434343;
+$header-middl-color: #2a2a2a;
+$accent: #d58e32;
+$salat: #79ae30;
+$dark-gray: #2a2a2a;
+$middle-gray: #3e3e3e;
+$light-gray: #7b7b7c;
+$fly-gray: #e2e2e2; // text
+$dark-text: #2a2a2a;
+$light-text: #ffff; // icons
+$light-icn: #ffff;
+$dark-icn: #2a2a2a; // @mixins
+// border, handemade-icons, triangles etc
+@mixin border-dark {
+  border: 1px solid rgb(42, 42, 42);
+}
+@mixin border-light {
+  border: 1px solid rgb(226, 226, 226);
+}
+@mixin border-accent {
+  border: 1px solid $accent;
+}
+@mixin ic-arrow-down {
+  content: '';
+  position: relative;
+  width: 5px;
+  border: 5px solid transparent;
+  border-top: 5px solid $dark-icn;
+  border-radius: 3px;
+}
+// стрелка вверх иконка самодельная
+@mixin ic-arrow-up {
+  content: '';
+  position: relative;
+  width: 5px;
+  border: 5px solid transparent;
+  border-bottom: 5px solid $dark-icn;
+}
+// переключатель в слайдере три круга
+@mixin thr-circl-icn {
+  width: 15px;
+  height: 15px;
+  color: $fly-gray;
+  margin-left: 7px;
+  border-radius: 50%;
+  background-color: $light-gray;
+
+  &:hover {
+    background-color: $accent;
+  }
+
+  &:active {
+    background-color: $accent;
+  }
+}
+// кнопка добавить в корзину на черном фоне
+@mixin add-to-card {
+  width: 133px;
+  height: 38px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: $dark-gray;
+  cursor: pointer;
+  font-family: "Poppins";
+  font-size: 0.8em;
+  color: $light-text;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 3.231;
+  text-align: center;
+}
+@mixin add-to-card-svg {
+  width: 20px;
+  height: 20px;
+  color: $light-icn;
+  margin-right: 7px;
+  margin-top: 8px;
+}
+@mixin triangl-price {
+  width: 78px;
+  height: 37px;
+  background-color: rgb(42, 42, 42);
+  family: "Poppins";
+  size: 18px;
+  color: #ffff;
+  weight: bold;
+  text-align: center;
+  line-height: 2.278;
+
+  &:hover {
+    background-color: rgb(213, 142, 50);
+  }
+
+  &:active {
+    background-color: rgb(213, 142, 50);
+  }
+}
+@mixin old-price {
+  font-family: $basis-font;
+  font-size: 0.9em;
+  color: #a5a5a5;
+  text-decoration: line-through;
+}
+@mixin product-touch-icon {
+  width: 37px;
+  height: 37px;
+  border: 1px solid $dark-gray;
+}
+// Fonts, titles, text
+@mixin bold-upper {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+@mixin section-title {
+  font-family: "Poppins";
+  font-size: 20px;
+  color: rgb(213, 142, 50);
+  font-weight: bold;
+  line-height: 1.886;
+}
+@mixin name-product {
+  font-size: 16px;
+  font-family: "Poppins";
+  color: rgb(42, 42, 42);
+  font-weight: bold;
+  line-height: 2.562;
+  text-align: center;
+}
+@mixin old-price {
+  font-size: 16px;
+  font-family: "Poppins";
+  line-height: 2.562;
+  color: rgb(165, 165, 165);
+  text-decoration: line-through;
+}
+@mixin main-text {
+  font-size: 14px;
+  font-family: "Poppins";
+  color: rgb(103, 103, 103);
+  line-height: 1.73;
+}
+// @mixin for flex
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+@mixin flex-row-centr {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+@mixin flex-row-spc_btwn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@mixin flex-row-spc_arnd {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
+@mixin flex-col-centr {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@mixin flex-col-spc_btwn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@mixin flex-col-spc_arnd {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+// graphics
+@mixin star-icons {}
+@mixin dark-blk-border-icon {
+  width: 35px;
+  height: 35px;
+  border: 1px solid rgb(42, 42, 42);
+}

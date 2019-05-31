@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet"  href="./css/reset.css"/>
+  <link rel="stylesheet" href="./css/main.css"/>
+  <title>Basar</title>
+</head>
+<body>
+<!-- <style>body {opacity: 0; overflow: hidden; } html {background-color: #fff; }</style> добавить js -->
+  <header>
+    <div class="headr__top_wrapp">
+      <div class="headr__top container">
+        <div class="headr__top_left-btns">
+          <ul class="left-btns_list">
+            <li class="left-btns_li">
+              <a href="#" class="left-btns_link">USD
+              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sort-down" class="left-btns_svg" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41z"></path></svg>
+              </a>
+            </li>
+            <li class="left-btns_li">
+              <a href="#" class="left-btns_link">English
+              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sort-down" class="left-btns_svg" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41z"></path></svg>
+            </a>
+            </li>
+            <li class="left-btns_li">
+              <a href="#" class="left-btns_link">Help
+              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sort-down" class="left-btns_svg" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41z"></path></svg>
+            </a>
+            </li>
+          </ul>
+        </div>
+        <div class="headr__top_rght-btns">
+          <ul class="rght-btns_list">
+            <li>
+              <a href="#" class="rght-btns__link"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="user" class="rght-btns_svg" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path></svg>
+              <span class="rght-btns__text">Login</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="rght-btns__link"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="lock" class="rght-btns_svg" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"></path></svg>
+              <span class="rght-btns__text">Register</span>
+              </a>
+            </li>
+            <li>
+              <div class="site-menu clearfix">
+                <div class="bars-menu">
+                  <form class="" action="" method="post">
+                    <nav class="bars-menu_nav clearfix">
+                      <div class="bars-menu_item">
+                        <input type="checkbox" name="" value="" id="bars-menu_main-menu_inp" class="bars-menu_check">
+                        <label for="bars-menu_main-menu_inp" id="bars-menu_main-menu_lbl" class="sidebar_nav_menu_lable">
+                          <ul class="bars-menu_btn">
+                            <li class="bars-menu_btn_line bars-menu_btn_line--1 bars-menu_btn_line--top-hedr"></li>
+                            <li class="bars-menu_btn_line bars-menu_btn_line--2 bars-menu_btn_line--top-hedr"></li>
+                            <li class="bars-menu_btn_line bars-menu_btn_line--3 bars-menu_btn_line--top-hedr"></li>
+                          </ul>
+                        </label>
+                        <ul class="bars-menu_list header__bars-menu_list container">
+                          <a href="#" class="bars-menu__nav_a"><li class="bars-menu__nav_li">Home</li></a>
+                          <a href="#" class="bars-menu__nav_a"><li class="bars-menu__nav_li">Furniture</li></a>
+                          <a href="#" class="bars-menu__nav_a"><li class="bars-menu__nav_li">Chair</li></a>
+                          <a href="#" class="bars-menu__nav_a"><li class="bars-menu__nav_li">Table</li></a>
+                          <a href="#" class="bars-menu__nav_a"><li class="bars-menu__nav_li">Sofa</li></a>
+                          <a href="#" class="bars-menu__nav_a"><li class="bars-menu__nav_li">Bedroom</li></a>
+                          <a href="#" class="bars-menu__nav_a"><li class="bars-menu__nav_li">Blog</li></a>
+                        </ul>
+                      </div>
+                    </nav>
+                </div>
+                </form>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="headr__middl_wrapp">
+      <div class="headr__middl container">
+        <div class="tel">
+          <a href="tel:+7 (8142) 33 22 11"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="mobile-alt" class="tel-svg" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z"></path></svg></a>
+          <a href="tel:+7 (8142) 33 22 11"><p class="tel_numb">2300 - 3560 - 222</p></a>
+        </div>
+        <div class="logo">
+          <a href="#"><img src="./img/logo.png" alt="Logo"></a>
+        </div>
+        <div class="buy-basket">
+          <a href="#">
+          <div class="buy-basket_svg_wrapp">
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="shopping-basket" class="buy-basket_svg" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M576 216v16c0 13.255-10.745 24-24 24h-8l-26.113 182.788C514.509 462.435 494.257 480 470.37 480H105.63c-23.887 0-44.139-17.565-47.518-41.212L32 256h-8c-13.255 0-24-10.745-24-24v-16c0-13.255 10.745-24 24-24h67.341l106.78-146.821c10.395-14.292 30.407-17.453 44.701-7.058 14.293 10.395 17.453 30.408 7.058 44.701L170.477 192h235.046L326.12 82.821c-10.395-14.292-7.234-34.306 7.059-44.701 14.291-10.395 34.306-7.235 44.701 7.058L484.659 192H552c13.255 0 24 10.745 24 24zM312 392V280c0-13.255-10.745-24-24-24s-24 10.745-24 24v112c0 13.255 10.745 24 24 24s24-10.745 24-24zm112 0V280c0-13.255-10.745-24-24-24s-24 10.745-24 24v112c0 13.255 10.745 24 24 24s24-10.745 24-24zm-224 0V280c0-13.255-10.745-24-24-24s-24 10.745-24 24v112c0 13.255 10.745 24 24 24s24-10.745 24-24z"></path></svg>
+            <div class="elips-counter-bask"><span class="counter-bask_numb">0</span></div>
+          </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="headr__bottm_wrapp">
+      <div class="headr__bottm container">
+        <div class="bars-menu_search__wrap">
+          <div class="bars-menu bars-menu--hedr-bott">
+            <span>
+              <label for="bars-menu_tw-menu-headr_inp">
+                <ul class="bars-menu_btn">
+                  <li class="bars-menu_btn_line bars-menu_btn_line--hedr-bott"></li>
+                  <li class="bars-menu_btn_line bars-menu_btn_line--hedr-bott"></li>
+                  <li class="bars-menu_btn_line bars-menu_btn_line--hedr-bott"></li>
+                </ul>
+              </label>
+            </span>
+            <form class="" action="" method="post">
+              <nav class="bars-menu_nav clearfix">
+                <div class="bars-menu_item">
+                  <input type="checkbox" name="" value="" id="bars-menu_tw-menu-headr_inp" class="bars-menu_check">
+                  <label for="bars-menu_tw-menu-headr_inp" id="bars-menu_tw-menu-headr_lbl" class="sidebar_nav_menu_lable"><span class="bars-menu_tw-menu-headr_lbl_span">Select a category</span></label>
+                  <ul class="bars-menu_list">
+                    <a href="#" class="bars-menu__nav_a"><li class="bars-menu__nav_li">submenu-1</li></a>
+                    <a href="#" class="bars-menu__nav_a"><li class="bars-menu__nav_li">submenu-2</li></a>
+                    <a href="#" class="bars-menu__nav_a"><li class="bars-menu__nav_li">submenu-3</li></a>
+                    <a href="#" class="bars-menu__nav_a"><li class="bars-menu__nav_li">submenu-4</li></a>
+                 </ul>
+                </div>
+              </nav>
+            </form>
+          <div class="p"></div>
+          </div>
+          <div class="headr__search">
+            <form class="search__form">
+              <input type="search" class="headr__search_inpt" placeholder="Search products...">
+              <input type="submit" id="search_btn">
+              <label for="search_btn" class="search_btn_lbl">
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="search_btn_svg" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg>
+              </label>
+            </form>
+          </div>
+        </div>
+        <div class="headr-botm__nav">
+          <ul class="headr-botm__nav_list">
+            <a href="#" class="headr-botm__nav_lnk headr-botm__nav_lnk--active"><li class="headr-botm__nav_li">Home</li></a>
+            <a href="#" class="headr-botm__nav_lnk"><li class="headr-botm__nav_li">Furniture</li></a>
+            <a href="#" class="headr-botm__nav_lnk"><li class="headr-botm__nav_li">Chair</li></a>
+            <a href="#" class="headr-botm__nav_lnk"><li class="headr-botm__nav_li">Table</li></a>
+            <a href="#" class="headr-botm__nav_lnk"><li class="headr-botm__nav_li">Sofa</li></a>
+            <a href="#" class="headr-botm__nav_lnk"><li class="headr-botm__nav_li">Bedroom</li></a>
+            <a href="#" class="headr-botm__nav_lnk"><li class="headr-botm__nav_li">Blog</li></a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+
+  <!-- <input type="checkbox" class="slid_circle-btn">
+  <input type="checkbox" class="slid_circle-btn">
+  <input type="checkbox" class="slid_circle-btn"> -->
+  <section class="hot-deals container">
+     <div class="hot-deals__hot-deals">
+       <div class="hot-deals_head">
+         <h2 class="hot-deals_head_title">Hot deals</h2>
+         <div class="circles_slide">
+           <!-- <input type="checkbox" class="slid_circle-btn">
+           <input type="checkbox" class="slid_circle-btn">
+           <input type="checkbox" class="slid_circle-btn"> -->
+           <div class="slid_circle-btn colr-accent"></div>
+           <div class="slid_circle-btn"></div>
+           <div class="slid_circle-btn"></div>
+         </div>
+       </div>
+       <div class="hot-deals_product">
+         <div></div>
+         <a href="#" class="add-t-card__link">
+           <div class="add-t-card">
+             <h3>Add to cart</h3>
+               <i class="add-t-card_i"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="shopping-basket" class="add-t-card_svg" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M576 216v16c0 13.255-10.745 24-24 24h-8l-26.113 182.788C514.509 462.435 494.257 480 470.37 480H105.63c-23.887 0-44.139-17.565-47.518-41.212L32 256h-8c-13.255 0-24-10.745-24-24v-16c0-13.255 10.745-24 24-24h67.341l106.78-146.821c10.395-14.292 30.407-17.453 44.701-7.058 14.293 10.395 17.453 30.408 7.058 44.701L170.477 192h235.046L326.12 82.821c-10.395-14.292-7.234-34.306 7.059-44.701 14.291-10.395 34.306-7.235 44.701 7.058L484.659 192H552c13.255 0 24 10.745 24 24zM312 392V280c0-13.255-10.745-24-24-24s-24 10.745-24 24v112c0 13.255 10.745 24 24 24s24-10.745 24-24zm112 0V280c0-13.255-10.745-24-24-24s-24 10.745-24 24v112c0 13.255 10.745 24 24 24s24-10.745 24-24zm-224 0V280c0-13.255-10.745-24-24-24s-24 10.745-24 24v112c0 13.255 10.745 24 24 24s24-10.745 24-24z"></path></svg>
+               </i>
+           </div>
+         </a>
+         <div class="offer__circls-wrap">
+           <div class="offer__circl"><p class="offer__circl_p">25</p><p>days</p></div>
+           <div class="offer__circl"><p class="offer__circl_p">10</p><p>hrs</p></div>
+           <div class="offer__circl"><p class="offer__circl_p">45</p><p>mins</p></div>
+           <div class="offer__circl"><p class="offer__circl_p">30</p><p>secs</p></div>
+         </div>
+       </div>
+       <div class="offer__footr">
+         <div class="product__footr">
+           <div class="product__footr_top">
+             <h3 class="product_titl">Aenean Ru Bristique</h3>
+             <div class="product_rating">
+               <div class="star_sprite_wrap">
+                 <img src="./img/stars.png" alt="">
+               </div>
+             </div>
+             <div class="product__middl-line"></div>
+           </div>
+           <div class="product__footr_bott">
+             <div class="product__icon-touch_wrap">
+               <i class="product__icon-touch"></i>
+               <i class="product__icon-touch"></i>
+               <i class="product__icon-touch"></i>
+             </div>
+             <div class="product__prices">
+               <p class="product__old-price">$350.00</p>
+               <a href="#"><p class="product__rectngl-price">$300.00</p></a>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     <div class="shop-now_blck">
+       <div class="furniture-shop">
+         <h1><span class="furniture-shop__titl-1">Indoor </span><span class="furniture-shop__titl-2">furniture</span></h1>
+         <p>Save up to 50% of all furniture</p>
+         <button type="button" name="button" class="shop-now_btn--white">Shop now</button>
+       </div>
+       <div class="offr__slide_btns">
+         <div class="btn_rectngl-last"><span class="arrow-svg"></span></div>
+         <div class="btn_rectngl-next">
+          <span class="arrow-svg"></span></div>
+       </div>
+     </div>
+   </section>
+
+   <section class="offers container">
+    <div class="offers__wrap">
+      <div class="offr__offers">
+        <div class="offr__bl">
+          <a href="#" class="offr__bl_link"><div class="offr__bl_i"><div class="offr__bl_i--inset"><span class="arrow-svg"></span></div></div></a>
+          <h3 class="offr__bl_tilt">Free Shipping</h3>
+          <p class="offr__bl_descript">all order</p>
+        </div>
+        <div class="offr__bl">
+          <a href="#" class="offr__bl_link"><div class="offr__bl_i"><div class="offr__bl_i--inset"><span class="arrow-svg"></span></div></div></a>
+          <h3 class="offr__bl_tilt">24/7 customer</h3>
+          <p class="offr__bl_descript">support</p>
+        </div>
+        <div class="offr__bl">
+          <a href="#" class="offr__bl_link"><div class="offr__bl_i"><div class="offr__bl_i--inset"><span class="arrow-svg"></span></div></div></a>
+          <h3 class="offr__bl_tilt">Money back</h3>
+          <p class="offr__bl_descript">guarantee</p>
+        </div>
+        <div class="offr__bl">
+          <a href="#" class="offr__bl_link"><div class="offr__bl_i"><div class="offr__bl_i--inset"><span class="arrow-svg"></span></div></div></a>
+          <h3 class="offr__bl_tilt">MEMBER DISCOUNT</h3>
+          <p class="offr__bl_descript">first oredr</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="sale container">
+    <div class="sale__wrap">
+      <div class="sale__col sale__col_col-1">
+        <div class="sale__col_col-1--inset">
+          <ul>
+            <li><h3 class="sale__col_col-1_descript">Guest room<h3></li>
+            <li><h2 class="sale__col_col-1_title">Sofa</h2></li>
+            <li>
+              <div class="sale__col_col-1_discount">
+              <p class="sale__col_col-1_discount_p">-20%</p>
+              </div>
+            </li>
+          </ul>
+         </div>
+       </div>
+     <!-- Вторая колонка -->
+      <div class="sale__col sale__col_col-2">
+        <div class="sale__col_col-2_bl sale__col_col-2_bl--1">
+          <a href="#" class="office-chair-collection_link">
+            <ul class="sale__col-2_bl-1_wrap">
+              <li><span class="sale__col-2_titl--bold">Office</span>&nbsp;<span class="sale__col-2_titl--light">chair</span></li>
+              <li class="sale__col-2_titl--norm">Collection</li>
+              <li class="sale__col-2_titl--price">$200.00</li>
+            </ul>
+          </a>
+        </div>
+        <div class="sale__col_col-2_bl sale__col_col-2_bl--2">
+          <ul class="sale__col_col-2_bl--2_wrap">
+            <li><span class="sale__col-2_bl-2_titl--bold">Special</span>&nbsp;<span class="sale__col-2_bl-2_titl--light">collection</span></li>
+            <li cclass="sale__col-2_bl-2_descript">Save up 45% of furniture</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="new-furnitr container">
+    <div class="new-furnitr_wrap">
+      <div class="new-furnitr__header_wrap">
+        <div class="new-furnitr_titl-navig_wrap">
+          <div class="new-furnitr_titl-wrap">
+            <h2 class="new-furnitr_titl"><span class="new-furnitr_titl_span">New</span>&nbsp;furniture</h2>
+          </div>
+          <div class="new-furnitr_navig">
+            <nav>
+              <ul class="new-furnitr__list">
+                <a href="#" class="new-furnitr_link"><li class="new-furnitr_li--active">Bed</li></a>
+                <a href="#" class="new-furnitr_link"><li class="new-furnitr_li">Chair</li></a>
+                <a href="#" class="new-furnitr_link"><li class="new-furnitr_li">Sofa</li></a>
+                <a href="#" class="new-furnitr_link"><li class="new-furnitr_li">Table</li></a>
+                <a href="#" class="new-furnitr_link"><li class="new-furnitr_li">Dining</li></a>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- <div class="new-furnitr_slidr-btn">
+          <div class="circles_slide">
+            <input type="checkbox" class="slid_circle-btn">
+            <input type="checkbox" class="slid_circle-btn">
+            <input type="checkbox" class="slid_circle-btn">
+            <div class="slid_circle-btn colr-accent"></div>
+            <div class="slid_circle-btn"></div>
+            <div class="slid_circle-btn"></div>
+          </div>
+        </div> -->
+      </div>
+      <!-- Блок с галереей продуктов -->
+      <div class="new-furnitr_products">
+        <!-- Отдельный блок с продуктом -->
+        <div class="product_bl">
+          <div class="product__header">
+            <div class="product__header_all-btns">
+              <div class="product__header_sale">
+                <p class="product__header_sale_text">Sale</p>
+              </div>
+              <div class="product__header_btns-wrap">
+                <!-- кнопка Quick View в ссылке -->
+                <a href="#">
+                  <div class="product__header_quick-btn">
+                    <p>Quick View</p>
+                  </div>
+                </a>
+                <a href="#" class="add-t-card__link">
+                  <div class="add-t-card">
+                    <h3>Add to cart</h3>
+                      <i class="basket-icon">
+                        <img src="./img/basket-24.png" alt="buy">
+                      </i>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="product__footr">
+            <div class="product__footr_top">
+              <h3 class="product_titl">Aenean Ru Bristique</h3>
+              <div class="product_rating">
+                <div class="star_sprite_wrap">
+                  <img src="./img/stars.png" alt="">
+                </div>
+              </div>
+              <div class="product__middl-line"></div>
+            </div>
+            <div class="product__footr_bott">
+              <div class="product__icon-touch_wrap">
+                <i class="product__icon-touch"></i>
+                <i class="product__icon-touch"></i>
+              </div>
+              <div class="product__prices">
+                <p class="product__old-price">$350.00</p>
+                <a href="#"><p class="product__rectngl-price">$300.00</p></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Отдельный блок с продуктом -->
+       <div class="product_bl">
+          <div class="product__header">
+            <div class="product__header_all-btns">
+              <div class="product__header_sale">
+                <p class="product__header_sale_text">Sale</p>
+              </div>
+              <div class="product__header_btns-wrap">
+                <!-- кнопка Quick View в ссылке -->
+                <a href="#">
+                  <div class="product__header_quick-btn">
+                    <p>Quick View</p>
+                  </div>
+                </a>
+                <a href="#" class="add-t-card__link">
+                  <div class="add-t-card">
+                    <h3>Add to cart</h3>
+                      <i class="basket-icon">
+                        <img src="./img/basket-24.png" alt="buy">
+                      </i>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="product__footr">
+            <div class="product__footr_top">
+              <h3 class="product_titl">Aenean Ru Bristique</h3>
+              <div class="product_rating">
+                <div class="star_sprite_wrap">
+                  <img src="./img/stars.png" alt="">
+                </div>
+              </div>
+              <div class="product__middl-line"></div>
+            </div>
+            <div class="product__footr_bott">
+              <div class="product__icon-touch_wrap">
+                <i class="product__icon-touch"></i>
+                <i class="product__icon-touch"></i>
+              </div>
+              <div class="product__prices">
+                <p class="product__old-price">$350.00</p>
+                <a href="#"><p class="product__rectngl-price">$300.00</p></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Отдельный блок с продуктом -->
+         <div class="product_bl">
+          <div class="product__header">
+            <div class="product__header_all-btns">
+              <div class="product__header_sale">
+                <p class="product__header_sale_text">Sale</p>
+              </div>
+              <div class="product__header_btns-wrap">
+                <!-- кнопка Quick View в ссылке -->
+                <a href="#">
+                  <div class="product__header_quick-btn">
+                    <p>Quick View</p>
+                  </div>
+                </a>
+                <a href="#" class="add-t-card__link">
+                  <div class="add-t-card">
+                    <h3>Add to cart</h3>
+                      <i class="basket-icon">
+                        <img src="./img/basket-24.png" alt="buy">
+                      </i>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="product__footr">
+            <div class="product__footr_top">
+              <h3 class="product_titl">Aenean Ru Bristique</h3>
+              <div class="product_rating">
+                <div class="star_sprite_wrap">
+                  <img src="./img/stars.png" alt="">
+                </div>
+              </div>
+              <div class="product__middl-line"></div>
+            </div>
+            <div class="product__footr_bott">
+              <div class="product__icon-touch_wrap">
+                <i class="product__icon-touch"></i>
+                <i class="product__icon-touch"></i>
+              </div>
+              <div class="product__prices">
+                <p class="product__old-price">$350.00</p>
+                <a href="#"><p class="product__rectngl-price">$300.00</p></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Отдельный блок с продуктом -->
+        <div class="product_bl">
+          <div class="product__header">
+            <div class="product__header_all-btns">
+              <div class="product__header_sale">
+                <p class="product__header_sale_text">Sale</p>
+              </div>
+              <div class="product__header_btns-wrap">
+                <!-- кнопка Quick View в ссылке -->
+                <a href="#">
+                  <div class="product__header_quick-btn">
+                    <p>Quick View</p>
+                  </div>
+                </a>
+                <a href="#" class="add-t-card__link">
+                  <div class="add-t-card">
+                    <h3>Add to cart</h3>
+                      <i class="basket-icon">
+                        <img src="./img/basket-24.png" alt="buy">
+                      </i>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="product__footr">
+            <div class="product__footr_top">
+              <h3 class="product_titl">Aenean Ru Bristique</h3>
+              <div class="product_rating">
+                <div class="star_sprite_wrap">
+                  <img src="./img/stars.png" alt="">
+                </div>
+              </div>
+              <div class="product__middl-line"></div>
+            </div>
+            <div class="product__footr_bott">
+              <div class="product__icon-touch_wrap">
+                <i class="product__icon-touch"></i>
+                <i class="product__icon-touch"></i>
+              </div>
+              <div class="product__prices">
+                <p class="product__old-price">$350.00</p>
+                <a href="#"><p class="product__rectngl-price">$300.00</p></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Отдельный блок с продуктом -->
+        <div class="product_bl">
+          <div class="product__header">
+            <div class="product__header_all-btns">
+              <div class="product__header_sale">
+                <p class="product__header_sale_text">Sale</p>
+              </div>
+              <div class="product__header_btns-wrap">
+                <!-- кнопка Quick View в ссылке -->
+                 <a href="#">
+                  <div class="product__header_quick-btn">
+                    <p>Quick View</p>
+                  </div>
+                </a>
+                <a href="#" class="add-t-card__link">
+                  <div class="add-t-card">
+                    <h3>Add to cart</h3>
+                      <i class="basket-icon">
+                        <img src="./img/basket-24.png" alt="buy">
+                      </i>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="product__footr">
+            <div class="product__footr_top">
+              <h3 class="product_titl">Aenean Ru Bristique</h3>
+              <div class="product_rating">
+                <div class="star_sprite_wrap">
+                  <img src="./img/stars.png" alt="">
+                </div>
+              </div>
+              <div class="product__middl-line"></div>
+            </div>
+            <div class="product__footr_bott">
+              <div class="product__icon-touch_wrap">
+                <i class="product__icon-touch"></i>
+                <i class="product__icon-touch"></i>
+              </div>
+              <div class="product__prices">
+                <p class="product__old-price">$350.00</p>
+                <a href="#"><p class="product__rectngl-price">$300.00</p></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Отдельный блок с продуктом -->
+        <div class="product_bl">
+          <div class="product__header">
+            <div class="product__header_all-btns">
+              <div class="product__header_sale">
+                <p class="product__header_sale_text">Sale</p>
+              </div>
+              <div class="product__header_btns-wrap">
+                <!-- кнопка Quick View в ссылке -->
+                <a href="#">
+                  <div class="product__header_quick-btn">
+                    <p>Quick View</p>
+                  </div>
+                </a>
+                <a href="#" class="add-t-card__link">
+                  <div class="add-t-card">
+                    <h3>Add to cart</h3>
+                      <i class="basket-icon">
+                        <img src="./img/basket-24.png" alt="buy">
+                      </i>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="product__footr">
+            <div class="product__footr_top">
+              <h3 class="product_titl">Aenean Ru Bristique</h3>
+              <div class="product_rating">
+                <div class="star_sprite_wrap">
+                  <img src="./img/stars.png" alt="">
+                </div>
+              </div>
+              <div class="product__middl-line"></div>
+            </div>
+            <div class="product__footr_bott">
+              <div class="product__icon-touch_wrap">
+                <i class="product__icon-touch"></i>
+                <i class="product__icon-touch"></i>
+              </div>
+              <div class="product__prices">
+                <p class="product__old-price">$350.00</p>
+                <a href="#"><p class="product__rectngl-price">$300.00</p></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Отдельный блок с продуктом -->
+        <div class="product_bl">
+          <div class="product__header">
+            <div class="product__header_all-btns">
+              <div class="product__header_sale">
+                <p class="product__header_sale_text">Sale</p>
+              </div>
+              <div class="product__header_btns-wrap">
+                <!-- кнопка Quick View в ссылке -->
+                <a href="#">
+                  <div class="product__header_quick-btn">
+                    <p>Quick View</p>
+                  </div>
+                </a>
+                <a href="#" class="add-t-card__link">
+                  <div class="add-t-card">
+                    <h3>Add to cart</h3>
+                      <i class="basket-icon">
+                        <img src="./img/basket-24.png" alt="buy">
+                      </i>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="product__footr">
+            <div class="product__footr_top">
+              <h3 class="product_titl">Aenean Ru Bristique</h3>
+              <div class="product_rating">
+                <div class="star_sprite_wrap">
+                  <img src="./img/stars.png" alt="">
+                </div>
+              </div>
+              <div class="product__middl-line"></div>
+            </div>
+            <div class="product__footr_bott">
+              <div class="product__icon-touch_wrap">
+                <i class="product__icon-touch"></i>
+                <i class="product__icon-touch"></i>
+              </div>
+              <div class="product__prices">
+                <p class="product__old-price">$350.00</p>
+                <a href="#"><p class="product__rectngl-price">$300.00</p></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Отдельный блок с продуктом -->
+        <div class="product_bl">
+          <div class="product__header">
+            <div class="product__header_all-btns">
+              <div class="product__header_sale">
+                <p class="product__header_sale_text">Sale</p>
+              </div>
+              <div class="product__header_btns-wrap">
+                <!-- кнопка Quick View в ссылке -->
+                 <a href="#">
+                  <div class="product__header_quick-btn">
+                    <p>Quick View</p>
+                  </div>
+                </a>
+                <a href="#" class="add-t-card__link">
+                  <div class="add-t-card">
+                    <h3>Add to cart</h3>
+                      <i class="basket-icon">
+                        <img src="./img/basket-24.png" alt="buy">
+                      </i>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="product__footr">
+            <div class="product__footr_top">
+              <h3 class="product_titl">Aenean Ru Bristique</h3>
+              <div class="product_rating">
+                <div class="star_sprite_wrap">
+                  <img src="./img/stars.png" alt="">
+                </div>
+              </div>
+              <div class="product__middl-line"></div>
+            </div>
+            <div class="product__footr_bott">
+              <div class="product__icon-touch_wrap">
+                <i class="product__icon-touch"></i>
+                <i class="product__icon-touch"></i>
+              </div>
+              <div class="product__prices">
+                <p class="product__old-price">$350.00</p>
+                <a href="#"><p class="product__rectngl-price">$300.00</p></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="furnitr-gallry container">
+    <div class="furnitr-gallry_wrap">
+      <div class="furnitr-gallry__bl">
+        <div class="furnitr-gallry__bl_titl-wrap">
+          <h2 class="furnitr-gallry__bl-left_titl"><span class="furnitr-gallry__bl-left_titl_span">Furn</span>iture gallery</h2>
+        </div>
+        <section class="furnitr-gallry__tab">
+          <input type="radio" id="tab1" name="radiobutton" checked="checked" class="furnitr-gallry__inp"/>
+          <label for="tab1" class="tabs"><p class="tabs_p">Featured</p></label>
+          <input type="radio" id="tab2" name="radiobutton" class="furnitr-gallry__inp"/>
+          <label for="tab2" class="tabs"><p class="tabs_p">Top seller</p></label>
+          <input type="radio" id="tab3" name="radiobutton" class="furnitr-gallry__inp"/>
+          <label for="tab3" class="tabs"><p class="tabs_p">Sale off</p></label>
+          <input type="radio" id="tab4" name="radiobutton" class="furnitr-gallry__inp"/>
+          <label for="tab4" class="tabs"><p class="tabs_p">Top rated</p></label>
+        <article class="furnitr-gallry__articl furnitr-gallry__articl--1">
+        </article>
+        <article class="furnitr-gallry__articl furnitr-gallry__articl--2">
+        </article>
+        <article class="furnitr-gallry__articl furnitr-gallry__articl--3">
+        </article>
+        <article class="furnitr-gallry__articl furnitr-gallry__articl--4">
+        </article>
+        <div class="furnitr-gallry_display-content">
+          <div class="furnitr-gallry_display_btns">
+            <div class="product__icon-touch_wrap furnitr-gallry_touch_wrap">
+              <i class="product__icon-touch furnitr-gallry_icon-touch"></i>
+              <i class="product__icon-touch furnitr-gallry_icon-touch"></i>
+              <i class="product__icon-touch furnitr-gallry_icon-touch"></i>
+              <i class="product__icon-touch furnitr-gallry_icon-touch"></i>
+            </div>
+          </div>
+          <div class="furnitr-gallry_display_price">
+            <div class="furnitr-gallry_display_price-rating-bl">
+              <div class="furnitr-gallry_display_circl-price_wrap">
+                <div class="furnitr-gallry_display_circl-price">
+                  <p class="new-price">$120.00</p>
+                  <p class="old-price">$160.00</p>
+                </div>
+              </div>
+              <div class="furnitr-gallry_display_rating">
+                <h3 class="product_titl">Aenean Ru Bristique</h3>
+                <div class="star_sprite_wrap">
+                  <img src="./img/stars.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="furnitr-gallry_slider-lenta_wrap">
+        <div class="furnitr-gallry_slider_btn-last">
+          <p class="furnitr-gallry_slider_btn-last_arrow"><</p>
+        </div>
+        <a href="#"><div class="furnitr-gallry_slider_slid"></div></a>
+        <a href="#"><div class="furnitr-gallry_slider_slid"></div></a>
+        <a href="#"><div class="furnitr-gallry_slider_slid"></div></a>
+        <a href="#"><div class="furnitr-gallry_slider_slid"></div></a>
+        <a href="#"><div class="furnitr-gallry_slider_slid"></div></a>
+        <a href="#"><div class="furnitr-gallry_slider_slid"></div></a>
+        <div class="furnitr-gallry_slider_btn-next">
+          <p class="furnitr-gallry_slider_btn-last_arrow">></p>
+        </div>
+      </div>
+      </div>
+      <div class="furnitr-gallry__bl furnitr-gallry__bl--2">
+        <p class="furnitr-gallry__bl--2_text">from <span class="furnitr-gallry__bl--2_price">$50.80</span></p>
+        <h2 class="furnitr-gallry__bl--2_titl">Bedroom Bed</h2>
+        <button class="furnitr-gallry__bl_shop-now-btn">Shop now</button>
+     </div>
+    </div>
+  </section>
+
+
+  <section class="latst-blog container">
+    <div class="latst-blog__wrap">
+      <h2 class="latst-blog_main-titl">latest blog</h2>
+      <div class="latst-blog_articls_wrap">
+
+        <div class="latst-blog_articl">
+          <div class="latst-blog_articl_header">
+            <div class="latst-blog_articl_header_info">
+              <div class="latst-blog_articl_header_data">
+                <span class="arrow-svg"></span>
+                <p class="latst-blog_articl_header_small-text">15 JAN 2016</p>
+              </div>
+              <div class="latst-blog_articl_header_commnts">
+                <span class="arrow-svg"></span>
+                <p class="latst-blog_articl_header_small-text">4 comments</p>
+              </div>
+            </div>
+          </div>
+          <div class="latst-blog_articl_bottom">
+            <h3 class="latst-blog_articl_bottom-titl">Products That Fight Static</h3>
+            <p class="latst-blog_articl_text">Aliquam dictum pellentesque nibh sit amet dapibus.
+              Vivamus eget luctus nisi. Nullam euismod leo vehicula,
+              rutrum magna in, ornare enim vehicula, rutrum magna in, ornare enim.
+            </p>
+            <button type="button" name="button" class="latst-blog_articl_btn-read-mr">Read more</button>
+          </div>
+        </div>
+
+        <div class="latst-blog_articl">
+          <div class="latst-blog_articl_header">
+            <div class="latst-blog_articl_header_info">
+              <div class="latst-blog_articl_header_data">
+                <span class="arrow-svg"></span>
+                <p class="latst-blog_articl_header_small-text">15 JAN 2016</p>
+              </div>
+              <div class="latst-blog_articl_header_commnts">
+                <a href="#"><span class="arrow-svg"></span>
+                <p class="latst-blog_articl_header_small-text">4 comments</p></a>
+              </div>
+            </div>
+          </div>
+          <div class="latst-blog_articl_bottom">
+            <h3 class="latst-blog_articl_bottom-titl">Products That Fight Static</h3>
+            <p class="latst-blog_articl_text">Aliquam dictum pellentesque nibh sit amet dapibus.
+              Vivamus eget luctus nisi. Nullam euismod leo vehicula,
+              rutrum magna in, ornare enim vehicula, rutrum magna in, ornare enim.
+            </p>
+            <button type="button" name="button" class="latst-blog_articl_btn-read-mr">Read more</button>
+          </div>
+        </div>
+
+        <div class="latst-blog_articl">
+          <div class="latst-blog_articl_header">
+            <div class="latst-blog_articl_header_info">
+              <div class="latst-blog_articl_header_data">
+                <span class="arrow-svg"></span>
+                <p class="latst-blog_articl_header_small-text">15 JAN 2016</p>
+              </div>
+              <div class="latst-blog_articl_header_commnts">
+                <span class="arrow-svg"></span>
+                <a href="#"><p class="latst-blog_articl_header_small-text">4 comments</p></a>
+              </div>
+            </div>
+          </div>
+          <div class="latst-blog_articl_bottom">
+            <h3 class="latst-blog_articl_bottom-titl">Products That Fight Static</h3>
+            <p class="latst-blog_articl_text">Aliquam dictum pellentesque nibh sit amet dapibus.
+              Vivamus eget luctus nisi. Nullam euismod leo vehicula,
+              rutrum magna in, ornare enim vehicula, rutrum magna in, ornare enim.
+            </p>
+            <button type="button" name="button" class="latst-blog_articl_btn-read-mr">Read more</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="brand-slider container">
+    <div class="brand-slider_wrap">
+      <div class="brand-slider__btn-last">
+        <p class="brand-slider__btn-arrow"><</p>
+      </div>
+      <a href="#"><div class="brand-slider__slider_slid"></div></a>
+      <a href="#"><div class="brand-slider__slider_slid"></div></a>
+      <a href="#"><div class="brand-slider__slider_slid"></div></a>
+      <a href="#"><div class="brand-slider__slider_slid"></div></a>
+      <a href="#"><div class="brand-slider__slider_slid"></div></a>
+      <a href="#"><div class="brand-slider__slider_slid"></div></a>
+      <div class="brand-slider__btn-next">
+        <p class="brand-slider__btn-arrow">></p>
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+  <section class="client-fdback container">
+    <h2 class="client-fdback_titl">client feedback</h2>
+    <div class="client-fdback_wrap">
+      <div class="client-fdback_bl">
+        <p class="client-fdback_quot">&rdquo;</p>
+      </div>
+      <div class="client-fdback_bl client-fdback_text_wrap">
+        <p class="client-fdback_text">Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+          et dolore magna aliquyam erat, sed diam voluptua. At&shy; vero eos et accusam et justo
+          duo dolores et ea rebum. Stet clita kasd gubergren.
+        </p>
+      </div>
+      <div class="client-fdback_bl client-fdback_bl-pers">
+        <div class="client-fdback_bl_pers_foto-wrap">
+          <img src="" alt="">
+        </div>
+        <div class="client-fdback_bl_pers_data-wrap">
+          <p>John Smith</p>
+          <p>Furniture client</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="footr_wrap container">
+      <div class="footr_top">
+        <div class="footr_top_block">
+          <h3 class="footr_titl">INFORMATION</h3>
+          <ul class="footr_top_list">
+            <li><a href="#" class="footr_top_link">About us</a></li>
+            <li><a href="#"  class="footr_top_link">Privacy</a></li>
+            <li><a href="#" class="footr_top_link">Conditions</a></li>
+            <li><a href="#" class="footr_top_link">Online support</a></li>
+          </ul>
+        </div>
+        <div class="footr_top_block">
+          <h3 class="footr_titl">MY ACCOUNT</h3>
+          <ul class="footr_top_list">
+            <li><a href="#" class="footr_top_link">Login</a></li>
+            <li><a href="#" class="footr_top_link">My Cart</a></li>
+            <li><a href="#" class="footr_top_link">Wishlist</a></li>
+            <li><a href="#" class="footr_top_link">Checkout</a></li>
+          </ul>
+        </div>
+        <div class="footr_top_block">
+          <h3 class="footr_titl">INFORMATION</h3>
+          <ul class="footr_top_list">
+            <li><a href="#" class="footr_top_link">Specials</a></li>
+            <li><a href="#" class="footr_top_link">New Products</a></li>
+            <li><a href="#" class="footr_top_link">Best Sellers</a></li>
+            <li><a href="#" class="footr_top_link">Our Stores</a></li>
+          </ul>
+        </div>
+        <div class="footr_top_block footr_top_block_orders">
+          <h3 class="footr_titl">ORDERS</h3>
+          <ul class="footr_top_list">
+            <li><a href="#" class="footr_top_link">Payment options</a></li>
+            <li><a href="#" class="footr_top_link">Shipping and delivery</a></li>
+            <li><a href="#" class="footr_top_link">Returns</a></li>
+            <li><a href="#" class="footr_top_link">Shipping</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- нижний футер -->
+      <div class="footr_bott">
+        <div class="footr_bott_bl"></div>
+        <div class="footr_bott_bl">
+          <address class="footr_bott_text">©Copyright 2016 Bazar | All Rights Reserved</address>
+          </div>
+        <div class="footr_bott_bl">
+          <div class="footr_bott_soc-icons">
+            <ul>
+              <li><i><span class="arrow-svg"></span></i></li>
+              <li><i><span class="arrow-svg"></span></i></li>
+              <li><i><span class="arrow-svg"></span></i></li>
+              <li><i><span class="arrow-svg"></span></i></li>
+              <li><i><span class="arrow-svg"></span></i></li>
+              <li><i><span class="arrow-svg"></span></i></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="./js/main.js"></script>
+
+</body>
+</html>
