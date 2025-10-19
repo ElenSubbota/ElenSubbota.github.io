@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Математический калькулятор</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            transition:  0.5s ease;
+        }
+
+        /* Градиенты для разных операций */
+        .coordinates { background: url('./img/planeta_koltso_fioletovyj.jpg'); background-size: cover; }
+        .length { background: url('./img/mlechnyj_put_zvezdnoe_nebo_zvezdy.jpg'); background-size: cover; }
+        .sum { background: url('./img/fonovay.jpg'); background-size: cover; }
+        .difference { background: url('./img/planeta_kosmos_sputnik.jpg'); background-size: cover; }
+        .multiply { background: url('./img/zemlia_luna_prostranstvo.jpg'); background-size: cover; }
+        .dot { background: url('./img/kosmos_shar_planeta.jpg'); background-size: cover; }
+        .angle { background: url('./img/zvezdnoe_nebo_mlechnyj_put_zvezdy.jpg'); background-size: cover; }
+        .collinear { background: url('./img/planeta_zemlia_kosmos.jpg'); background-size: cover; }
+        .perpendicular { background: url('./img/kosmos_planeta_prostranstvo.jpg'); background-size: cover; }
+        .distance { background: url('./img/luna_polnolunie_krasnaia_luna.jpg'); background-size: cover; }
+        .segment_division { background: url('./img/luna_polnolunie_krasnaia_luna.jpg'); background-size: cover; }
+        .triangle_area { background: url('./img/planeta_shar_temnyj_1.jpg'); background-size: cover; }
+        .slope_line { background: url('./img/zemlia_zvezdy_svechenie_1207423_1920x1080.jpg'); background-size: cover; }
+        .general_line { background: url('./img/zemlia_luna_prostranstvo.jpg'); background-size: cover; }
+        .line_through_point { background: url('./img/zemlia_luna_prostranstvo.jpg'); background-size: cover; }
+        .line_through_two_points { background: url('./img/planeta_koltso_fioletovyj.jpg'); background-size: cover; }
+        .line_segments { background: url('./img/planeta_kosmos_sputnik.jpg'); background-size: cover; }
+        .perpendicular_line { background: url('./img/luna_polnolunie_krasnaia_luna.jpg'); background-size: cover; }
+        .parallel_lines { background: url('./img/planeta_kosmos_sputnik.jpg'); background-size: cover; }
+        .perpendicular_lines { background: url('./img/zvezdnoe_nebo_mlechnyj_put_zvezdy.jpg'); background-size: cover; }
+        .angle_between_lines { background: url('./img/zemlia_zvezdy_svechenie_1207423_1920x1080.jpg'); background-size: cover; }
+
+        .calculator-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 640px;
+            padding: 10px;
+        }
+
+        .calculator-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            border: 2px solid #764ba2;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Анимированная пульсирующая обводка */
+        .pulsing-border {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 25px;
+            background: linear-gradient(45deg, #764ba2, #667eea, #764ba2);
+            background-size: 400% 400%;
+            z-index: 1;
+            animation: pulse-glow 3s ease-in-out infinite, gradient-shift 4s ease infinite;
+            opacity: 0.8;
+            filter: blur(8px);
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1.02);
+                opacity: 1;
+            }
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #1b4194;
+            font-size: 2.2em;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #5a4a7a;
+            font-size: 1.1em;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        select:focus, input:focus {
+            outline: none;
+            border-color: #764ba2;
+            box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.1);
+        }
+
+        .vector-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .vector-input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .vector-input-group label {
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #315ec0, #667eea);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(118, 75, 162, 0.3);
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        button:hover::before {
+            left: 100%;
+        }
+
+        .result {
+            margin-top: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, #315ec0, #667eea);
+            border-radius: 15px;
+            color: white;
+            display: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .result::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            /* background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent); */
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                transform: rotate(0deg) translate(-50%, -50%);
+            }
+            100% {
+                transform: rotate(360deg) translate(-50%, -50%);
+            }
+        }
+
+        .result h3 {
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .result-content {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .solution {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border-left: 4px solid white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step {
+            margin-bottom: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .step:last-child {
+            border-bottom: none;
+        }
+
+        .math-formula {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            text-align: center;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 1.1em;
+        }
+
+        .operation-description {
+            text-align: center;
+            color: #ffffff;
+            font-style: italic;
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #63a8ed;
+            border-radius: 8px;
+            border: 2px solid #4b8ae9;
+            
+        }
+
+        .graph-container {
+            margin-top: 20px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        #graph-canvas {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            background: white;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Анимация звездочек */
+        .stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite;
+            box-shadow: 0 0 6px white, 0 0 12px white;
+        }
+
+        .star::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1px;
+            height: 8px;
+            background: white;
+            transform: translate(-50%, -50%) rotate(45deg);
+            box-shadow: 0 0 4px white;
+        }
+
+        .star::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 8px;
+            height: 1px;
+            background: white;
+            transform: translate(-50%, -50%) rotate(45deg);
+            box-shadow: 0 0 4px white;
+        }
+
+        .star:nth-child(odd) {
+            animation-delay: 0.5s;
+        }
+
+        .star:nth-child(3n) {
+            animation-delay: 1s;
+        }
+
+        .star:nth-child(4n) {
+            animation-delay: 1.5s;
+        }
+
+        .star:nth-child(5n) {
+            animation: twinkle 3s infinite;
+        }
+
+        .star:nth-child(7n) {
+            animation: twinkle 1.5s infinite;
+        }
+
+        .star:nth-child(11n) {
+            animation: twinkle 4s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.2;
+                transform: scale(0.3) rotate(0deg) translateY(0px);
+            }
+            25% {
+                opacity: 0.8;
+                transform: scale(1.1) rotate(90deg) translateY(-5px);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.3) rotate(180deg) translateY(-10px);
+            }
+            75% {
+                opacity: 0.6;
+                transform: scale(0.9) rotate(270deg) translateY(-5px);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+
+        .star:nth-child(6n) {
+            animation: float 4s infinite ease-in-out;
+        }
+
+        @keyframes orbit {
+            0% {
+                transform: rotate(0deg) translateX(30px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(30px) rotate(-360deg);
+            }
+        }
+
+        .star:nth-child(8n) {
+            animation: orbit 6s infinite linear;
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.5) rotate(180deg);
+            }
+        }
+
+        .star:nth-child(9n) {
+            animation: sparkle 2s infinite;
+        }
+
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            50% {
+                opacity: 0.6;
+                transform: scale(1.5);
+            }
+        }
+    </style>
+</head>
+<body class="coordinates">
+    <!-- Контейнер для звездочек -->
+    <div class="stars-container" id="stars-container"></div>
+    
+    <div class="calculator-wrapper">
+        <!-- Анимированная обводка -->
+        <div class="pulsing-border"></div>
+        
+        <!-- Основной контейнер -->
+        <div class="calculator-container">
+            <h1>Математический Калькулятор</h1>
+            
+            <div class="input-group">
+                <label>Выберите операцию:</label>
+                <select id="operation">
+                    <option value="coordinates">Координаты вектора по точкам</option>
+                    <option value="length">Длина вектора</option>
+                    <option value="sum">Сумма векторов</option>
+                    <option value="difference">Разность векторов</option>
+                    <option value="multiply">Умножение на число</option>
+                    <option value="dot">Скалярное произведение</option>
+                    <option value="angle">Угол между векторами</option>
+                    <option value="collinear">Проверка коллинеарности</option>
+                    <option value="perpendicular">Проверка перпендикулярности</option>
+                    <option value="distance">Расстояние между точками</option>
+                    <option value="segment_division">Деление отрезка в отношении m:n</option>
+                    <option value="triangle_area">Площадь треугольника</option>
+                    <option value="slope_line">Уравнение прямой с угловым коэффициентом</option>
+                    <option value="general_line">Общее уравнение прямой</option>
+                    <option value="line_through_point">Уравнение прямой через точку в заданном направлении</option>
+                    <option value="line_through_two_points">Прямая через две точки</option>
+                    <option value="line_segments">Прямая в отрезках на осях</option>
+                    <option value="angle_between_lines">Угол между двумя прямыми (k₁, k₂)</option>
+                    <option value="perpendicular_line">Уравнение прямой, проходящей через точку перпендикулярно вектору</option>
+                    <option value="parallel_lines">Параллельность прямых</option>
+                    <option value="perpendicular_lines">Перпендикулярность прямых</option>
+                </select>
+            </div>
+
+            <div id="operation-description" class="operation-description">
+                Вычисление координат вектора по двум точкам
+            </div>
+
+            <div id="input-fields">
+                <!-- Поля ввода будут генерироваться динамически -->
+            </div>
+
+            <button id="calculate-btn">Вычислить</button>
+
+            <div id="result" class="result">
+                <h3>Результат:</h3>
+                <div id="result-content" class="result-content"></div>
+                <div id="solution" class="solution"></div>
+                <div id="graph-container" class="graph-container">
+                    <canvas id="graph-canvas" width="400" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Функции для работы со звездочками
+        function createStars() {
+            const starsContainer = document.getElementById('stars-container');
+            const numStars = 50; // Количество звездочек
+            
+            // Очищаем существующие звездочки
+            starsContainer.innerHTML = '';
+            
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                
+                // Случайная позиция
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                
+                // Случайная задержка анимации
+                star.style.animationDelay = Math.random() * 3 + 's';
+                
+                // Случайная скорость анимации
+                const animationSpeed = Math.random() * 2 + 1;
+                star.style.animationDuration = animationSpeed + 's';
+                
+                // Случайный размер
+                const size = Math.random() * 4 + 2;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                
+                // Случайная интенсивность свечения
+                const glowIntensity = Math.random() * 0.8 + 0.2;
+                star.style.filter = `brightness(${glowIntensity})`;
+                
+                starsContainer.appendChild(star);
+            }
+        }
+
+        function updateStarsForOperation(operation) {
+            // Обновляем звездочки при смене операции
+            createStars();
+            
+            // Добавляем цветовые эффекты в зависимости от операции
+            const starsContainer = document.getElementById('stars-container');
+            const stars = starsContainer.querySelectorAll('.star');
+            
+            stars.forEach((star, index) => {
+                // Разные цвета для разных операций
+                let starColor = 'white';
+                let glowColor = 'white';
+                
+                switch(operation) {
+                    case 'coordinates':
+                        starColor = '#ff6b6b';
+                        glowColor = '#ff6b6b';
+                        break;
+                    case 'length':
+                        starColor = '#4ecdc4';
+                        glowColor = '#4ecdc4';
+                        break;
+                    case 'sum':
+                        starColor = '#45b7d1';
+                        glowColor = '#45b7d1';
+                        break;
+                    case 'difference':
+                        starColor = '#96ceb4';
+                        glowColor = '#96ceb4';
+                        break;
+                    case 'multiply':
+                        starColor = '#feca57';
+                        glowColor = '#feca57';
+                        break;
+                    case 'dot':
+                        starColor = '#ff9ff3';
+                        glowColor = '#ff9ff3';
+                        break;
+                    case 'angle':
+                        starColor = '#54a0ff';
+                        glowColor = '#54a0ff';
+                        break;
+                    case 'collinear':
+                        starColor = '#5f27cd';
+                        glowColor = '#5f27cd';
+                        break;
+                    case 'perpendicular':
+                        starColor = '#00d2d3';
+                        glowColor = '#00d2d3';
+                        break;
+                    case 'distance':
+                        starColor = '#ff9f43';
+                        glowColor = '#ff9f43';
+                        break;
+                    default:
+                        starColor = 'white';
+                        glowColor = 'white';
+                }
+                
+                star.style.background = starColor;
+                star.style.boxShadow = `0 0 6px ${glowColor}, 0 0 12px ${glowColor}, 0 0 18px ${glowColor}`;
+                
+                // Добавляем градиентный эффект
+                star.style.background = `radial-gradient(circle, ${starColor} 0%, ${starColor}80 50%, transparent 100%)`;
+                
+                // Добавляем случайные эффекты свечения
+                if (index % 7 === 0) {
+                    star.style.filter = `hue-rotate(${Math.random() * 360}deg) brightness(1.5)`;
+                }
+                
+                // Добавляем случайные эффекты мерцания
+                if (index % 13 === 0) {
+                    star.style.animation = `sparkle ${Math.random() * 2 + 1}s infinite`;
+                }
+                
+                // Добавляем случайные эффекты пульсации
+                if (index % 17 === 0) {
+                    star.style.animation = `pulse ${Math.random() * 3 + 1}s infinite`;
+                }
+                
+                // Добавляем случайные эффекты свечения
+                if (index % 21 === 0) {
+                    star.style.filter = `hue-rotate(${Math.random() * 360}deg) brightness(${Math.random() * 2 + 0.5}) saturate(${Math.random() * 2 + 0.5})`;
+                }
+                
+                // Добавляем случайные эффекты пульсации
+                if (index % 25 === 0) {
+                    star.style.animation = `pulse ${Math.random() * 4 + 2}s infinite, twinkle ${Math.random() * 3 + 1}s infinite`;
+                }
+                
+                // Добавляем случайные эффекты
+                if (index % 5 === 0) {
+                    star.style.animationDuration = (Math.random() * 2 + 1) + 's';
+                }
+                
+                // Разные формы звездочек
+                if (index % 3 === 0) {
+                    star.style.borderRadius = '50%';
+                } else if (index % 3 === 1) {
+                    star.style.borderRadius = '0%';
+                    star.style.transform = 'rotate(45deg)';
+                } else {
+                    star.style.borderRadius = '20%';
+                }
+                
+                // Добавляем случайные эффекты движения
+                if (index % 10 === 0) {
+                    star.style.animation = `twinkle ${Math.random() * 3 + 1}s infinite, float ${Math.random() * 4 + 2}s infinite ease-in-out`;
+                }
+                
+                // Добавляем случайные эффекты орбиты
+                if (index % 15 === 0) {
+                    star.style.animation = `orbit ${Math.random() * 6 + 3}s infinite linear`;
+                }
+                
+                // Добавляем случайные эффекты вращения
+                if (index % 19 === 0) {
+                    star.style.animation = `twinkle ${Math.random() * 2 + 1}s infinite, orbit ${Math.random() * 8 + 4}s infinite linear`;
+                }
+                
+                // Добавляем случайные эффекты мерцания
+                if (index % 23 === 0) {
+                    star.style.animation = `sparkle ${Math.random() * 1.5 + 0.5}s infinite, float ${Math.random() * 3 + 2}s infinite ease-in-out`;
+                }
+            });
+        }
+
+        // Функции для работы с графиками
+        function clearCanvas() {
+            const canvas = document.getElementById('graph-canvas');
+            const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function drawAxes(ctx, width, height) {
+            const centerX = width / 2;
+            const centerY = height / 2;
+            
+            // Оси координат
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(0, centerY);
+            ctx.lineTo(width, centerY);
+            ctx.moveTo(centerX, 0);
+            ctx.lineTo(centerX, height);
+            ctx.stroke();
+            
+            // Стрелки на осях
+            ctx.beginPath();
+            ctx.moveTo(width - 10, centerY - 5);
+            ctx.lineTo(width, centerY);
+            ctx.lineTo(width - 10, centerY + 5);
+            ctx.moveTo(centerX - 5, 10);
+            ctx.lineTo(centerX, 0);
+            ctx.lineTo(centerX + 5, 10);
+            ctx.stroke();
+            
+            // Подписи осей
+            ctx.fillStyle = '#333';
+            ctx.font = '14px Arial';
+            ctx.fillText('X', width - 20, centerY - 10);
+            ctx.fillText('Y', centerX + 10, 20);
+        }
+
+        function drawGrid(ctx, width, height, scale = 20) {
+            const centerX = width / 2;
+            const centerY = height / 2;
+            
+            ctx.strokeStyle = '#ddd';
+            ctx.lineWidth = 1;
+            
+            // Вертикальные линии
+            for (let x = centerX % scale; x < width; x += scale) {
+                ctx.beginPath();
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, height);
+                ctx.stroke();
+            }
+            
+            // Горизонтальные линии
+            for (let y = centerY % scale; y < height; y += scale) {
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(width, y);
+                ctx.stroke();
+            }
+        }
+
+        function drawPoint(ctx, x, y, color = '#ff0000', size = 5, label = '') {
+            const centerX = ctx.canvas.width / 2;
+            const centerY = ctx.canvas.height / 2;
+            const scale = 20;
+            
+            const canvasX = centerX + x * scale;
+            const canvasY = centerY - y * scale;
+            
+            ctx.fillStyle = color;
+            ctx.beginPath();
+            ctx.arc(canvasX, canvasY, size, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            if (label) {
+                ctx.fillStyle = '#333';
+                ctx.font = '12px Arial';
+                ctx.fillText(label, canvasX + 8, canvasY - 8);
+            }
+        }
+
+        function drawVector(ctx, startX, startY, endX, endY, color = '#0000ff', label = '') {
+            const centerX = ctx.canvas.width / 2;
+            const centerY = ctx.canvas.height / 2;
+            const scale = 20;
+            
+            const startCanvasX = centerX + startX * scale;
+            const startCanvasY = centerY - startY * scale;
+            const endCanvasX = centerX + endX * scale;
+            const endCanvasY = centerY - endY * scale;
+            
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(startCanvasX, startCanvasY);
+            ctx.lineTo(endCanvasX, endCanvasY);
+            ctx.stroke();
+            
+            // Стрелка
+            const angle = Math.atan2(endCanvasY - startCanvasY, endCanvasX - startCanvasX);
+            const arrowLength = 10;
+            ctx.beginPath();
+            ctx.moveTo(endCanvasX, endCanvasY);
+            ctx.lineTo(endCanvasX - arrowLength * Math.cos(angle - Math.PI / 6), 
+                      endCanvasY - arrowLength * Math.sin(angle - Math.PI / 6));
+            ctx.moveTo(endCanvasX, endCanvasY);
+            ctx.lineTo(endCanvasX - arrowLength * Math.cos(angle + Math.PI / 6), 
+                      endCanvasY - arrowLength * Math.sin(angle + Math.PI / 6));
+            ctx.stroke();
+            
+            if (label) {
+                ctx.fillStyle = color;
+                ctx.font = '12px Arial';
+                ctx.fillText(label, (startCanvasX + endCanvasX) / 2, (startCanvasY + endCanvasY) / 2 - 10);
+            }
+        }
+
+        function drawLine(ctx, x1, y1, x2, y2, color = '#00ff00', label = '') {
+            const centerX = ctx.canvas.width / 2;
+            const centerY = ctx.canvas.height / 2;
+            const scale = 20;
+            
+            const canvasX1 = centerX + x1 * scale;
+            const canvasY1 = centerY - y1 * scale;
+            const canvasX2 = centerX + x2 * scale;
+            const canvasY2 = centerY - y2 * scale;
+            
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 2;
+            ctx.setLineDash([5, 5]);
+            ctx.beginPath();
+            ctx.moveTo(canvasX1, canvasY1);
+            ctx.lineTo(canvasX2, canvasY2);
+            ctx.stroke();
+            ctx.setLineDash([]);
+            
+            if (label) {
+                ctx.fillStyle = color;
+                ctx.font = '12px Arial';
+                ctx.fillText(label, (canvasX1 + canvasX2) / 2, (canvasY1 + canvasY2) / 2 - 10);
+            }
+        }
+
+        // Конфигурация операций
+        const operationsConfig = {
+            coordinates: {
+                description: "Вычисление координат вектора по двум точкам",
+                inputs: [
+                    { label: "Точка A", fields: ["x₁", "y₁"], values: [1, 2] },
+                    { label: "Точка B", fields: ["x₂", "y₂"], values: [4, 6] }
+                ],
+                calculate: (inputs) => {
+                    const [ax, ay, bx, by] = inputs;
+                    const dx = bx - ax;
+                    const dy = by - ay;
+                    
+                    // Построение графика
+                    const canvas = document.getElementById('graph-canvas');
+                    const ctx = canvas.getContext('2d');
+                    clearCanvas();
+                    drawGrid(ctx, canvas.width, canvas.height);
+                    drawAxes(ctx, canvas.width, canvas.height);
+                    
+                    // Точки A и B
+                    drawPoint(ctx, ax, ay, '#ff0000', 6, 'A');
+                    drawPoint(ctx, bx, by, '#ff0000', 6, 'B');
+                    
+                    // Вектор AB
+                    drawVector(ctx, ax, ay, bx, by, '#0000ff', 'AB');
+                    
+                    return {
+                        result: `Вектор AB = (${dx}, ${dy})`,
+                        solution: `
+                            <div class="step">A(${ax}, ${ay}), B(${bx}, ${by})</div>
+                            <div class="math-formula">AB = (x₂ - x₁, y₂ - y₁)</div>
+                            <div class="step">AB = (${bx} - ${ax}, ${by} - ${ay})</div>
+                            <div class="math-formula">AB = (${dx}, ${dy})</div>
+                        `
+                    };
+                }
+            },
+            angle_between_lines: {
+                description: "Угол между двумя прямыми: tg φ = |(k₁ - k₂) / (1 + k₁k₂)|",
+                inputs: [
+                    { label: "Угловой коэффициент k₁", fields: ["k₁"], values: [1] },
+                    { label: "Угловой коэффициент k₂", fields: ["k₂"], values: [2] }
+                ],
+                calculate: (inputs) => {
+                    const [k1, k2] = inputs;
+                    const denom = 1 + k1 * k2;
+                    const tanPhi = Math.abs((k1 - k2) / denom);
+                    const phi = Math.atan(tanPhi) * 180 / Math.PI;
+
+                    // Построение графика (две прямые с заданными k через начало координат)
+                    const canvas = document.getElementById('graph-canvas');
+                    const ctx = canvas.getContext('2d');
+                    clearCanvas();
+                    drawGrid(ctx, canvas.width, canvas.height);
+                    drawAxes(ctx, canvas.width, canvas.height);
+
+                    const x1 = -10, x2 = 10;
+                    drawLine(ctx, x1, k1 * x1, x2, k1 * x2, '#0000ff', `k₁ = ${k1}`);
+                    drawLine(ctx, x1, k2 * x1, x2, k2 * x2, '#ff0000', `k₂ = ${k2}`);
+
+                    return {
+                        result: `φ = ${phi.toFixed(2)}°`,
+                        solution: `
+                            <div class=\"step\">k₁ = ${k1}, k₂ = ${k2}</div>
+                            <div class=\"math-formula\">tg φ = |(k₁ - k₂) / (1 + k₁k₂)|</div>
+                            <div class=\"step\">tg φ = |(${k1} - ${k2}) / (1 + ${k1}·${k2})| = |${(k1 - k2)} / ${denom}| = ${tanPhi.toFixed(4)}</div>
+                            <div class=\"math-formula\">φ = arctg(${tanPhi.toFixed(4)}) = ${phi.toFixed(2)}°</div>
+                        `
+                    };
+                }
+            },
+            length: {
+                description: "Вычисление длины (модуля) вектора",
+                inputs: [
+                    { label: "Вектор a", fields: ["x", "y"], values: [3, 4] }
+                ],
+                calculate: (inputs) => {
+                    const [x, y] = inputs;
+                    const length = Math.sqrt(x*x + y*y);
+                    
+                    // Построение графика
+                    const canvas = document.getElementById('graph-canvas');
+                    const ctx = canvas.getContext('2d');
+                    clearCanvas();
+                    drawGrid(ctx, canvas.width, canvas.height);
+                    drawAxes(ctx, canvas.width, canvas.height);
+                    
+                    // Вектор от начала координат
+                    drawVector(ctx, 0, 0, x, y, '#0000ff', 'a');
+                    drawPoint(ctx, 0, 0, '#ff0000', 4, 'O');
+                    drawPoint(ctx, x, y, '#ff0000', 6, 'A');
+                    
+                    return {
+                        result: `Длина вектора |a| = ${length.toFixed(4)}`,
+                        solution: `
+                            <div class="step">a = (${x}, ${y})</div>
+                            <div class="math-formula">|a| = √(x² + y²)</div>
+                            <div class="step">|a| = √(${x}² + ${y}²) = √(${x*x} + ${y*y})</div>
+                            <div class="math-formula">|a| = √${x*x + y*y} = ${length.toFixed(4)}</div>
+                        `
+                    };
+                }
+            },
+            sum: {
+                description: "Сложение двух векторов",
+                inputs: [
+                    { label: "Вектор a", fields: ["x₁", "y₁"], values: [2, 3] },
+                    { label: "Вектор b", fields: ["x₂", "y₂"], values: [1, -1] }
+                ],
+                calculate: (inputs) => {
+                    const [ax, ay, bx, by] = inputs;
+                    const sumX = ax + bx;
+                    const sumY = ay + by;
+                    
+                    // Построение графика
+                    const canvas = document.getElementById('graph-canvas');
+                    const ctx = canvas.getContext('2d');
+                    clearCanvas();
+                    drawGrid(ctx, canvas.width, canvas.height);
+                    drawAxes(ctx, canvas.width, canvas.height);
+                    
+                    // Векторы от начала координат
+                    drawVector(ctx, 0, 0, ax, ay, '#0000ff', 'a');
+                    drawVector(ctx, 0, 0, bx, by, '#ff0000', 'b');
+                    drawVector(ctx, 0, 0, sumX, sumY, '#00ff00', 'a+b');
+                    
+                    drawPoint(ctx, 0, 0, '#333', 4, 'O');
+                    drawPoint(ctx, ax, ay, '#0000ff', 4, '');
+                    drawPoint(ctx, bx, by, '#ff0000', 4, '');
+                    drawPoint(ctx, sumX, sumY, '#00ff00', 6, 'a+b');
+                    
+                    return {
+                        result: `a + b = (${sumX}, ${sumY})`,
+                        solution: `
+                            <div class="step">a = (${ax}, ${ay}), b = (${bx}, ${by})</div>
+                            <div class="math-formula">a + b = (x₁ + x₂, y₁ + y₂)</div>
+                            <div class="step">a + b = (${ax} + ${bx}, ${ay} + ${by})</div>
+                            <div class="math-formula">a + b = (${sumX}, ${sumY})</div>
+                        `
+                    };
+                }
+            },
+            difference: {
+                description: "Вычитание двух векторов",
+                inputs: [
+                    { label: "Вектор a", fields: ["x₁", "y₁"], values: [5, 3] },
+                    { label: "Вектор b", fields: ["x₂", "y₂"], values: [2, 1] }
+                ],
+                calculate: (inputs) => {
+                    const [ax, ay, bx, by] = inputs;
+                    const diffX = ax - bx;
+                    const diffY = ay - by;
+                    
+                    // Построение графика
+                    const canvas = document.getElementById('graph-canvas');
+                    const ctx = canvas.getContext('2d');
+                    clearCanvas();
+                    drawGrid(ctx, canvas.width, canvas.height);
+                    drawAxes(ctx, canvas.width, canvas.height);
+                    
+                    // Векторы от начала координат
+                    drawVector(ctx, 0, 0, ax, ay, '#0000ff', 'a');
+                    drawVector(ctx, 0, 0, bx, by, '#ff0000', 'b');
+                    drawVector(ctx, 0, 0, diffX, diffY, '#00ff00', 'a-b');
+                    
+                    drawPoint(ctx, 0, 0, '#333', 4, 'O');
+                    drawPoint(ctx, ax, ay, '#0000ff', 4, '');
+                    drawPoint(ctx, bx, by, '#ff0000', 4, '');
+                    drawPoint(ctx, diffX, diffY, '#00ff00', 6, 'a-b');
+                    
+                    return {
+                        result: `a - b = (${diffX}, ${diffY})`,
+                        solution: `
+                            <div class="step">a = (${ax}, ${ay}), b = (${bx}, ${by})</div>
+                            <div class="math-formula">a - b = (x₁ - x₂, y₁ - y₂)</div>
+                            <div class="step">a - b = (${ax} - ${bx}, ${ay} - ${by})</div>
+                            <div class="math-formula">a - b = (${diffX}, ${diffY})</div>
+                        `
+                    };
+                }
+            },
+            multiply: {
+                description: "Умножение вектора на число",
+                inputs: [
+                    { label: "Вектор a", fields: ["x", "y"], values: [2, -3] },
+                    { label: "Число k", fields: ["k"], values: [3] }
+                ],
+                calculate: (inputs) => {
+                    const [x, y, k] = inputs;
+                    const multX = k * x;
+                    const multY = k * y;
+                    
+                    // Построение графика
+                    const canvas = document.getElementById('graph-canvas');
+                    const ctx = canvas.getContext('2d');
+                    clearCanvas();
+                    drawGrid(ctx, canvas.width, canvas.height);
+                    drawAxes(ctx, canvas.width, canvas.height);
+                    
+                    // Исходный вектор и результат умножения
+                    drawVector(ctx, 0, 0, x, y, '#0000ff', 'a');
+                    drawVector(ctx, 0, 0, multX, multY, '#ff0000', `${k}·a`);
+                    
+                    drawPoint(ctx, 0, 0, '#333', 4, 'O');
+                    drawPoint(ctx, x, y, '#0000ff', 4, '');
+                    drawPoint(ctx, multX, multY, '#ff0000', 6, `${k}·a`);
+                    
+                    return {
+                        result: `${k}·a = (${multX}, ${multY})`,
+                        solution: `
+                            <div class="step">a = (${x}, ${y}), k = ${k}</div>
+                            <div class="math-formula">k·a = (k·x, k·y)</div>
+                            <div class="step">${k}·a = (${k}·${x}, ${k}·${y})</div>
+                            <div class="math-formula">${k}·a = (${multX}, ${multY})</div>
+                        `
+                    };
+                }
+            },
+            dot: {
+                description: "Скалярное произведение векторов",
+                inputs: [
+                    { label: "Вектор a", fields: ["x₁", "y₁"], values: [1, 2] },
+                    { label: "Вектор b", fields: ["x₂", "y₂"], values: [3, 4] }
+                ],
+                calculate: (inputs) => {
+                    const [ax, ay, bx, by] = inputs;
+                    const dot = ax * bx + ay * by;
+                    
+                    // Построение графика
+                    const canvas = document.getElementById('graph-canvas');
+                    const ctx = canvas.getContext('2d');
+                    clearCanvas();
+                    drawGrid(ctx, canvas.width, canvas.height);
+                    drawAxes(ctx, canvas.width, canvas.height);
+                    
+                    // Векторы от начала координат
+                    drawVector(ctx, 0, 0, ax, ay, '#0000ff', 'a');
+                    drawVector(ctx, 0, 0, bx, by, '#ff0000', 'b');
+                    
+                    drawPoint(ctx, 0, 0, '#333', 4, 'O');
+                    drawPoint(ctx, ax, ay, '#0000ff', 4, '');
+                    drawPoint(ctx, bx, by, '#ff0000', 4, '');
+                    
+                    return {
+                        result: `a·b = ${dot}`,
+                        solution: `
+                            <div class="step">a = (${ax}, ${ay}), b = (${bx}, ${by})</div>
+                            <div class="math-formula">a·b = x₁·x₂ + y₁·y₂</div>
+                            <div class="step">a·b = ${ax}·${bx} + ${ay}·${by}</div>
+                            <div class="step">a·b = ${ax * bx} + ${ay * by}</div>
+                            <div class="math-formula">a·b = ${dot}</div>
+                        `
+                    };
+                }
+            },
+            angle: {
+                description: "Угол между векторами в градусах",
+                inputs: [
+                    { label: "Вектор a", fields: ["x₁", "y₁"], values: [1, 0] },
+                    { label: "Вектор b", fields: ["x₂", "y₂"], values: [0, 1] }
+                ],
+                calculate: (inputs) => {
+                    const [ax, ay, bx, by] = inputs;
+                    const dot = ax * bx + ay * by;
+                    const lenA = Math.sqrt(ax*ax + ay*ay);
+                    const lenB = Math.sqrt(bx*bx + by*by);
+                    const cosAngle = dot / (lenA * lenB);
+                    const angle = Math.acos(cosAngle) * 180 / Math.PI;
+                    
+                    // Построение графика
+                    const canvas = document.getElementById('graph-canvas');
+                    const ctx = canvas.getContext('2d');
+                    clearCanvas();
+                    drawGrid(ctx, canvas.width, canvas.height);
+                    drawAxes(ctx, canvas.width, canvas.height);
+                    
+                    // Векторы от начала координат
+                    drawVector(ctx, 0, 0, ax, ay, '#0000ff', 'a');
+                    drawVector(ctx, 0, 0, bx, by, '#ff0000', 'b');
+                    
+                    drawPoint(ctx, 0, 0, '#333', 4, 'O');
+                    drawPoint(ctx, ax, ay, '#0000ff', 4, '');
+                    drawPoint(ctx, bx, by, '#ff0000', 4, '');
+                    
+                    return {
+                        result: `Угол между векторами: ${angle.toFixed(2)}°`,
+                        solution: `
+                            <div class="step">a = (${ax}, ${ay}), b = (${bx}, ${by})</div>
+                            <div class="math-formula">cos(φ) = (a·b) / (|a|·|b|)</div>
+                            <div class="step">a·b = ${ax}·${bx} + ${ay}·${by} = ${dot}</div>
+                            <div class="step">|a| = √(${ax}² + ${ay}²) = ${lenA.toFixed(4)}</div>
+                            <div class="step">|b| = √(${bx}² + ${by}²) = ${lenB.toFixed(4)}</div>
+                            <div class="step">cos(φ) = ${dot} / (${lenA.toFixed(4)}·${lenB.toFixed(4)})</div>
+                            <div class="step">cos(φ) = ${dot} / ${(lenA * lenB).toFixed(4)} = ${cosAngle.toFixed(4)}</div>
+                            <div class="math-formula">φ = arccos(${cosAngle.toFixed(4)}) = ${angle.toFixed(2)}°</div>
+                        `
+                    };
+                }
+            },
+            collinear: {
+                description: "Проверка векторов на коллинеарность",
+                inputs: [
+                    { label: "Вектор a", fields: ["x₁", "y₁"], values: [2, 4] },
+                    { label: "Вектор b", fields: ["x₂", "y₂"], values: [1, 2] }
+                ],
+                calculate: (inputs) => {
+                    const [ax, ay, bx, by] = inputs;
+                    const isCollinear = Math.abs(ax * by - ay * bx) < 1e-10;
+                    
+                    // Построение графика
+                    const canvas = document.getElementById('graph-canvas');
+                    const ctx = canvas.getContext('2d');
+                    clearCanvas();
+                    drawGrid(ctx, canvas.width, canvas.height);
+                    drawAxes(ctx, canvas.width, canvas.height);
+                    
+                    // Векторы от начала координат
+                    drawVector(ctx, 0, 0, ax, ay, '#0000ff', 'a');
+                    drawVector(ctx, 0, 0, bx, by, '#ff0000', 'b');
+                    
+                    drawPoint(ctx, 0, 0, '#333', 4, 'O');
+                    drawPoint(ctx, ax, ay, '#0000ff', 4, '');
+                    drawPoint(ctx, bx, by, '#ff0000', 4, '');
+                    
+                    return {
+                        result: `Векторы ${isCollinear ? 'коллинеарны' : 'не коллинеарны'}`,
+                        solution: `
+                            <div class="step">a = (${ax}, ${ay}), b = (${bx}, ${by})</div>
+                            <div class="math-formula">Условие коллинеарности: x₁·y₂ - x₂·y₁ = 0</div>
+                            <div class="step">${ax}·${by} - ${bx}·${ay} = ${ax * by} - ${bx * ay} = ${ax * by - bx * ay}</div>
+                            <div class="math-formula">${isCollinear ? 'x₁·y₂ - x₂·y₁ = 0 - векторы коллинеарны' : 'x₁·y₂ - x₂·y₁ ≠ 0 - векторы не коллинеарны'}</div>
+                        `
+                    };
+                }
+            },
+            perpendicular: {
+                description: "Проверка векторов на перпендикулярность",
+                inputs: [
+                    { label: "Вектор a", fields: ["x₁", "y₁"], values: [1, 0] },
+                    { label: "Вектор b", fields: ["x₂", "y₂"], values: [0, 1] }
+                ],
+                calculate: (inputs) => {
+                    const [ax, ay, bx, by] = inputs;
+                    const dot = ax * bx + ay * by;
+                    const isPerpendicular = Math.abs(dot) < 1e-10;
+                    
+                    // Построение графика
+                    const canvas = document.getElementById('graph-canvas');
+                    const ctx = canvas.getContext('2d');
+                    clearCanvas();
+                    drawGrid(ctx, canvas.width, canvas.height);
+                    drawAxes(ctx, canvas.width, canvas.height);
+                    
+                    // Векторы от начала координат
+                    drawVector(ctx, 0, 0, ax, ay, '#0000ff', 'a');
+                    drawVector(ctx, 0, 0, bx, by, '#ff0000', 'b');
+                    
+                    drawPoint(ctx, 0, 0, '#333', 4, 'O');
+                    drawPoint(ctx, ax, ay, '#0000ff', 4, '');
+                    drawPoint(ctx, bx, by, '#ff0000', 4, '');
+                    
+                    return {
+                        result: `Векторы ${isPerpendicular ? 'перпендикулярны' : 'не перпендикулярны'}`,
+                        solution: `
+                            <div class="step">a = (${ax}, ${ay}), b = (${bx}, ${by})</div>
+                            <div class="math-formula">Условие перпендикулярности: a·b = 0</div>
+                            <div class="step">a·b = ${ax}·${bx} + ${ay}·${by} = ${dot}</div>
+                            <div class="math-formula">${isPerpendicular ? 'a·b = 0 - векторы перпендикулярны' : 'a·b ≠ 0 - векторы не перпендикулярны'}</div>
+                        `
+                    };
+                }
+            },
+            distance: {
+                description: "Расстояние между двумя точками",
+                inputs: [
+                    { label: "Точка A", fields: ["x₁", "y₁"], values: [1, 2] },
+                    { label: "Точка B", fields: ["x₂", "y₂"], values: [4, 6] }
+                ],
+                calculate: (inputs) => {
+                    const [ax, ay, bx, by] = inputs;
+                    const distance = Math.sqrt((bx - ax) * (bx - ax) + (by - ay) * (by - ay));
+                    
+                    // Построение графика
+                    const canvas = document.getElementById('graph-canvas');
+                    const ctx = canvas.getContext('2d');
+                    clearCanvas();
+                    drawGrid(ctx, canvas.width, canvas.height);
+                    drawAxes(ctx, canvas.width, canvas.height);
+                    
+                    // Точки A и B
+                    drawPoint(ctx, ax, ay, '#ff0000', 6, 'A');
+                    drawPoint(ctx, bx, by, '#ff0000', 6, 'B');
+                    
+                    // Линия между точками
+                    drawLine(ctx, ax, ay, bx, by, '#00ff00', `d = ${distance.toFixed(2)}`);
+                    
+                    return {
+                        result: `Расстояние AB = ${distance.toFixed(4)}`,
+                        solution: `
+                            <div class="step">A(${ax}, ${ay}), B(${bx}, ${by})</div>
+                            <div class="math-formula">d = √((x₂ - x₁)² + (y₂ - y₁)²)</div>
+                            <div class="step">d = √((${bx} - ${ax})² + (${by} - ${ay})²)</div>
+                            <div class="step">d = √(${bx - ax}² + ${by - ay}²)</div>
+                            <div class="step">d = √(${(bx - ax) * (bx - ax)} + ${(by - ay) * (by - ay)})</div>
+                            <div class="math-formula">d = √${(bx - ax) * (bx - ax) + (by - ay) * (by - ay)} = ${distance.toFixed(4)}</div>
+                        `
+                    };
+                }
+            },
+            segment_division: {
+                description: "Деление отрезка в данном отношении m:n",
+                inputs: [
+                    { label: "Точка A", fields: ["x₁", "y₁"], values: [1, 2] },
+                    { label: "Точка B", fields: ["x₂", "y₂"], values: [7, 8] },
+                    { label: "Отношение m:n", fields: ["m", "n"], values: [2, 1] }
+                ],
+                calculate: (inputs) => {
+                    const [ax, ay, bx, by, m, n] = inputs;
+                    const x = (m * bx + n * ax) / (m + n);
+                    const y = (m * by + n * ay) / (m + n);
+                    
+                    // Построение графика
+                    const canvas = document.getElementById('graph-canvas');
+                    const ctx = canvas.getContext('2d');
+                    clearCanvas();
+                    drawGrid(ctx, canvas.width, canvas.height);
+                    drawAxes(ctx, canvas.width, canvas.height);
+                    
+                    // Точки A, B и точка деления
+                    drawPoint(ctx, ax, ay, '#ff0000', 6, 'A');
+                    drawPoint(ctx, bx, by, '#ff0000', 6, 'B');
+                    drawPoint(ctx, x, y, '#00ff00', 6, 'C');
+                    
+                    // Отрезок AB
+                    drawLine(ctx, ax, ay, bx, by, '#0000ff', 'AB');
+                    
+                    return {
+                        result: `Точка деления: (${x.toFixed(4)}, ${y.toFixed(4)})`,
+                        solution: `
+                            <div class="step">A(${ax}, ${ay}), B(${bx}, ${by}), отношение m:n = ${m}:${n}</div>
+                            <div class="math-formula">x = (m·x₂ + n·x₁) / (m + n)</div>
+                            <div class="math-formula">y = (m·y₂ + n·y₁) / (m + n)</div>
+                            <div class="step">x = (${m}·${bx} + ${n}·${ax}) / (${m} + ${n})</div>
+                            <div class="step">x = (${m * bx} + ${n * ax}) / ${m + n}</div>
+                            <div class="step">x = ${m * bx + n * ax} / ${m + n} = ${x.toFixed(4)}</div>
+                            <div class="step">y = (${m}·${by} + ${n}·${ay}) / (${m} + ${n})</div>
+                            <div class="step">y = (${m * by} + ${n * ay}) / ${m + n}</div>
+                            <div class="math-formula">y = ${m * by + n * ay} / ${m + n} = ${y.toFixed(4)}</div>
+                        `
+                    };
+                }
+            },
+            triangle_area: {
+                description: "Площадь треугольника по трем точкам",
+                inputs: [
+                    { label: "Точка A", fields: ["x₁", "y₁"], values: [0, 0] },
+                    { label: "Точка B", fields: ["x₂", "y₂"], values: [4, 0] },
+                    { label: "Точка C", fields: ["x₃", "y₃"], values: [2, 3] }
+                ],
+                calculate: (inputs) => {
+                    const [ax, ay, bx, by, cx, cy] = inputs;
+                    const area = Math.abs((ax * (by - cy) + bx * (cy - ay) + cx * (ay - by)) / 2);
+                    
+                    // Построение графика
+                    const canvas = document.getElementById('graph-canvas');
+                    const ctx = canvas.getContext('2d');
+                    clearCanvas();
+                    drawGrid(ctx, canvas.width, canvas.height);
+                    drawAxes(ctx, canvas.width, canvas.height);
+                    
+                    // Точки треугольника
+                    drawPoint(ctx, ax, ay, '#ff0000', 6, 'A');
+                    drawPoint(ctx, bx, by, '#ff0000', 6, 'B');
+                    drawPoint(ctx, cx, cy, '#ff0000', 6, 'C');
+                    
+                    // Стороны треугольника
+                    drawLine(ctx, ax, ay, bx, by, '#0000ff', 'AB');
+                    drawLine(ctx, bx, by, cx, cy, '#0000ff', 'BC');
+                    drawLine(ctx, cx, cy, ax, ay, '#0000ff', 'CA');
+                    
+                    return {
+                        result: `Площадь треугольника = ${area.toFixed(4)}`,
+                        solution: `
+                            <div class="step">A(${ax}, ${ay}), B(${bx}, ${by}), C(${cx}, ${cy})</div>
+                            <div class="math-formula">S = |(x₁(y₂ - y₃) + x₂(y₃ - y₁) + x₃(y₁ - y₂)) / 2|</div>
+                            <div class="step">S = |${ax}(${by} - ${cy}) + ${bx}(${cy} - ${ay}) + ${cx}(${ay} - ${by})| / 2</div>
+                            <div class="step">S = |${ax}·${by - cy} + ${bx}·${cy - ay} + ${cx}·${ay - by}| / 2</div>
+                            <div class="step">S = |${ax * (by - cy)} + ${bx * (cy - ay)} + ${cx * (ay - by)}| / 2</div>
+                            <div class="math-formula">S = |${ax * (by - cy) + bx * (cy - ay) + cx * (ay - by)}| / 2 = ${area.toFixed(4)}</div>
+                        `
+                    };
+                }
+            },
+            slope_line: {
+                description: "Уравнение прямой с угловым коэффициентом y = kx + b",
+                inputs: [
+                    { label: "Точка", fields: ["x₀", "y₀"], values: [2, 3] },
+                    { label: "Угловой коэффициент k", fields: ["k"], values: [2] }
+                ],
+                calculate: (inputs) => {
+                    const [x0, y0, k] = inputs;
+                    const b = y0 - k * x0;
+                    
+                    // Построение графика
+                    const canvas = document.getElementById('graph-canvas');
+                    const ctx = canvas.getContext('2d');
+                    clearCanvas();
+                    drawGrid(ctx, canvas.width, canvas.height);
+                    drawAxes(ctx, canvas.width, canvas.height);
+                    
+                    // Точка на прямой
+                    drawPoint(ctx, x0, y0, '#ff0000', 6, 'P');
+                    
+                    // Прямая линия
+                    const x1 = -10, y1 = k * x1 + b;
+                    const x2 = 10, y2 = k * x2 + b;
+                    drawLine(ctx, x1, y1, x2, y2, '#0000ff', `y = ${k}x + ${b.toFixed(2)}`);
+                    
+                    return {
+                        result: `y = ${k}x + ${b.toFixed(4)}`,
+                        solution: `
+                            <div class="step">Точка (${x0}, ${y0}), k = ${k}</div>
+                            <div class="math-formula">y = kx + b</div>
+                            <div class="step">где k = ${k} - угловой коэффициент</div>
+                            <div class="step">b = y₀ - k·x₀ = ${y0} - ${k}·${x0} = ${b.toFixed(4)}</div>
+                            <div class="math-formula">y = ${k}x + ${b.toFixed(4)}</div>
+                        `
+                    };
+                }
+            },
+            general_line: {
+                description: "Общее уравнение прямой",
+                inputs: [
+                    { label: "Коэффициент A", fields: ["A"], values: [2] },
+                    { label: "Коэффициент B", fields: ["B"], values: [3] },
+                    { label: "Коэффициент C", fields: ["C"], values: [-6] }
+                ],
+                calculate: (inputs) => {
+                    const [A, B, C] = inputs;
+                    
+                    // Построение графика
+                    const canvas = document.getElementById('graph-canvas');
+                    const ctx = canvas.getContext('2d');
+                    clearCanvas();
+                    drawGrid(ctx, canvas.width, canvas.height);
+                    drawAxes(ctx, canvas.width, canvas.height);
+                    
+                    // Прямая линия
+                    const x1 = -10, y1 = B !== 0 ? (-A * x1 - C) / B : 0;
+                    const x2 = 10, y2 = B !== 0 ? (-A * x2 - C) / B : 0;
+                    drawLine(ctx, x1, y1, x2, y2, '#0000ff', `${A}x + ${B}y + ${C} = 0`);
+                    
+                    return {
+                        result: `${A}x + ${B}y + ${C} = 0`,
+                        solution: `
+                            <div class="step">A = ${A}, B = ${B}, C = ${C}</div>
+                            <div class="math-formula">Ax + By + C = 0</div>
+                            <div class="math-formula">${A}x + ${B}y + ${C} = 0</div>
+                        `
+                    };
+                }
+            },
+            line_through_point: {
+                description: "Уравнение прямой через точку в заданном направлении",
+                inputs: [
+                    { label: "Точка", fields: ["x₀", "y₀"], values: [1, 2] },
+                    { label: "Направляющий вектор", fields: ["a", "b"], values: [3, 4] }
+                ],
+                calculate: (inputs) => {
+                    const [x0, y0, a, b] = inputs;
+                    const A = b;
+                    const B = -a;
+                    const C = a * y0 - b * x0;
+                    
+                    // Построение графика
+                    const canvas = document.getElementById('graph-canvas');
+                    const ctx = canvas.getContext('2d');
+                    clearCanvas();
+                    drawGrid(ctx, canvas.width, canvas.height);
+                    drawAxes(ctx, canvas.width, canvas.height);
+                    
+                    // Точка и направляющий вектор
+                    drawPoint(ctx, x0, y0, '#ff0000', 6, 'P');
+                    drawVector(ctx, x0, y0, x0 + a, y0 + b, '#0000ff', 'v');
+                    
+                    // Прямая линия
+                    const x1 = -10, y1 = B !== 0 ? (-A * x1 - C) / B : y0;
+                    const x2 = 10, y2 = B !== 0 ? (-A * x2 - C) / B : y0;
+                    drawLine(ctx, x1, y1, x2, y2, '#00ff00', `${A}x + ${B}y + ${C} = 0`);
+                    
+                    return {
+                        result: `${A}x + ${B}y + ${C} = 0`,
+                        solution: `
+                            <div class="step">Точка (${x0}, ${y0}), направляющий вектор (${a}, ${b})</div>
+                            <div class="math-formula">(x - x₀)/a = (y - y₀)/b</div>
+                            <div class="step">(x - ${x0})/${a} = (y - ${y0})/${b}</div>
+                            <div class="step">${b}(x - ${x0}) = ${a}(y - ${y0})</div>
+                            <div class="step">${b}x - ${b * x0} = ${a}y - ${a * y0}</div>
+                            <div class="math-formula">${A}x + ${B}y + ${C} = 0</div>
+                        `
+                    };
+                }
+            },
+            line_through_two_points: {
+                description: "Прямая через две точки",
+                inputs: [
+                    { label: "Точка A", fields: ["x₁", "y₁"], values: [1, 2] },
+                    { label: "Точка B", fields: ["x₂", "y₂"], values: [4, 5] }
+                ],
+                calculate: (inputs) => {
+                    const [ax, ay, bx, by] = inputs;
+                    const A = by - ay;
+                    const B = ax - bx;
+                    const C = bx * ay - ax * by;
+                    
+                    // Построение графика
+                    const canvas = document.getElementById('graph-canvas');
+                    const ctx = canvas.getContext('2d');
+                    clearCanvas();
+                    drawGrid(ctx, canvas.width, canvas.height);
+                    drawAxes(ctx, canvas.width, canvas.height);
+                    
+                    // Точки A и B
+                    drawPoint(ctx, ax, ay, '#ff0000', 6, 'A');
+                    drawPoint(ctx, bx, by, '#ff0000', 6, 'B');
+                    
+                    // Прямая линия
+                    const x1 = -10, y1 = B !== 0 ? (-A * x1 - C) / B : ay;
+                    const x2 = 10, y2 = B !== 0 ? (-A * x2 - C) / B : ay;
+                    drawLine(ctx, x1, y1, x2, y2, '#0000ff', `${A}x + ${B}y + ${C} = 0`);
+                    
+                    return {
+                        result: `${A}x + ${B}y + ${C} = 0`,
+                        solution: `
+                            <div class="step">A(${ax}, ${ay}), B(${bx}, ${by})</div>
+                            <div class="math-formula">(x - x₁)/(x₂ - x₁) = (y - y₁)/(y₂ - y₁)</div>
+                            <div class="step">(x - ${ax})/(${bx} - ${ax}) = (y - ${ay})/(${by} - ${ay})</div>
+                            <div class="step">(x - ${ax})/${bx - ax} = (y - ${ay})/${by - ay}</div>
+                            <div class="step">${by - ay}(x - ${ax}) = ${bx - ax}(y - ${ay})</div>
+                            <div class="step">${by - ay}x - ${(by - ay) * ax} = ${bx - ax}y - ${(bx - ax) * ay}</div>
+                            <div class="math-formula">${A}x + ${B}y + ${C} = 0</div>
+                        `
+                    };
+                }
+            },
+            line_segments: {
+                description: "Уравнение прямой в отрезках на осях x/a + y/b = 1",
+                inputs: [
+                    { label: "Отрезок на оси X", fields: ["a"], values: [3] },
+                    { label: "Отрезок на оси Y", fields: ["b"], values: [4] }
+                ],
+                calculate: (inputs) => {
+                    const [a, b] = inputs;
+                    
+                    // Построение графика
+                    const canvas = document.getElementById('graph-canvas');
+                    const ctx = canvas.getContext('2d');
+                    clearCanvas();
+                    drawGrid(ctx, canvas.width, canvas.height);
+                    drawAxes(ctx, canvas.width, canvas.height);
+                    
+                    // Точки пересечения с осями
+                    drawPoint(ctx, a, 0, '#ff0000', 6, `(${a}, 0)`);
+                    drawPoint(ctx, 0, b, '#ff0000', 6, `(0, ${b})`);
+                    
+                    // Прямая линия
+                    drawLine(ctx, a, 0, 0, b, '#0000ff', `x/${a} + y/${b} = 1`);
+                    
+                    return {
+                        result: `x/${a} + y/${b} = 1`,
+                        solution: `
+                            <div class="step">Прямая пересекает оси в точках A(${a}, 0) и B(0, ${b})</div>
+                            <div class="math-formula">x/a + y/b = 1</div>
+                            <div class="step">где a = ${a} - отрезок на оси X, b = ${b} - отрезок на оси Y</div>
+                            <div class="math-formula">x/${a} + y/${b} = 1</div>
+                        `
+                    };
+                }
+            },
+            perpendicular_line: {
+                description: "Уравнение прямой, проходящей через точку перпендикулярно вектору",
+                inputs: [
+                    { label: "Точка", fields: ["x₀", "y₀"], values: [2, 3] },
+                    { label: "Нормальный вектор", fields: ["A", "B"], values: [1, 2] }
+                ],
+                calculate: (inputs) => {
+                    const [x0, y0, A, B] = inputs;
+                    const C = -(A * x0 + B * y0);
+                    
+                    // Построение графика
+                    const canvas = document.getElementById('graph-canvas');
+                    const ctx = canvas.getContext('2d');
+                    clearCanvas();
+                    drawGrid(ctx, canvas.width, canvas.height);
+                    drawAxes(ctx, canvas.width, canvas.height);
+                    
+                    // Точка и нормальный вектор
+                    drawPoint(ctx, x0, y0, '#ff0000', 6, 'P');
+                    drawVector(ctx, x0, y0, x0 + A, y0 + B, '#0000ff', 'n');
+                    
+                    // Прямая линия
+                    const x1 = -10, y1 = B !== 0 ? (-A * x1 - C) / B : y0;
+                    const x2 = 10, y2 = B !== 0 ? (-A * x2 - C) / B : y0;
+                    drawLine(ctx, x1, y1, x2, y2, '#00ff00', `${A}x + ${B}y + ${C} = 0`);
+                    
+                    return {
+                        result: `${A}x + ${B}y + ${C} = 0`,
+                        solution: `
+                            <div class="step">Точка (${x0}, ${y0}), нормальный вектор (${A}, ${B})</div>
+                            <div class="math-formula">A(x - x₀) + B(y - y₀) = 0</div>
+                            <div class="step">${A}(x - ${x0}) + ${B}(y - ${y0}) = 0</div>
+                            <div class="step">${A}x - ${A * x0} + ${B}y - ${B * y0} = 0</div>
+                            <div class="math-formula">${A}x + ${B}y + ${C} = 0</div>
+                        `
+                    };
+                }
+            },
+            parallel_lines: {
+                description: "Проверка параллельности прямых",
+                inputs: [
+                    { label: "Прямая 1: A₁x + B₁y + C₁ = 0", fields: ["A₁", "B₁", "C₁"], values: [2, 3, 1] },
+                    { label: "Прямая 2: A₂x + B₂y + C₂ = 0", fields: ["A₂", "B₂", "C₂"], values: [4, 6, 2] }
+                ],
+                calculate: (inputs) => {
+                    const [A1, B1, C1, A2, B2, C2] = inputs;
+                    const isParallel = Math.abs(A1 * B2 - A2 * B1) < 1e-10;
+                    
+                    // Построение графика
+                    const canvas = document.getElementById('graph-canvas');
+                    const ctx = canvas.getContext('2d');
+                    clearCanvas();
+                    drawGrid(ctx, canvas.width, canvas.height);
+                    drawAxes(ctx, canvas.width, canvas.height);
+                    
+                    // Прямые линии
+                    const x1 = -10, y1_1 = B1 !== 0 ? (-A1 * x1 - C1) / B1 : 0;
+                    const x2 = 10, y2_1 = B1 !== 0 ? (-A1 * x2 - C1) / B1 : 0;
+                    drawLine(ctx, x1, y1_1, x2, y2_1, '#0000ff', `L1: ${A1}x + ${B1}y + ${C1} = 0`);
+                    
+                    const y1_2 = B2 !== 0 ? (-A2 * x1 - C2) / B2 : 0;
+                    const y2_2 = B2 !== 0 ? (-A2 * x2 - C2) / B2 : 0;
+                    drawLine(ctx, x1, y1_2, x2, y2_2, '#ff0000', `L2: ${A2}x + ${B2}y + ${C2} = 0`);
+                    
+                    return {
+                        result: `Прямые ${isParallel ? 'параллельны' : 'не параллельны'}`,
+                        solution: `
+                            <div class="step">Прямая 1: ${A1}x + ${B1}y + ${C1} = 0</div>
+                            <div class="step">Прямая 2: ${A2}x + ${B2}y + ${C2} = 0</div>
+                            <div class="math-formula">Условие параллельности: A₁B₂ - A₂B₁ = 0</div>
+                            <div class="step">${A1}·${B2} - ${A2}·${B1} = ${A1 * B2} - ${A2 * B1} = ${A1 * B2 - A2 * B1}</div>
+                            <div class="math-formula">${isParallel ? 'A₁B₂ - A₂B₁ = 0 - прямые параллельны' : 'A₁B₂ - A₂B₁ ≠ 0 - прямые не параллельны'}</div>
+                        `
+                    };
+                }
+            },
+            perpendicular_lines: {
+                description: "Проверка перпендикулярности прямых",
+                inputs: [
+                    { label: "Прямая 1: A₁x + B₁y + C₁ = 0", fields: ["A₁", "B₁", "C₁"], values: [1, 2, 3] },
+                    { label: "Прямая 2: A₂x + B₂y + C₂ = 0", fields: ["A₂", "B₂", "C₂"], values: [2, -1, 1] }
+                ],
+                calculate: (inputs) => {
+                    const [A1, B1, C1, A2, B2, C2] = inputs;
+                    const dot = A1 * A2 + B1 * B2;
+                    const isPerpendicular = Math.abs(dot) < 1e-10;
+                    
+                    // Построение графика
+                    const canvas = document.getElementById('graph-canvas');
+                    const ctx = canvas.getContext('2d');
+                    clearCanvas();
+                    drawGrid(ctx, canvas.width, canvas.height);
+                    drawAxes(ctx, canvas.width, canvas.height);
+                    
+                    // Прямые линии
+                    const x1 = -10, y1_1 = B1 !== 0 ? (-A1 * x1 - C1) / B1 : 0;
+                    const x2 = 10, y2_1 = B1 !== 0 ? (-A1 * x2 - C1) / B1 : 0;
+                    drawLine(ctx, x1, y1_1, x2, y2_1, '#0000ff', `L1: ${A1}x + ${B1}y + ${C1} = 0`);
+                    
+                    const y1_2 = B2 !== 0 ? (-A2 * x1 - C2) / B2 : 0;
+                    const y2_2 = B2 !== 0 ? (-A2 * x2 - C2) / B2 : 0;
+                    drawLine(ctx, x1, y1_2, x2, y2_2, '#ff0000', `L2: ${A2}x + ${B2}y + ${C2} = 0`);
+                    
+                    return {
+                        result: `Прямые ${isPerpendicular ? 'перпендикулярны' : 'не перпендикулярны'}`,
+                        solution: `
+                            <div class="step">Прямая 1: ${A1}x + ${B1}y + ${C1} = 0</div>
+                            <div class="step">Прямая 2: ${A2}x + ${B2}y + ${C2} = 0</div>
+                            <div class="math-formula">Условие перпендикулярности: A₁A₂ + B₁B₂ = 0</div>
+                            <div class="step">${A1}·${A2} + ${B1}·${B2} = ${A1 * A2} + ${B1 * B2} = ${dot}</div>
+                            <div class="math-formula">${isPerpendicular ? 'A₁A₂ + B₁B₂ = 0 - прямые перпендикулярны' : 'A₁A₂ + B₁B₂ ≠ 0 - прямые не перпендикулярны'}</div>
+                        `
+                    };
+                }
+            }
+        };
+
+        // Инициализация при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            const operationSelect = document.getElementById('operation');
+            const inputFields = document.getElementById('input-fields');
+            const calculateBtn = document.getElementById('calculate-btn');
+            const resultDiv = document.getElementById('result');
+            const resultContent = document.getElementById('result-content');
+            const solutionDiv = document.getElementById('solution');
+            const operationDescription = document.getElementById('operation-description');
+
+            // Функция для обновления фона
+            function updateBackground(operation) {
+                document.body.className = operation;
+                updateStarsForOperation(operation);
+            }
+
+            // Обновление полей ввода
+            function updateInputFields() {
+                const operation = operationSelect.value;
+                const config = operationsConfig[operation];
+                
+                operationDescription.textContent = config.description;
+                updateBackground(operation);
+                
+                let html = '';
+                config.inputs.forEach((inputGroup, index) => {
+                    html += `
+                        <div class="input-group">
+                            <label>${inputGroup.label}:</label>
+                            <div class="vector-inputs">
+                    `;
+                    
+                    inputGroup.fields.forEach((field, fieldIndex) => {
+                        html += `
+                            <div class="vector-input-group">
+                                <label>${field}</label>
+                                <input type="number" 
+                                       id="input-${index}-${fieldIndex}" 
+                                       value="${inputGroup.values[fieldIndex]}"
+                                       step="any">
+                            </div>
+                        `;
+                    });
+                    
+                    html += `</div></div>`;
+                });
+                
+                inputFields.innerHTML = html;
+            }
+
+            // Функция вычисления
+            function calculate() {
+                const operation = operationSelect.value;
+                const config = operationsConfig[operation];
+                
+                try {
+                    const inputs = [];
+                    config.inputs.forEach((inputGroup, groupIndex) => {
+                        inputGroup.fields.forEach((field, fieldIndex) => {
+                            const input = document.getElementById(`input-${groupIndex}-${fieldIndex}`);
+                            inputs.push(parseFloat(input.value));
+                        });
+                    });
+
+                    const { result, solution } = config.calculate(inputs);
+                    
+                    resultContent.textContent = result;
+                    solutionDiv.innerHTML = solution;
+                    resultDiv.style.display = 'block';
+                    
+                } catch (error) {
+                    resultContent.textContent = 'Ошибка в вычислениях. Проверьте введенные данные.';
+                    solutionDiv.innerHTML = '';
+                    resultDiv.style.display = 'block';
+                }
+            }
+
+            // Назначение обработчиков
+            operationSelect.addEventListener('change', updateInputFields);
+            calculateBtn.addEventListener('click', calculate);
+
+            // Первоначальная настройка
+            updateInputFields();
+            
+            // Создаем звездочки при загрузке
+            createStars();
+        });
+    </script>
+</body>
+</html>
