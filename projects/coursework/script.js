@@ -388,7 +388,7 @@ const downloadHistory = () => {
 
     document.body.appendChild(a); 
 
-    a.click(); 
+    a.click(); //  нажимает на ссылку и запускает скачивание
 
     a.remove(); // удаляет временную ссылку со страницы.
 
