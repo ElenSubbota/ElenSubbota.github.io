@@ -1,4 +1,3 @@
-"use strict";
 
 // Призы и основные данные приложения.
 const prizes = [
@@ -37,6 +36,8 @@ let currentParticipantIndex = 0;
 let currentRotation = 0;
 
 let isSpinning = false;
+
+let animationFrameId = null;
 
 // Функция сохраняет текущее состояние приложения в localStorage
 const saveState = () => {
@@ -281,9 +282,11 @@ const startSpin = () => {
         wheel.style.transform = "rotate(" + deg + "deg)"
 
         if (part < 1) { // проверяет закончилась ли анимациа
-            requestAnimationFrame(animate); // планирует следующий кадр анимации
+            animationFrameId = requestAnimationFrame(animate); // планирует следующий кадр анимации
             return;
         }
+
+        animationFrameId = null;
 
         currentRotation = final % 360 // сохраняет итоговый угол в диапазоне одного круга
  
@@ -292,7 +295,7 @@ const startSpin = () => {
         finishDraw(num); // завершает розыгрыш выбранного приза
     };
 
-    requestAnimationFrame(animate);
+    animationFrameId = requestAnimationFrame(animate);
 }
 
 // завершение розыгрыша и запись результата в историю
@@ -397,6 +400,14 @@ const downloadHistory = () => {
 
 // полная очистка данных розыгрыша
 const resetDraw = () => {
+    if (animationFrameId !== null) {
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
+    }
+
+    isSpinning = false;
+    spinButton.disabled = false;
+
     participants = [];
 
     history = [];
@@ -410,7 +421,9 @@ const resetDraw = () => {
 
     fileInput.value = "";
 
-    fileName.textContent = "Файл не выбран";
+    if (fileName) {
+        fileName.textContent = "Файл не выбран";
+    }
 
     wheel.style.transform = "rotate(0deg)";
 
@@ -445,7 +458,9 @@ const escapeHtml = (val) => {
 fileInput.addEventListener("change", () => {
     selectedFile = fileInput.files[0] || null;
 
-    fileName.textContent = selectedFile ? selectedFile.name : "Файл не выбран";
+    if (fileName) {
+        fileName.textContent = selectedFile ? selectedFile.name : "Файл не выбран";
+    }
 })
 
 loadState();
@@ -456,5 +471,4 @@ loadButton.addEventListener("click", loadParticipants);
 spinButton.addEventListener("click", startSpin);
 historyButton.addEventListener("click", downloadHistory)
 resetButton.addEventListener("click", resetDraw);
-
 
